@@ -133,8 +133,8 @@
                         </LinearLayout>
                     </RelativeLayout>
 
-                    <!-- 2. HUAWEI LIGHT-FIELD ARCHITECTURAL HOME OVERVIEW CARD -->
-                    <com.thinktech.smarthome.ui.home.HarmonyLightFieldCard
+                    <!-- 2. FLAGSHIP HUAWEI HARMONYOS SPATIAL HOME HERO CARD -->
+                    <com.thinktech.smarthome.ui.home.HarmonyHomeHeroCard
                         android:id="@+id/layoutIndoorCard"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -142,10 +142,10 @@
                         android:orientation="vertical"
                         android:paddingStart="20dp"
                         android:paddingTop="18dp"
-                        android:paddingEnd="18dp"
+                        android:paddingEnd="20dp"
                         android:paddingBottom="18dp">
 
-                        <!-- Top Header: Spatial Tag + Editorial Status Headline + Minimal + Sensor Pill -->
+                        <!-- Row 1: Frosted Live Status Pill + Glass + Sensor Action -->
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -155,27 +155,29 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
-                                android:orientation="vertical">
+                                android:background="@drawable/bg_hero_glass_pill"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingStart="9dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="11dp"
+                                android:paddingBottom="5dp">
+
+                                <View
+                                    android:id="@+id/viewHeroLiveDot"
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:background="@drawable/bg_hero_live_dot" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
-                                    android:letterSpacing="0.06"
-                                    android:text="STATUS RUMAH"
-                                    android:textColor="@color/harmony_blue"
-                                    android:textSize="10sp" />
-
-                                <TextView
-                                    android:id="@+id/tvHomeSummarySub"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="3dp"
+                                    android:layout_marginStart="6dp"
                                     android:fontFamily="@font/plus_jakarta_sans_bold"
-                                    android:letterSpacing="-0.02"
-                                    android:text="Semua Terkendali"
-                                    android:textColor="@color/harmony_ink"
-                                    android:textSize="19sp" />
+                                    android:letterSpacing="0.08"
+                                    android:text="STATUS RUMAH"
+                                    android:textColor="#F2FFFFFF"
+                                    android:textSize="9.5sp" />
                             </LinearLayout>
 
                             <TextView
@@ -184,134 +186,271 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:background="@drawable/bg_harmony_pill_white"
+                                android:background="@drawable/bg_hero_glass_action"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:fontFamily="@font/plus_jakarta_sans_semibold"
                                 android:paddingStart="13dp"
-                                android:paddingTop="7dp"
+                                android:paddingTop="6dp"
                                 android:paddingEnd="13dp"
-                                android:paddingBottom="7dp"
+                                android:paddingBottom="6dp"
                                 android:text="+ Sensor"
-                                android:textColor="@color/harmony_blue"
+                                android:textColor="#FFFFFF"
                                 android:textSize="11.5sp" />
                         </RelativeLayout>
 
-                        <!-- Whisper-thin Hairline Divider -->
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="15dp"
-                            android:background="@color/harmony_divider" />
-
-                        <!-- 3 Borderless Editorial Telemetry Columns (ZERO nested boxes) -->
+                        <!-- Row 2: Editorial Status Headline + 3D Ambient Climate Focal Block -->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
-                            <!-- Metric 1: Online -->
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:paddingEnd="10dp">
+
+                                <TextView
+                                    android:id="@+id/tvHomeSummarySub"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.025"
+                                    android:lineSpacingMultiplier="1.06"
+                                    android:maxLines="2"
+                                    android:text="Semua Terkendali"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="21sp" />
+
+                                <TextView
+                                    android:id="@+id/tvHomeSummaryDetail"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:maxLines="1"
+                                    android:text="Ekosistem Terhubung • Stabil"
+                                    android:textColor="#CCFFFFFF"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/chipClimateSensor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="end"
+                                android:orientation="vertical"
+                                android:paddingStart="6dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="34dp"
+                                        android:layout_height="34dp"
+                                        android:contentDescription="Iklim"
+                                        android:src="@drawable/ic_hero_climate_3d" />
+
+                                    <TextView
+                                        android:id="@+id/tvStatClimate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                                        android:letterSpacing="-0.03"
+                                        android:text="24°C"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="28sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="1dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:maxLines="1"
+                                    android:text="Iklim Ideal"
+                                    android:textColor="#D9FFFFFF"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Row 3: 3 Translucent Frosted Glass Telemetry Micro-Tiles -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal">
+
+                            <!-- Tile 1: Online Connectivity -->
+                            <LinearLayout
+                                android:id="@+id/chipOnlineMetric"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_hero_glass_tile"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:paddingStart="12dp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="13dp"
+                                        android:layout_height="13dp"
+                                        android:contentDescription="Online"
+                                        android:src="@drawable/ic_hero_metric_online" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                                        android:maxLines="1"
+                                        android:text="Online"
+                                        android:textColor="#CCFFFFFF"
+                                        android:textSize="10.5sp" />
+                                </LinearLayout>
 
                                 <TextView
                                     android:id="@+id/tvStatOnline"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
                                     android:fontFamily="@font/plus_jakarta_sans_bold"
                                     android:letterSpacing="-0.02"
                                     android:text="0/0"
-                                    android:textColor="@color/harmony_ink"
-                                    android:textSize="22sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:fontFamily="@font/plus_jakarta_sans_medium"
-                                    android:text="Online"
-                                    android:textColor="@color/harmony_ink_secondary"
-                                    android:textSize="11.5sp" />
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="18sp" />
                             </LinearLayout>
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="28dp"
-                                android:background="@color/harmony_divider" />
-
-                            <!-- Metric 2: Active ON -->
+                            <!-- Tile 2: Active ON Devices -->
                             <LinearLayout
+                                android:id="@+id/chipActiveMetric"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
                                 android:layout_weight="1"
+                                android:background="@drawable/bg_hero_glass_tile"
+                                android:clickable="true"
+                                android:focusable="true"
                                 android:orientation="vertical"
-                                android:paddingStart="16dp">
+                                android:paddingStart="12dp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="13dp"
+                                        android:layout_height="13dp"
+                                        android:contentDescription="Menyala"
+                                        android:src="@drawable/ic_hero_metric_active" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                                        android:maxLines="1"
+                                        android:text="Menyala"
+                                        android:textColor="#CCFFFFFF"
+                                        android:textSize="10.5sp" />
+                                </LinearLayout>
 
                                 <TextView
                                     android:id="@+id/tvStatActive"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
                                     android:fontFamily="@font/plus_jakarta_sans_bold"
                                     android:letterSpacing="-0.02"
                                     android:text="0"
-                                    android:textColor="@color/harmony_blue"
-                                    android:textSize="22sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:fontFamily="@font/plus_jakarta_sans_medium"
-                                    android:text="Menyala"
-                                    android:textColor="@color/harmony_ink_secondary"
-                                    android:textSize="11.5sp" />
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="18sp" />
                             </LinearLayout>
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="28dp"
-                                android:background="@color/harmony_divider" />
-
-                            <!-- Metric 3: Climate -->
+                            <!-- Tile 3: Real-Time Power / Energy -->
                             <LinearLayout
-                                android:id="@+id/chipClimateSensor"
+                                android:id="@+id/chipPowerMetric"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
                                 android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:background="@drawable/bg_hero_glass_tile"
                                 android:clickable="true"
                                 android:focusable="true"
                                 android:orientation="vertical"
-                                android:paddingStart="16dp">
+                                android:paddingStart="12dp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="10dp">
 
-                                <TextView
-                                    android:id="@+id/tvStatClimate"
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="13dp"
+                                        android:layout_height="13dp"
+                                        android:contentDescription="Daya"
+                                        android:src="@drawable/ic_hero_metric_power" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                                        android:maxLines="1"
+                                        android:text="Daya"
+                                        android:textColor="#CCFFFFFF"
+                                        android:textSize="10.5sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tvStatPower"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
                                     android:fontFamily="@font/plus_jakarta_sans_bold"
                                     android:letterSpacing="-0.02"
-                                    android:text="24°C"
-                                    android:textColor="@color/harmony_ink"
-                                    android:textSize="22sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:ellipsize="end"
-                                    android:fontFamily="@font/plus_jakarta_sans_medium"
-                                    android:maxLines="1"
-                                    android:text="Iklim Ideal"
-                                    android:textColor="@color/harmony_ink_secondary"
-                                    android:textSize="11.5sp" />
+                                    android:text="0 W"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="18sp" />
                             </LinearLayout>
                         </LinearLayout>
-                    </com.thinktech.smarthome.ui.home.HarmonyLightFieldCard>
+                    </com.thinktech.smarthome.ui.home.HarmonyHomeHeroCard>
 
                     <!-- 3. HUAWEI AI LIFE 1-TAP QUICK SCENE BAR -->
                     <LinearLayout

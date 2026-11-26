@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="36"
+    android:viewportHeight="36">
+
+    <!-- Soft ambient golden sun halo -->
+    <path
+        android:fillAlpha="0.34"
+        android:fillColor="#FFD766"
+        android:pathData="M22.5,12.5m-9.5,0a9.5,9.5 0,1 1,19 0a9.5,9.5 0,1 1,-19 0" />
+
+    <!-- Luminous 3D sun sphere -->
+    <path android:pathData="M22.5,12.5m-6.3,0a6.3,6.3 0,1 1,12.6 0a6.3,6.3 0,1 1,-12.6 0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="27.5"
+                android:endY="18"
+                android:startX="17.5"
+                android:startY="7"
+                android:type="linear">
+                <item
+                    android:color="#FFF5B8"
+                    android:offset="0" />
+                <item
+                    android:color="#FFCE4B"
+                    android:offset="0.55" />
+                <item
+                    android:color="#FF9B24"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Frosted translucent pearl cloud shadow -->
+    <path
+        android:fillAlpha="0.22"
+        android:fillColor="#09308A"
+        android:pathData="M10.5,28.8h15.2c3.0,0 5.4,-2.3 5.4,-5.1 0,-2.6 -2.0,-4.7 -4.6,-5.0 -0.8,-3.2 -3.7,-5.5 -7.2,-5.5 -3.7,0 -6.7,2.6 -7.3,6.1 -0.4,-0.1 -0.9,-0.2 -1.4,-0.2 -2.8,0 -5.0,2.2 -5.0,4.9 0,2.7 2.2,4.8 4.9,4.8z" />
+
+    <!-- Crisp 3D frosted white glass cloud -->
+    <path android:pathData="M9.8,27.5h15.2c3.0,0 5.4,-2.3 5.4,-5.1 0,-2.6 -2.0,-4.7 -4.6,-5.0 -0.8,-3.2 -3.7,-5.5 -7.2,-5.5 -3.7,0 -6.7,2.6 -7.3,6.1 -0.4,-0.1 -0.9,-0.2 -1.4,-0.2 -2.8,0 -5.0,2.2 -5.0,4.9 0,2.7 2.2,4.8 4.9,4.8z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="17.5"
+                android:endY="27.8"
+                android:startX="17.5"
+                android:startY="11.8"
+                android:type="linear">
+                <item
+                    android:color="#FFFFFFFF"
+                    android:offset="0" />
+                <item
+                    android:color="#F0EEF7FF"
+                    android:offset="0.65" />
+                <item
+                    android:color="#E0CBE4FF"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

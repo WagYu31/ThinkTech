@@ -1,5 +1,8 @@
 package com.thinktech.smarthome.ui.home
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
+import android.animation.ValueAnimator
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
@@ -54,6 +57,7 @@ class MainActivity : AppCompatActivity() {
     private var currentRoomFilter: String = "ALL"
     private val activeDeviceListeners = mutableMapOf<String, IDevListener>()
     private var topMenuPopup: PopupWindow? = null
+    private var heroLiveDotAnimator: ObjectAnimator? = null
     private lateinit var voiceAssistant: HarmonyVoiceAssistantController
 
     private val micPermissionLauncher = registerForActivityResult(
@@ -127,15 +131,31 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupHarmonyElevations() {
         val density = resources.displayMetrics.density
-        binding.layoutIndoorCard.setCornerRadiusDp(26f)
-        binding.layoutIndoorCard.lightFieldMode = HarmonyLightFieldCard.Mode.HERO_LIGHT_FIELD
-        binding.layoutIndoorCard.elevation = 3f * density
+        binding.layoutIndoorCard.setCornerRadiusDp(28f)
+        binding.layoutIndoorCard.heroMood = HarmonyHomeHeroCard.HeroMood.ACTIVE
+        binding.layoutIndoorCard.elevation = 8f * density
+
+        // Subtle Huawei HarmonyOS live indicator breathing pulse
+        heroLiveDotAnimator?.cancel()
+        heroLiveDotAnimator = ObjectAnimator.ofPropertyValuesHolder(
+            binding.viewHeroLiveDot,
+            PropertyValuesHolder.ofFloat(View.SCALE_X, 0.88f, 1.18f),
+            PropertyValuesHolder.ofFloat(View.SCALE_Y, 0.88f, 1.18f),
+            PropertyValuesHolder.ofFloat(View.ALPHA, 0.50f, 1.0f)
+        ).apply {
+            duration = 1400L
+            repeatCount = ValueAnimator.INFINITE
+            repeatMode = ValueAnimator.REVERSE
+            start()
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            binding.layoutIndoorCard.outlineSpotShadowColor = 0x450A59F7
+            binding.layoutIndoorCard.outlineAmbientShadowColor = 0x260A59F7
+
             val softShadow = 0x160A192F
             val softAmbient = 0x0B0A192F
             listOf(
-                binding.layoutIndoorCard,
                 binding.layoutFloatingAiBar,
                 binding.btnPlusPill,
                 binding.btnTopAddDevice
@@ -297,20 +317,50 @@ class MainActivity : AppCompatActivity() {
             val isCam = TuyaDeviceClassifier.isCameraDevice(dev.devId, dev.name, dev.category, dev.productId)
             dev.isOnline && (isCam || dev.isSwitchOn)
         }
+        val estimatedWatts = allDevicesList.fold(0) { acc, dev ->
+            if (!dev.isOnline) return@fold acc
+            val isCam = TuyaDeviceClassifier.isCameraDevice(dev.devId, dev.name, dev.category, dev.productId)
+            val isPlug = dev.category.equals("cz", ignoreCase = true) ||
+                dev.category.equals("pc", ignoreCase = true) ||
+                dev.name.contains("plug", ignoreCase = true) ||
+                dev.name.contains("socket", ignoreCase = true) ||
+                dev.name.contains("stop kontak", ignoreCase = true)
+            acc + when {
+                isCam -> 5
+                isPlug && dev.isSwitchOn -> 15
+                dev.isSwitchOn -> 12
+                else -> 0
+            }
+        }
 
         binding.tvConnectedDevicesTitle.text = "Perangkat ($total)"
         binding.tvOnlineCountBadge.text = "$onlineCount Online"
         binding.tvStatOnline.text = "$onlineCount/$total"
         binding.tvStatActive.text = activeCount.toString()
+        binding.tvStatPower.text = "$estimatedWatts W"
+
         binding.tvHomeSummarySub.text = when {
             total == 0 -> "Siap Dihubungkan"
             activeCount == 0 -> "Semua Perangkat Siaga"
             else -> "$activeCount Perangkat Aktif"
         }
+        binding.tvHomeSummaryDetail.text = when {
+            total == 0 -> "Hubungkan Perangkat Pintar Anda"
+            onlineCount == 0 -> "Perangkat Offline • Periksa Wi-Fi"
+            activeCount == 0 -> "Semua Perangkat Siaga • Hemat Daya"
+            else -> "Ekosistem Terhubung • Stabil"
+        }
+
+        binding.layoutIndoorCard.heroMood = when {
+            activeCount > 0 -> HarmonyHomeHeroCard.HeroMood.ACTIVE
+            onlineCount > 0 -> HarmonyHomeHeroCard.HeroMood.STANDBY
+            else -> HarmonyHomeHeroCard.HeroMood.OFFLINE
+        }
 
         binding.layoutHeroEmptyState.visibility = if (total == 0) View.VISIBLE else View.GONE
         binding.tvProfileDeviceCount.text = total.toString()
         binding.tvProfileOnlineCount.text = onlineCount.toString()
+        AppLanguageManager.localizeActivity(this)
     }
 
     private fun showDeleteDeviceDialog(device: SmartDeviceItem) {
@@ -563,6 +613,53 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnAddIndoor.setOnClickListener(openSensorPrompt)
         binding.chipClimateSensor.setOnClickListener(openSensorPrompt)
+
+        binding.chipOnlineMetric.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+            currentRoomFilter = "ALL"
+            activeRoomTabHolders.firstOrNull { tab -> tab.filterKey == "ALL" }?.let { allTab ->
+                updateRoomTabsUI(activeRoomTabHolders, allTab)
+            }
+            applyRoomFilter()
+            binding.tabHomeContent.smoothScrollTo(0, binding.tvConnectedDevicesTitle.top)
+        }
+        binding.chipActiveMetric.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+            val activeNames = allDevicesList
+                .filter { dev ->
+                    val isCam = TuyaDeviceClassifier.isCameraDevice(dev.devId, dev.name, dev.category, dev.productId)
+                    dev.isOnline && (isCam || dev.isSwitchOn)
+                }
+                .map { dev -> dev.name }
+            val msg = if (activeNames.isEmpty()) {
+                AppLanguageManager.tr(this, "Semua Perangkat Siaga")
+            } else {
+                activeNames.joinToString(" • ")
+            }
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        }
+        binding.chipPowerMetric.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+            val watts = binding.tvStatPower.text?.toString() ?: "0 W"
+            val activeSwitches = allDevicesList.count { dev ->
+                !TuyaDeviceClassifier.isCameraDevice(dev.devId, dev.name, dev.category, dev.productId) && dev.isSwitchOn
+            }
+            ProfileDialogsHelper.showTuyaConfirmDialog(
+                this,
+                title = "Audit Hemat Energi",
+                message = if (activeSwitches > 0) {
+                    "Estimasi daya aktif saat ini $watts ($activeSwitches saklar/lampu menyala). Matikan semua untuk hemat listrik?"
+                } else {
+                    "Estimasi daya saat ini $watts. Seluruh saklar dalam mode siaga hemat energi."
+                },
+                confirmText = if (activeSwitches > 0) "Matikan Semua" else "Selesai",
+                confirmColor = ContextCompat.getColor(this, R.color.harmony_blue)
+            ) {
+                if (activeSwitches > 0) {
+                    toggleAllNonCameraDevices(false)
+                }
+            }
+        }
 
         // Home Quick-Scene Bar (1-tap HarmonyOS actions right on Home)
         binding.btnQuickHome.setOnClickListener {
@@ -1356,6 +1453,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        heroLiveDotAnimator?.cancel()
+        heroLiveDotAnimator = null
         voiceAssistant.release()
         topMenuPopup?.dismiss()
         activeDeviceListeners.forEach { (devId, _) ->
