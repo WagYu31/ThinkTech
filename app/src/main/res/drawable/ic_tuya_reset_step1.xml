@@ -1,0 +1,124 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Left Socket Plate (Plugged In) -->
+    <!-- Outer wall plate -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 38,40 L 102,40 A 6,6 0 0 1 108,46 L 108,110 A 6,6 0 0 1 102,116 L 38,116 A 6,6 0 0 1 32,110 L 32,46 A 6,6 0 0 1 38,40 Z" />
+
+    <!-- Inner socket inset -->
+    <path
+        android:strokeColor="#A1A1AA"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 46,48 L 94,48 A 4,4 0 0 1 98,52 L 98,102 A 4,4 0 0 1 94,106 L 46,106 A 4,4 0 0 1 42,102 L 42,52 A 4,4 0 0 1 46,48 Z" />
+
+    <!-- Plug inserted into left socket -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 58,54 L 82,54 A 8,8 0 0 1 90,62 L 86,94 A 4,4 0 0 1 82,98 L 58,98 A 4,4 0 0 1 54,94 L 50,62 A 8,8 0 0 1 58,54 Z" />
+
+    <!-- Plug horizontal grip ridge line -->
+    <path
+        android:strokeColor="#A1A1AA"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 52,76 L 88,76" />
+
+    <!-- Plug neck & power cord -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 66,98 L 74,98 L 74,106 L 66,106 Z" />
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 70,106 L 70,132" />
+
+
+    <!-- Right Socket Plate (Unplugged) -->
+    <!-- Outer wall plate -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 166,40 L 230,40 A 6,6 0 0 1 236,46 L 236,110 A 6,6 0 0 1 230,116 L 166,116 A 6,6 0 0 1 160,110 L 160,46 A 6,6 0 0 1 166,40 Z" />
+
+    <!-- 3 pin slots / socket holes (UK / Universal style) -->
+    <!-- Top earth slit -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 198,58 L 198,69" />
+    <!-- Bottom left slit -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 183,84 L 192,84" />
+    <!-- Bottom right slit -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 204,84 L 213,84" />
+
+    <!-- Unplugged plug standing to the right -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 238,54 L 260,54 A 8,8 0 0 1 268,62 L 264,94 A 4,4 0 0 1 260,98 L 238,98 A 4,4 0 0 1 234,94 L 230,62 A 8,8 0 0 1 238,54 Z" />
+
+    <!-- Horizontal grip line on right plug -->
+    <path
+        android:strokeColor="#A1A1AA"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 232,76 L 266,76" />
+
+    <!-- Right plug neck & cord -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 245,98 L 253,98 L 253,106 L 245,106 Z" />
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 249,106 L 249,132" />
+
+</vector>

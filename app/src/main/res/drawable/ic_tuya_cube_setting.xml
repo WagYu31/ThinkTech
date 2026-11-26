@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Isometric 3D Cube / Hexagonal Prism matching Tuya Setting Icon -->
+    <!-- Outer hexagon box -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M12,2.5 L20.5,7.4 L20.5,16.6 L12,21.5 L3.5,16.6 L3.5,7.4 Z" />
+    <!-- Inner Y axes meeting at center (12, 12) -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M12,12 L12,21.5 M12,12 L20.5,7.4 M12,12 L3.5,7.4" />
+    <!-- Center circle or inner detail -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M12,12m-2.5,0a2.5,2.5 0 1,0 5,0a2.5,2.5 0 1,0 -5,0" />
+</vector>

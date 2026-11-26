@@ -1,0 +1,40 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Wall Switch Frame -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 95,35 L 185,35 A 8,8 0 0 1 193,43 L 193,125 A 8,8 0 0 1 185,133 L 95,133 A 8,8 0 0 1 87,125 L 87,43 A 8,8 0 0 1 95,35 Z" />
+
+    <!-- 2 Gang Buttons -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 97,45 L 135,45 L 135,123 L 97,123 Z" />
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 145,45 L 183,45 L 183,123 L 145,123 Z" />
+
+    <!-- Status LEDs -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M 116,105 m -3,0 a 3,3 0 1,0 6,0 a 3,3 0 1,0 -6,0" />
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M 164,105 m -3,0 a 3,3 0 1,0 6,0 a 3,3 0 1,0 -6,0" />
+
+</vector>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sheet_dialog"
+    android:orientation="vertical"
+    android:paddingStart="22dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="22dp"
+    android:paddingBottom="28dp">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_sheet_handle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:letterSpacing="-0.02"
+        android:text="Pengaturan Saklar"
+        android:textColor="@color/harmony_ink"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="Konfigurasi relai dan indikator fisik perangkat"
+        android:textColor="@color/harmony_ink_secondary"
+        android:textSize="12.5sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_harmony_sheet_row"
+        android:gravity="center_vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Status Relai Saat Listrik Pulih"
+                android:textColor="@color/harmony_ink"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Ingat status terakhir sebelum mati lampu"
+                android:textColor="@color/harmony_blue"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/harmony_ink_muted" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_harmony_sheet_row"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="12dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Indikator Lampu LED Saklar"
+                android:textColor="@color/harmony_ink"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="Menyala lembut sebagai panduan dalam gelap"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            app:thumbTint="@color/harmony_switch_thumb"
+            app:trackDecorationTint="@android:color/transparent"
+            app:trackTint="@color/harmony_switch_track" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btnSaveSettings"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_harmony_btn_blue_solid"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:gravity="center"
+        android:text="Simpan Pengaturan"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/btnDeleteDeviceInSettings"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_harmony_logout_btn"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:gravity="center"
+        android:text="Hapus Perangkat dari Rumah"
+        android:textColor="@color/status_red"
+        android:textSize="14sp" />
+</LinearLayout>

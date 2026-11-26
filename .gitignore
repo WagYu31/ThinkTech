@@ -1,0 +1,36 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+*.dex
+*.zip
+
+# Files for the ART/Dalvik VM
+*.class
+
+# Generated & Gradle files
+bin/
+gen/
+out/
+release/
+.gradle/
+build/
+app/build/
+
+# Local machine configuration (SDK path, Tuya AppKey/AppSecret, etc.)
+local.properties
+
+# Tuya SDK security binaries & signing keystores (never commit)
+app/libs/*.aar
+app/src/main/assets/t_s.bmp
+*.jks
+*.keystore
+
+# IDE & OS metadata
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+*.log

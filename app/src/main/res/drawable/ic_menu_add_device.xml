@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Top Prongs -->
+    <path
+        android:pathData="M9,3v4"
+        android:strokeWidth="2.2"
+        android:strokeColor="#1E293B"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M15,3v4"
+        android:strokeWidth="2.2"
+        android:strokeColor="#1E293B"
+        android:strokeLineCap="round" />
+    <!-- Plug Body -->
+    <path
+        android:pathData="M7,7h10a2,2 0 0,1 2,2v5a5,5 0 0,1 -5,5h-4a5,5 0 0,1 -5,-5v-5a2,2 0 0,1 2,-2z"
+        android:strokeWidth="2.0"
+        android:strokeColor="#1E293B"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <!-- Side tabs / wings -->
+    <path
+        android:pathData="M4,11h3"
+        android:strokeWidth="2.0"
+        android:strokeColor="#1E293B"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M17,11h3"
+        android:strokeWidth="2.0"
+        android:strokeColor="#1E293B"
+        android:strokeLineCap="round" />
+</vector>

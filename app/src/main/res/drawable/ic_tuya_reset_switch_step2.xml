@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Soft aura -->
+    <path
+        android:fillColor="#EAF2FA"
+        android:pathData="M 140,80 m -50,0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0" />
+
+    <!-- Wall Switch Frame -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 100,40 L 180,40 A 6,6 0 0 1 186,46 L 186,120 A 6,6 0 0 1 180,126 L 100,126 A 6,6 0 0 1 94,120 L 94,46 A 6,6 0 0 1 100,40 Z" />
+
+    <!-- Switch Button Inset -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 104,48 L 176,48 L 176,118 L 104,118 Z" />
+
+    <!-- Press target indicator -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#E0F2FE"
+        android:pathData="M 130,85 m -12,0 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" />
+
+    <!-- Hand & finger pressing button -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 130,85 
+            C 127,81 129,77 133,77 
+            C 136,77 139,79 143,84 
+            L 154,97 
+            L 164,99 
+            C 169,100 174,103 177,107 
+            L 190,120 
+            C 193,123 191,127 186,127 
+            L 168,121 
+            L 152,115 
+            L 140,108 
+            C 136,106 133,102 134,97 
+            Z" />
+
+</vector>

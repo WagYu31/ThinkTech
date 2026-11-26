@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Amber ticket/order card -->
+    <path
+        android:fillColor="#FFB300"
+        android:pathData="M18,3H6C4.9,3 4,3.9 4,5v15l3,-1.5 3,1.5 2,-1 2,1 3,-1.5 3,1.5V5C20,3.9 19.1,3 18,3z"/>
+    <!-- Two horizontal order lines -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M8,8h8"/>
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M8,12h5"/>
+</vector>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ThinkTech</string>
+    <string name="smart_home_title">ThinkTech Smart Home</string>
+    <string name="login_title">Smart Living Starts Here</string>
+    <string name="login_subtitle">Kelola dan kontrol perangkat IoT Tuya Anda dengan mudah</string>
+    <string name="country_code">Kode Negara</string>
+    <string name="email_or_phone">Email atau No. Telepon</string>
+    <string name="password">Kata Sandi</string>
+    <string name="login_btn">Masuk ke Akun</string>
+    <string name="register_btn">Daftar Akun Baru</string>
+    <string name="anonymous_demo">Masuk Mode Demo / Quick Test</string>
+
+    <!-- Home strings -->
+    <string name="my_home">Rumah Saya</string>
+    <string name="all_devices">Semua Perangkat</string>
+    <string name="active_devices">Aktif</string>
+    <string name="add_device">+ Tambah Perangkat</string>
+    <string name="no_devices">Belum ada perangkat terhubung</string>
+    <string name="no_devices_hint">Ketuk tombol Tambah Perangkat di atas untuk menghubungkan saklar, lampu, atau sensor pintar</string>
+    <string name="device_online">Online</string>
+    <string name="device_offline">Offline</string>
+
+    <!-- Pairing -->
+    <string name="pairing_title">Pairing Perangkat Baru</string>
+    <string name="wifi_ssid">Nama Wi-Fi (2.4 GHz)</string>
+    <string name="wifi_password">Kata Sandi Wi-Fi</string>
+    <string name="start_pairing">Mulai Pencarian Perangkat</string>
+    <string name="pairing_in_progress">Menghubungkan ke Tuya Cloud...</string>
+</resources>

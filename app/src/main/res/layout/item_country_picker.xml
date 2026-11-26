@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
+
+    <TextView
+        android:id="@+id/tvItemFlag"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="🇮🇩"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tvItemCountryName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Indonesia"
+        android:textColor="@color/thinktech_dark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvItemCountryCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="+62"
+        android:textColor="@color/thinktech_blue"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ivItemCheck"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/ic_rule_check"
+        android:visibility="gone" />
+</LinearLayout>

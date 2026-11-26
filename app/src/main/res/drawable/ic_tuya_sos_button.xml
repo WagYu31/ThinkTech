@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,10a20,20 0 1,0 0.001,0z" />
+
+    <!-- Pure White Medallion Body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,8a19,19 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,9.5a17.5,17.5 0 1,0 0.001,0z" />
+
+    <!-- Lanyard / Keychain Loop at Top -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M30,4h4v6h-4z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M31,5h2v4h-2z" />
+
+    <!-- Vivid Red Recessed SOS Button Disc -->
+    <path
+        android:fillColor="#EF4444"
+        android:strokeColor="#DC2626"
+        android:strokeWidth="1.2"
+        android:pathData="M32,32a13,13 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#F87171"
+        android:pathData="M32,32a11,11 0 1,0 0.001,0z" />
+
+    <!-- Bold White 'SOS' Lettering -->
+    <!-- S -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M23,29h4a1,1 0 0,0 0,-2h-3a2.5,2.5 0 0,1 0,-5h3a1,1 0 0,1 0,2h-3a1,1 0 0,0 0,2h3a2.5,2.5 0 0,1 0,5h-4a1,1 0 0,1 0,-2z" />
+    <!-- O -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,22a4.5,4.5 0 1,1 0,9a4.5,4.5 0 0,1 0,-9zm0,2a2.5,2.5 0 1,0 0,5a2.5,2.5 0 0,0 0,-5z" />
+    <!-- S -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M37,29h4a1,1 0 0,0 0,-2h-3a2.5,2.5 0 0,1 0,-5h3a1,1 0 0,1 0,2h-3a1,1 0 0,0 0,2h3a2.5,2.5 0 0,1 0,5h-4a1,1 0 0,1 0,-2z" />
+</vector>

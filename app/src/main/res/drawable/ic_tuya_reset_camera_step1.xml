@@ -1,0 +1,54 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Camera Stand Base -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 115,130 L 165,130 A 4,4 0 0 1 169,134 L 169,140 L 111,140 L 111,134 A 4,4 0 0 1 115,130 Z" />
+
+    <!-- Stem -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:fillColor="#E2E8F0"
+        android:pathData="M 134,106 L 146,106 L 146,130 L 134,130 Z" />
+
+    <!-- Camera Head (Spherical PTZ Dome) -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 140,68 m -38,0 a 38,38 0 1,0 76,0 a 38,38 0 1,0 -76,0" />
+
+    <!-- Lens Inset Oval -->
+    <path
+        android:strokeColor="#334155"
+        android:strokeWidth="1.8"
+        android:fillColor="#1E293B"
+        android:pathData="M 140,68 m -22,0 a 22,22 0 1,0 44,0 a 22,22 0 1,0 -44,0" />
+
+    <!-- Lens Glass Circle -->
+    <path
+        android:strokeColor="#0EA5E9"
+        android:strokeWidth="2.0"
+        android:fillColor="#0284C7"
+        android:pathData="M 140,68 m -9,0 a 9,9 0 1,0 18,0 a 9,9 0 1,0 -18,0" />
+
+    <!-- Power cable running from base -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 165,136 L 195,136" />
+
+</vector>

@@ -1,0 +1,49 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M11,15h42a5,5 0 0,1 5,5v30a5,5 0 0,1 -5,5H11a5,5 0 0,1 -5,-5V20a5,5 0 0,1 5,-5z" />
+
+    <!-- Orange / Blue Compact Relay Enclosure -->
+    <path
+        android:fillColor="#EA580C"
+        android:strokeColor="#C2410C"
+        android:strokeWidth="1.2"
+        android:pathData="M12,12h40a4,4 0 0,1 4,4v32a4,4 0 0,1 -4,4H12a4,4 0 0,1 -4,-4V16a4,4 0 0,1 4,-4z" />
+    <path
+        android:fillColor="#F97316"
+        android:pathData="M13,13.5h38a2.5,2.5 0 0,1 2.5,2.5v18H10.5V16a2.5,2.5 0 0,1 2.5,-2.5z" />
+
+    <!-- Front Label Area (White Specs Plate) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15,17h25a2,2 0 0,1 2,2v10a2,2 0 0,1 -2,2H15a2,2 0 0,1 -2,-2V19a2,2 0 0,1 2,-2z" />
+    <path
+        android:fillColor="#EA580C"
+        android:pathData="M17,20h12v2H17zm0,4h8v1.5H17z" />
+
+    <!-- Pairing Button & LED on top right -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M46,20a3,3 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#22C55E"
+        android:pathData="M46,26a1.5,1.5 0 1,0 0.001,0z" />
+
+    <!-- Bottom Terminal Block (Dark Slate with Brass Screw Holes) -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M10,34h44v14H10z" />
+
+    <!-- 5 Screw Terminal Holes (L, N, S1, S2, L1) -->
+    <path
+        android:fillColor="#D97706"
+        android:pathData="M14,39a2.2,2.2 0 1,0 0.001,0zm8,0a2.2,2.2 0 1,0 0.001,0zm8,0a2.2,2.2 0 1,0 0.001,0zm8,0a2.2,2.2 0 1,0 0.001,0zm8,0a2.2,2.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#78350F"
+        android:pathData="M14,39a1.2,1.2 0 1,0 0.001,0zm8,0a1.2,1.2 0 1,0 0.001,0zm8,0a1.2,1.2 0 1,0 0.001,0zm8,0a1.2,1.2 0 1,0 0.001,0zm8,0a1.2,1.2 0 1,0 0.001,0z" />
+</vector>

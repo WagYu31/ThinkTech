@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M16,24h32a8,8 0 0,1 8,8v18a8,8 0 0,1 -8,8H16a8,8 0 0,1 -8,-8V32a8,8 0 0,1 8,-8z" />
+
+    <!-- Cooker Rounded Outer Chassis -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M16,18h32a7,7 0 0,1 7,7v22a7,7 0 0,1 -7,7H16a7,7 0 0,1 -7,-7V25a7,7 0 0,1 7,-7z" />
+
+    <!-- Glossy White Front Surface -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,19.5h30a5.5,5.5 0 0,1 5.5,5.5v20a5.5,5.5 0 0,1 -5.5,5.5H17a5.5,5.5 0 0,1 -5.5,-5.5V25a5.5,5.5 0 0,1 5.5,-5.5z" />
+
+    <!-- Top Hinged Lid Seam -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#E2E8F0"
+        android:strokeWidth="1.2"
+        android:pathData="M10,26h44" />
+
+    <!-- Top Steam Vent Valve (Micro-pressure) -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M27,15h10a1.5,1.5 0 0,1 1.5,1.5v2h-13v-2a1.5,1.5 0 0,1 1.5,-1.5z" />
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M30,16.5h4v1h-4z" />
+
+    <!-- Front Open Push Button (Metallic Chrome Latch) -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="0.8"
+        android:pathData="M28,24h8a1.5,1.5 0 0,1 1.5,1.5v3a1.5,1.5 0 0,1 -1.5,1.5h-8a1.5,1.5 0 0,1 -1.5,-1.5v-3a1.5,1.5 0 0,1 1.5,-1.5z" />
+
+    <!-- Digital Touch Control Screen (Black Glass) -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M20,33h24a2,2 0 0,1 2,2v12a2,2 0 0,1 -2,2H20a2,2 0 0,1 -2,-2V35a2,2 0 0,1 2,-2z" />
+
+    <!-- Glowing Amber Time Remaining (00:25) -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M24,38h16v3h-16z" />
+
+    <!-- Touch Menu Function Indicators -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M23,43a1,1 0 1,0 0.001,0z M27,43a1,1 0 1,0 0.001,0z M37,43a1,1 0 1,0 0.001,0z M41,43a1,1 0 1,0 0.001,0z" />
+</vector>

@@ -1,0 +1,53 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,18a16,16 0 1,0 0.001,0z" />
+
+    <!-- Dual Antennas pointing angled up -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M16,6l3,1v18h-3zM45,6l-3,1v18h3z" />
+
+    <!-- Top Wall / Ceiling Mount Bracket -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M24,18h16v6H24z" />
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M22,15h20v4H22z" />
+
+    <!-- Rotating Spherical PTZ Dome Body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,38a16,16 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,38a14.5,14.5 0 1,0 0.001,0z" />
+
+    <!-- Center Black Camera Eyeball Sphere -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M32,38a10,10 0 1,0 0.001,0z" />
+
+    <!-- Coated Blue Lens Aperture -->
+    <path
+        android:fillColor="#1E3A8A"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="1"
+        android:pathData="M32,38a5,5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32,38a2.5,2.5 0 1,0 0.001,0z" />
+
+    <!-- Dual IR Floodlight LEDs around Lens -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M25,38a1.5,1.5 0 1,0 0.001,0zm14,0a1.5,1.5 0 1,0 0.001,0z" />
+</vector>

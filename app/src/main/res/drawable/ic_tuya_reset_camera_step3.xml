@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Speaker Icon on left -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 100,68 L 115,68 L 132,52 L 132,108 L 115,92 L 100,92 Z" />
+
+    <!-- Audio Chime Waves (Ding-Dong / Prompt Tone) -->
+    <!-- Arc 1 -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 144,66 C 152,74 152,86 144,94" />
+
+    <!-- Arc 2 -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 156,54 C 170,68 170,92 156,106" />
+
+    <!-- Arc 3 -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 168,42 C 188,62 188,98 168,118" />
+
+    <!-- Musical tone note -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M 188,48 m -4,0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0" />
+    <path
+        android:strokeColor="#0284C7"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 192,48 L 192,30 L 204,30" />
+
+</vector>

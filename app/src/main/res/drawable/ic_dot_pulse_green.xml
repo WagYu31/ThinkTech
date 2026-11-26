@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="12dp"
+    android:height="12dp"
+    android:viewportWidth="12"
+    android:viewportHeight="12">
+    <!-- Outer halo -->
+    <path
+        android:fillAlpha="0.25"
+        android:fillColor="#10B981"
+        android:pathData="M6,0A6,6 0 1,0 12,6A6,6 0 0,0 6,0Z" />
+    <!-- Inner solid dot -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M6,3A3,3 0 1,0 9,6A3,3 0 0,0 6,3Z" />
+</vector>

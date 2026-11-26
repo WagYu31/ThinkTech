@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sheet_dialog"
+    android:orientation="vertical"
+    android:paddingStart="22dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="22dp"
+    android:paddingBottom="28dp">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_sheet_handle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:letterSpacing="-0.02"
+        android:text="Hitung Mundur"
+        android:textColor="@color/harmony_ink"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="Pilih durasi otomatis untuk mematikan semua saklar"
+        android:textColor="@color/harmony_ink_secondary"
+        android:textSize="12.5sp" />
+
+    <TextView
+        android:id="@+id/btnTimer15m"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_harmony_sheet_row"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="Matikan setelah 15 Menit"
+        android:textColor="@color/harmony_ink"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/btnTimer30m"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_harmony_sheet_row"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="Matikan setelah 30 Menit"
+        android:textColor="@color/harmony_ink"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/btnTimer1h"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_harmony_sheet_row"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:text="Matikan setelah 1 Jam"
+        android:textColor="@color/harmony_ink"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/btnCancelTimer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_harmony_logout_btn"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:gravity="center"
+        android:text="Batalkan Timer"
+        android:textColor="@color/status_red"
+        android:textSize="14sp" />
+</LinearLayout>

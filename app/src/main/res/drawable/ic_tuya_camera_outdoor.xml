@@ -1,0 +1,57 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M14,24h32a6,6 0 0,1 6,6v18a6,6 0 0,1 -6,6H14a6,6 0 0,1 -6,-6V30a6,6 0 0,1 6,-6z" />
+
+    <!-- Dual High-Gain Wi-Fi Antennas at Rear -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M15,10h3v14h-3zm-6,4h3v10h-3z" />
+
+    <!-- Wall Mounting Bracket Base & Pivot Arm -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M8,30h8v8H8zm6,3l6,3v2l-6,3z" />
+
+    <!-- Sunshield Visor (Top Roof) -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1"
+        android:pathData="M18,20h35l4,4H18z" />
+
+    <!-- Main Cylindrical Bullet Camera Body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M18,24h30a4,4 0 0,1 4,4v16a4,4 0 0,1 -4,4H18a3,3 0 0,1 -3,-3V27a3,3 0 0,1 3,-3z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M19,25.5h28a2.5,2.5 0 0,1 2.5,2.5v13a2.5,2.5 0 0,1 -2.5,2.5H19a1.5,1.5 0 0,1 -1.5,-1.5V27a1.5,1.5 0 0,1 1.5,-1.5z" />
+
+    <!-- Front Black Lens Bezel -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M48,25h6a2,2 0 0,1 2,2v14a2,2 0 0,1 -2,2h-6z" />
+
+    <!-- Optical Lens in Front -->
+    <path
+        android:fillColor="#1E3A8A"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="0.8"
+        android:pathData="M52,34a3.5,3.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M52,34a1.8,1.8 0 1,0 0.001,0z" />
+
+    <!-- Red Status Indicator & IR Dot -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M52,28a1,1 0 1,0 0.001,0z" />
+</vector>

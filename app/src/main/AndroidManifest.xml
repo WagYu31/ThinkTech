@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Network & Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <!-- Location (Required for Wi-Fi Scanning / Device Pairing) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Microphone (Required for Smart Camera Two-Way Talk / Intercom) -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Bluetooth (Required for BLE Device Discovery & Pairing) -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        tools:targetApi="s" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"
+        tools:targetApi="s" />
+
+    <!-- Android 11+ package visibility for SpeechRecognizer & TextToSpeech -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".ThinkTechApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ThinkTech"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- Tuya / Thing Smart Life App SDK Credentials (loaded from local.properties) -->
+        <meta-data
+            android:name="TUYA_SMART_APPKEY"
+            android:value="${TUYA_APP_KEY}" />
+        <meta-data
+            android:name="TUYA_SMART_SECRET"
+            android:value="${TUYA_APP_SECRET}" />
+        <meta-data
+            android:name="THING_SMART_APPKEY"
+            android:value="${TUYA_APP_KEY}" />
+        <meta-data
+            android:name="THING_SMART_SECRET"
+            android:value="${TUYA_APP_SECRET}" />
+
+        <!-- Activities -->
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ThinkTech.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.device.DeviceControlActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.device.CameraControlActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.pairing.PairDeviceActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.pairing.ResetDeviceActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.pairing.ConnectingDeviceActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.schedule.ScheduleTimeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.settings.AppLanguageActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

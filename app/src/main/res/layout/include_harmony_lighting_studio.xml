@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLightingStudio"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:paddingHorizontal="6dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="10dp"
+    android:visibility="gone">
+
+    <!-- 1. ULTRA-CLEAN DEVICE IDENTITY ROW + HARMONY ROYAL-BLUE POWER SWITCH -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="4dp">
+
+        <FrameLayout
+            android:id="@+id/flLampMiniBadge"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@drawable/bg_lamp_tab_track">
+
+            <ImageView
+                android:id="@+id/ivLampMiniIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_lamp_bulb_mini" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvLampIdentityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:letterSpacing="-0.015"
+                android:maxLines="1"
+                android:text="Smart Bulb Bedroom RGB"
+                android:textColor="#151922"
+                android:textSize="15.5sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/viewLightColorDot"
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="#3B5BFF" />
+
+                <TextView
+                    android:id="@+id/tvLightColorMeta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:maxLines="1"
+                    android:text="Kamar Tidur • Menyala 85%"
+                    android:textColor="#717887"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchLampPower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:thumb="@drawable/bg_lamp_power_switch_thumb"
+            app:showText="false"
+            app:switchMinWidth="48dp"
+            app:track="@drawable/bg_lamp_power_switch_track" />
+    </LinearLayout>
+
+    <!-- 2. ROYAL COBALT 3-SEGMENT MODE SWITCHER (PUTIH | WARNA | SUASANA) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_lamp_tab_track"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            android:id="@+id/tabLightCct"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:gravity="center"
+            android:text="Putih"
+            android:textColor="#2A303D"
+            android:textSize="13.5sp" />
+
+        <TextView
+            android:id="@+id/tabLightRgb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_lamp_tab_active"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:gravity="center"
+            android:text="Warna"
+            android:textColor="#FFFFFF"
+            android:textSize="13.5sp" />
+
+        <TextView
+            android:id="@+id/tabLightScene"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:gravity="center"
+            android:text="Suasana"
+            android:textColor="#2A303D"
+            android:textSize="13.5sp" />
+    </LinearLayout>
+
+    <!-- 3. CENTERPIECE STAGE: 3D BULB DIAL (WHITE CCT 270° / RGB 360°) OR AMBIENT SCENES -->
+    <LinearLayout
+        android:id="@+id/panelDialStage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingVertical="8dp">
+
+        <com.thinktech.smarthome.ui.device.HarmonyLampDialView
+            android:id="@+id/lampDialView"
+            android:layout_width="292dp"
+            android:layout_height="292dp" />
+
+        <!-- Quick Color Swatches + Live Hex Pill (Visible in WARNA mode) -->
+        <LinearLayout
+            android:id="@+id/panelRgbQuickRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/swatchRgb1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#FF3B30"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <View
+                android:id="@+id/swatchRgb2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#FF9500"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <View
+                android:id="@+id/swatchRgb3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#FFCC00"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <View
+                android:id="@+id/swatchRgb4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#34C759"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <View
+                android:id="@+id/swatchRgb5"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#00C7E6"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <View
+                android:id="@+id/swatchRgb6"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#3B5BFF"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <View
+                android:id="@+id/swatchRgb7"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#9333EA"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/tvRgbReadout"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_lamp_cta_soft"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:gravity="center"
+                android:paddingHorizontal="9dp"
+                android:text="#3B5BFF"
+                android:textColor="#3B5BFF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Quick Kelvin Presets (Visible in PUTIH mode) -->
+        <LinearLayout
+            android:id="@+id/panelCctQuickRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/presetCctNight"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_lamp_tab_track"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Lilin"
+                android:textColor="#2A303D"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/presetCctWarm"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_lamp_tab_track"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Hangat"
+                android:textColor="#2A303D"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/presetCctNeutral"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_lamp_tab_track"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Netral"
+                android:textColor="#2A303D"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/presetCctCool"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_lamp_tab_track"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Siang"
+                android:textColor="#2A303D"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 3B. AMBIENT SCENES STAGE (Visible in SUASANA mode) -->
+    <LinearLayout
+        android:id="@+id/panelLightScene"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingVertical="10dp"
+        android:visibility="gone">
+
+        <!-- Compact Live Scene Banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/bg_lamp_tab_track"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp">
+
+            <View
+                android:id="@+id/viewSceneActiveGlow"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#3B5BFF" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvLightStateHeadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:text="Suasana Pencahayaan"
+                    android:textColor="#151922"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:text="Pilih profil atmosfer instan untuk ruangan Anda"
+                    android:textColor="#717887"
+                    android:textSize="11.5sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 1: Membaca & Tidur -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/sceneReading"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_scene_tile"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp">
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="#60A5FA" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:text="Membaca"
+                        android:textColor="#151922"
+                        android:textSize="13.5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                        android:text="4500K • 90%"
+                        android:textColor="#717887"
+                        android:textSize="11.5sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sceneNight"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_scene_tile"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp">
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="#F59E0B" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:text="Tidur"
+                        android:textColor="#151922"
+                        android:textSize="13.5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                        android:text="2200K • 18%"
+                        android:textColor="#717887"
+                        android:textSize="11.5sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 2: Santai & Sinema -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/sceneCozy"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_scene_tile"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp">
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="#FB923C" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:text="Santai"
+                        android:textColor="#151922"
+                        android:textSize="13.5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                        android:text="2700K • 55%"
+                        android:textColor="#717887"
+                        android:textSize="11.5sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sceneCinema"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_scene_tile"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp">
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="#4F46E5" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:text="Sinema"
+                        android:textColor="#151922"
+                        android:textSize="13.5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                        android:text="Indigo • 35%"
+                        android:textColor="#717887"
+                        android:textSize="11.5sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 3: Romantis & Pesta RGB -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/sceneRomantic"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_scene_tile"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp">
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="#EC4899" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:text="Romantis"
+                        android:textColor="#151922"
+                        android:textSize="13.5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                        android:text="Rose • 45%"
+                        android:textColor="#717887"
+                        android:textSize="11.5sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sceneParty"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_scene_tile"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp">
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="#8B5CF6" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:text="Pesta RGB"
+                        android:textColor="#151922"
+                        android:textSize="13.5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                        android:text="Violet • 100%"
+                        android:textColor="#717887"
+                        android:textSize="11.5sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 4. PRECISION ROYAL-BLUE SLIDERS (BRIGHTNESS + SATURATION — ZERO SCROLLING!) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical">
+
+        <!-- Brightness Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_lamp_brightness" />
+
+            <SeekBar
+                android:id="@+id/seekLightBrightness"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:maxHeight="8dp"
+                android:minHeight="8dp"
+                android:progress="85"
+                android:progressDrawable="@drawable/bg_lamp_slider_progress"
+                android:splitTrack="false"
+                android:thumb="@drawable/bg_lamp_slider_thumb"
+                android:thumbOffset="12dp" />
+
+            <TextView
+                android:id="@+id/tvLightBrightnessPct"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="end"
+                android:text="85%"
+                android:textColor="#1E2430"
+                android:textSize="14.5sp" />
+        </LinearLayout>
+
+        <!-- Saturation Row (Visible in WARNA mode, matches & elevates reference slider) -->
+        <LinearLayout
+            android:id="@+id/rowLightSaturation"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_lamp_saturation" />
+
+            <SeekBar
+                android:id="@+id/seekLightSaturation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:maxHeight="8dp"
+                android:minHeight="8dp"
+                android:progress="80"
+                android:progressDrawable="@drawable/bg_lamp_slider_progress"
+                android:splitTrack="false"
+                android:thumb="@drawable/bg_lamp_slider_thumb"
+                android:thumbOffset="12dp" />
+
+            <TextView
+                android:id="@+id/tvLightSaturationPct"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="end"
+                android:text="80%"
+                android:textColor="#1E2430"
+                android:textSize="14.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 5. SUBTLE HAIRLINE DIVIDER + ELEVATED BOTTOM ACTION CTA BAR -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="14dp"
+        android:background="#F0F2F7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btnLampSchedule"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_lamp_cta_soft"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:gravity="center"
+            android:text="Jadwal Otomatis ON/OFF"
+            android:textColor="#3B5BFF"
+            android:textSize="13.5sp" />
+
+        <FrameLayout
+            android:id="@+id/btnLampTimer"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_lamp_cta_soft"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tuya_timer"
+                app:tint="#3B5BFF" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/btnLampSettings"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_lamp_cta_soft"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tuya_cube_setting"
+                app:tint="#3B5BFF" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,10a22,22 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#100F172A"
+        android:pathData="M32,12a23,23 0 1,0 0.001,0z" />
+
+    <!-- Outer Circular Adapter Housing -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,8a21,21 0 1,0 0.001,0z" />
+
+    <!-- Pure White Front Bevel -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,9.5a19.5,19.5 0 1,0 0.001,0z" />
+
+    <!-- Inner Socket Well Recess -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M32,14a15,15 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#F1F5F9"
+        android:pathData="M32,15.5a13.5,13.5 0 1,0 0.001,0z" />
+
+    <!-- Top Grounding Brass Clip -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M30.5,14.5h3v3.5h-3z" />
+
+    <!-- Bottom Grounding Brass Clip -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M30.5,36h3v3.5h-3z" />
+
+    <!-- Left Pin Hole -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M24,27a3.2,3.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M24,27a2.2,2.2 0 1,0 0.001,0z" />
+
+    <!-- Right Pin Hole -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M40,27a3.2,3.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M40,27a2.2,2.2 0 1,0 0.001,0z" />
+
+    <!-- Glowing Power Switch Ring at Top Rim -->
+    <path
+        android:fillColor="#0284C7"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="0.8"
+        android:pathData="M32,50a5.5,5.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32,50a4,4 0 1,0 0.001,0z" />
+
+    <!-- Power Icon glyph inside button -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M31.2,46.8h1.6v3.2h-1.6z" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.9"
+        android:strokeLineCap="round"
+        android:pathData="M29.5,48.5a3,3 0 1,0 5,0" />
+</vector>

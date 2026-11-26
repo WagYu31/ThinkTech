@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Tuya OEM SmartLife Home Icon: House with small chimney -->
+    <path
+        android:fillColor="#111111"
+        android:pathData="M12,3L2,11.5L3.4,13L5,11.6V20C5,20.6 5.4,21 6,21H18C18.6,21 19,20.6 19,20V11.6L20.6,13L22,11.5L12,3ZM17,6.8V4H15V5.1L17,6.8ZM17,19H7V10L12,5.7L17,10V19Z"/>
+</vector>

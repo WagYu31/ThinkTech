@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.thinktech.smarthome.ui.home.HarmonyLightFieldCard xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardDevice"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:minHeight="146dp"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="14dp"
+    android:paddingBottom="15dp">
+
+    <!-- Top Row: Clean Product Illustration (no inner box clutter) + Tactile Power Circle / LIVE -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <ImageView
+            android:id="@+id/ivDeviceIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Ikon Perangkat"
+            android:src="@drawable/ic_power" />
+
+        <!-- Tactile HarmonyOS Circular Power Button -->
+        <FrameLayout
+            android:id="@+id/btnPowerCircle"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_harmony_power_off"
+            android:clickable="true"
+            android:contentDescription="Saklar Daya"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/ivPowerIcon"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_power"
+                app:tint="@color/harmony_ink" />
+        </FrameLayout>
+
+        <!-- Camera LIVE Capsule -->
+        <LinearLayout
+            android:id="@+id/tvCameraLivePill"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_harmony_live_pill"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="9dp"
+            android:paddingEnd="10dp"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/dotCameraLive"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/bg_hyperos_status_dot"
+                android:backgroundTint="#E84026" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:letterSpacing="0.04"
+                android:text="LIVE"
+                android:textColor="@color/harmony_blue"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Device Title -->
+    <TextView
+        android:id="@+id/tvDeviceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:letterSpacing="-0.015"
+        android:maxLines="1"
+        android:text="WiFi 3ch switch"
+        android:textColor="@color/harmony_ink"
+        android:textSize="14.5sp" />
+
+    <!-- Room & Category Subtitle -->
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:maxLines="1"
+        android:text="Ruang Tamu"
+        android:textColor="@color/harmony_ink_secondary"
+        android:textSize="11.5sp" />
+
+    <!-- Bottom Row: Crisp Circular Status Dot + State + Discreet Demo-only Tag -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/dotStatus"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:background="@drawable/bg_hyperos_status_dot" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:maxLines="1"
+            android:text="Menyala"
+            android:textColor="@color/harmony_blue"
+            android:textSize="11.5sp" />
+
+        <TextView
+            android:id="@+id/tvDeviceBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_hyperos_badge_soft"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="1.5dp"
+            android:text="Demo"
+            android:textColor="@color/hyper_amber_text"
+            android:textSize="9sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</com.thinktech.smarthome.ui.home.HarmonyLightFieldCard>

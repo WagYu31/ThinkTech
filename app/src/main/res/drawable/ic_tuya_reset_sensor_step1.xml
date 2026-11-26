@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Sensor Body (PIR / Door Sensor) -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 120,40 L 160,40 A 12,12 0 0 1 172,52 L 172,118 A 12,12 0 0 1 160,130 L 120,130 A 12,12 0 0 1 108,118 L 108,52 A 12,12 0 0 1 120,40 Z" />
+
+    <!-- Battery Compartment Line -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 108,85 L 172,85" />
+
+    <!-- Coin cell battery being inserted -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#E2E8F0"
+        android:pathData="M 140,65 m -16,0 a 16,16 0 1,0 32,0 a 16,16 0 1,0 -32,0" />
+    <path
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 136,65 L 144,65 M 140,61 L 140,69" />
+
+</vector>

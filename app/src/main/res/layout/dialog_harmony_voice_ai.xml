@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootVoiceScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Minimalist Top-Left Close Button -->
+    <FrameLayout
+        android:id="@+id/btnCloseVoiceSheet"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="12dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="Tutup"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_voice_close_thin" />
+    </FrameLayout>
+
+    <!-- Upper Centered Listening Prompt & Live Spoken Transcript -->
+    <LinearLayout
+        android:id="@+id/layoutVoiceHeaderBlock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        app:layout_constraintBottom_toTopOf="@id/voiceWaveView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCloseVoiceSheet"
+        app:layout_constraintVertical_bias="0.34">
+
+        <TextView
+            android:id="@+id/tvVoiceStatusLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:gravity="center"
+            android:text="Kami mendengarkan..."
+            android:textColor="#6B7280"
+            android:textSize="16.5sp" />
+
+        <TextView
+            android:id="@+id/tvVoiceStatusLine2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:gravity="center"
+            android:text="Apa yang ingin Anda lakukan?"
+            android:textColor="#6B7280"
+            android:textSize="16.5sp" />
+
+        <TextView
+            android:id="@+id/tvVoiceTranscript"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:gravity="center"
+            android:letterSpacing="-0.005"
+            android:lineSpacingExtra="6dp"
+            android:minHeight="62dp"
+            android:text="“Nyalakan semua lampu di seluruh ruangan”"
+            android:textColor="#181C24"
+            android:textSize="22sp" />
+
+        <!-- Subtle Confirmation Pill (Visible only after command executes) -->
+        <LinearLayout
+            android:id="@+id/layoutVoiceResultCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_harmony_soft_blue_pill"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="8dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ivVoiceResultIcon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_connect_check_small" />
+
+            <TextView
+                android:id="@+id/tvVoiceResultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Siap, semua saklar berhasil dinyalakan."
+                android:textColor="@color/harmony_blue"
+                android:textSize="12.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Full-Width Edge-to-Edge Mirrored Multi-Color Organic Audio Wave -->
+    <com.thinktech.smarthome.ui.home.HarmonyVoiceWaveView
+        android:id="@+id/voiceWaveView"
+        android:layout_width="0dp"
+        android:layout_height="276dp"
+        app:layout_constraintBottom_toTopOf="@id/btnVoiceMicOrb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCloseVoiceSheet"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <!-- Luminous 3D Aurora / Liquid-Glass Voice Assistant Sphere Orb -->
+    <com.thinktech.smarthome.ui.home.HarmonyVoiceOrbView
+        android:id="@+id/btnVoiceMicOrb"
+        android:layout_width="156dp"
+        android:layout_height="156dp"
+        android:layout_marginBottom="46dp"
+        android:clickable="true"
+        android:contentDescription="Mulai atau hentikan mikrofon suara"
+        android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@id/layoutVoiceFallbackInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Subtle Hint (Hidden during active listening to preserve pure minimal canvas) -->
+    <TextView
+        android:id="@+id/tvVoiceMicHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/plus_jakarta_sans_medium"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:text="Ketuk bola suara untuk berbicara lagi"
+        android:textColor="#9AA1AE"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/layoutVoiceFallbackInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Hidden-by-default Fallback Text Input (shown only if SpeechRecognizer unavailable or orb long-pressed) -->
+    <LinearLayout
+        android:id="@+id/layoutVoiceFallbackInput"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="22dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/bg_harmony_sheet_row"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/etVoiceTextCommand"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:hint="Ketik perintah suara di sini..."
+            android:imeOptions="actionSend"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/harmony_ink"
+            android:textColorHint="@color/harmony_ink_muted"
+            android:textSize="13.5sp" />
+
+        <TextView
+            android:id="@+id/btnSendVoiceText"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_harmony_btn_blue_solid"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:gravity="center"
+            android:paddingHorizontal="14dp"
+            android:text="Kirim"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

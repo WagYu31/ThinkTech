@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Base -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#64748B"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M14,42 L34,42" />
+    <!-- Stand -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#64748B"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M24,42 L24,20 L32,14" />
+    <!-- Head lamp bar -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0EA5E9"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M26,10 L38,19" />
+</vector>

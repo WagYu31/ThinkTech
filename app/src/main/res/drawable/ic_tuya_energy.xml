@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- DIN rail breaker body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.6"
+        android:pathData="M16,10 L32,10 C33.1,10 34,10.9 34,12 L34,36 C34,37.1 33.1,38 32,38 L16,38 C14.9,38 14,37.1 14,36 L14,12 C14,10.9 14.9,10 16,10 Z" />
+    <!-- Toggle switch latch -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M22,20 L26,20 L26,27 L22,27 Z" />
+    <!-- Terminal screws -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M24,14 m-1.5,0 a1.5,1.5 0 1,1 3,0 a1.5,1.5 0 1,1 -3,0 M24,34 m-1.5,0 a1.5,1.5 0 1,1 3,0 a1.5,1.5 0 1,1 -3,0" />
+</vector>

@@ -1,0 +1,46 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,12a20,20 0 1,0 0.001,0z" />
+
+    <!-- Orange Spring Clips at Left and Right -->
+    <path
+        android:fillColor="#EA580C"
+        android:pathData="M7,30l6,2v-4zM57,30l-6,2v-4z" />
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M11,28h3v4h-3zm39,0h3v4h-3z" />
+
+    <!-- Outer Circular White Face Ring -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,10a19,19 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,11.5a17.5,17.5 0 1,0 0.001,0z" />
+
+    <!-- Aluminum Reflector Funnel (Stepped Recess) -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M32,29a14,14 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M32,29a12,12 0 1,0 0.001,0z" />
+
+    <!-- Center Warm/Frosted Diffuser Lens (Glowing Soft Amber/White) -->
+    <path
+        android:fillColor="#FEF3C7"
+        android:strokeColor="#FDE68A"
+        android:strokeWidth="1"
+        android:pathData="M32,29a9,9 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,29a6,6 0 1,0 0.001,0z" />
+</vector>

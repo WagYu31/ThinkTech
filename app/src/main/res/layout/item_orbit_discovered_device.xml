@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/flOrbitIconWrap"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:background="@drawable/bg_pair_orbit_node"
+        android:elevation="5dp">
+
+        <ImageView
+            android:id="@+id/ivOrbitDeviceIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_tuya_light_bulb" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvOrbitDeviceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_pair_info_pill"
+        android:ellipsize="end"
+        android:fontFamily="@font/plus_jakarta_sans_semibold"
+        android:maxLines="1"
+        android:maxWidth="84dp"
+        android:paddingHorizontal="7dp"
+        android:paddingVertical="2dp"
+        android:text="Smart Bulb"
+        android:textColor="@color/harmony_ink"
+        android:textSize="9.5sp" />
+</LinearLayout>

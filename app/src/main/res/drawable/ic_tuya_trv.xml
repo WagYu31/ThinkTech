@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- White thermostat head -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1.6"
+        android:pathData="M18,12 L30,12 C31.1,12 32,12.9 32,14 L32,27 C32,28.1 31.1,29 30,29 L18,29 C16.9,29 16,28.1 16,27 L16,14 C16,12.9 16.9,12 18,12 Z" />
+    <!-- Metallic radiator valve connector pipe -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.5"
+        android:pathData="M21,29 L27,29 L27,33 L33,33 L33,37 L15,37 L15,33 L21,33 Z" />
+</vector>

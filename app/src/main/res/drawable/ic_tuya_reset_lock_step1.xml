@@ -1,0 +1,46 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Smart Door Handle & Escutcheon Plate -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 125,25 L 155,25 A 14,14 0 0 1 169,39 L 169,135 A 14,14 0 0 1 155,149 L 125,149 A 14,14 0 0 1 111,135 L 111,39 A 14,14 0 0 1 125,25 Z" />
+
+    <!-- Numeric Keypad Grid dots -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 128,45 m -2,0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0" />
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 140,45 m -2,0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0" />
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 152,45 m -2,0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0" />
+
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 128,55 m -2,0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0" />
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 140,55 m -2,0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0" />
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 152,55 m -2,0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0" />
+
+    <!-- Lever Handle -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#E2E8F0"
+        android:pathData="M 140,95 L 75,95 A 8,8 0 0 1 67,87 L 67,83 A 8,8 0 0 1 75,75 L 140,75 Z" />
+
+</vector>

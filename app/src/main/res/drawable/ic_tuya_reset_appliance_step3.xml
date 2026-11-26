@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Big Wi-Fi Antenna Beacon in center -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M 140,110 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0" />
+
+    <!-- Wave 1 -->
+    <path
+        android:strokeColor="#0284C7"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 124,94 C 133,85 147,85 156,94" />
+
+    <!-- Wave 2 -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 112,80 C 127,65 153,65 168,80" />
+
+    <!-- Wave 3 -->
+    <path
+        android:strokeColor="#7DD3FC"
+        android:strokeWidth="3.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 100,66 C 122,45 158,45 180,66" />
+
+</vector>

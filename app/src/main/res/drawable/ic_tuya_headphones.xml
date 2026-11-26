@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Headband Arch -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#1E293B"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:pathData="M14,26 C14,14 34,14 34,26" />
+
+    <!-- Left Ear Cup Cushion -->
+    <path
+        android:fillColor="#334155"
+        android:strokeColor="#0F172A"
+        android:strokeWidth="1.2"
+        android:pathData="M11,23 C11,20 15,20 15,23 L15,33 C15,36 11,36 11,33 Z" />
+
+    <!-- Left Ear Cup Outer Shell -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M13,22 C11,22 9,24 9,28 C9,32 11,34 13,34 Z" />
+
+    <!-- Right Ear Cup Cushion -->
+    <path
+        android:fillColor="#334155"
+        android:strokeColor="#0F172A"
+        android:strokeWidth="1.2"
+        android:pathData="M33,23 C33,20 37,20 37,23 L37,33 C37,36 33,36 33,33 Z" />
+
+    <!-- Right Ear Cup Outer Shell -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M35,22 C37,22 39,24 39,28 C39,32 37,34 35,34 Z" />
+</vector>

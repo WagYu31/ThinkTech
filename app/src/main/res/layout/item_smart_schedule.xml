@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_smart_card_white_22"
+    android:clickable="true"
+    android:elevation="1dp"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="15dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvScheduleItemTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:letterSpacing="-0.02"
+                android:text="21:45"
+                android:textColor="#151922"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tvScheduleItemActionBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_lamp_cta_soft"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="ON"
+                android:textColor="#3B5BFF"
+                android:textSize="10.5sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvScheduleItemTarget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:maxLines="1"
+            android:text="Nyalakan • Semua Saklar"
+            android:textColor="#2A303D"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvScheduleItemRepeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/plus_jakarta_sans_regular"
+            android:text="Setiap Hari • Otomasi Cloud"
+            android:textColor="#717887"
+            android:textSize="11.5sp" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchScheduleItemEnabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:thumb="@drawable/bg_lamp_power_switch_thumb"
+        app:showText="false"
+        app:switchMinWidth="48dp"
+        app:track="@drawable/bg_lamp_power_switch_track" />
+</LinearLayout>

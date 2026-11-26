@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Egg / dome shaped night lamp -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1.8"
+        android:pathData="M18,36 C15,36 14,32 14,24 C14,16 18,10 24,10 C30,10 34,16 34,24 C34,32 33,36 30,36 Z" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:pathData="M14.5,26 L33.5,26" />
+    <!-- Warm glow dot -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M24,24 m-3,0 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0" />
+    <!-- Base stand -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M20,36 L28,36 L27,39 L21,39 Z" />
+</vector>

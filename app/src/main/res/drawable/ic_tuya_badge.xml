@@ -1,0 +1,40 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="156dp"
+    android:height="56dp"
+    android:viewportWidth="156"
+    android:viewportHeight="56">
+
+    <!-- Orange Rounded Badge -->
+    <path
+        android:fillColor="#FF5722"
+        android:pathData="M16,0 L140,0 A16,16 0 0 1 156,16 L156,40 A16,16 0 0 1 140,56 L16,56 A16,16 0 0 1 0,40 L0,16 A16,16 0 0 1 16,0 Z" />
+
+    <!-- 't' -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M24,20 h6 v-5 h5 v5 h6 v5 h-6 v11 c0,2.5 1.2,3.5 3.5,3.5 c0.9,0 1.8,-0.2 2.5,-0.5 v5 c-1.2,0.4 -2.8,0.7 -4.5,0.7 c-5.5,0 -8.5,-3 -8.5,-8.5 v-11.2 h-4 z" />
+
+    <!-- 'u' -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M48,24 h5 v13.5 c0,4 2.2,6.5 6,6.5 c3.8,0 6,-2.5 6,-6.5 v-13.5 h5 v20 h-5 v-3.5 c-1.6,2.5 -4.5,4 -8,4 c-5.8,0 -9,-4 -9,-10.5 z" />
+
+    <!-- 'y' -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M73,24 h5.2 l5.8,15.2 l5.8,-15.2 h5.2 l-9,21.5 c-2.2,5.2 -5.2,7.5 -10,7.5 c-1,0 -2.2,-0.2 -3,-0.5 v-4.5 c0.8,0.3 1.6,0.4 2.5,0.4 c2.8,0 4.5,-1.2 5.8,-4.5 z" />
+
+    <!-- 'a' -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M109.5,23.5 c6.5,0 10.5,4.2 10.5,10.5 v10 h-5 v-2.8 c-1.8,2 -4.5,3.3 -7.8,3.3 c-5,0 -8.5,-3.2 -8.5,-7.5 c0,-4.5 3.8,-7.2 9.5,-7.5 l6.5,-0.3 v-1.2 c0,-3.2 -2,-4.8 -5.5,-4.8 c-3,0 -5.2,1.2 -6.2,3.2 l-4.2,-2.2 c1.8,-3.8 5.8,-6.5 10.7,-6.5 z M114.8,38.8 l-4.8,0.3 c-3.2,0.2 -5,1.6 -5,4 c0,2.2 1.8,3.8 4.5,3.8 c3.2,0 5.3,-2 5.3,-5.2 z" />
+
+    <!-- WiFi wave arcs above 'a' -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M123,17 c2.8,2.2 4.2,5.2 4.2,8.8 h-3 c0,-2.8 -1.2,-5.2 -3.2,-6.8 z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M127,13 c4.5,3.2 6.8,7.8 6.8,12.8 h-3 c0,-4.2 -1.8,-7.8 -5.2,-10.5 z" />
+
+</vector>

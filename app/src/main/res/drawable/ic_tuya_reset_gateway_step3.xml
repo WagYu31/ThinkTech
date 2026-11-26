@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Red and Blue Dual LEDs -->
+    <!-- Red LED (Wi-Fi) -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M 120,80 m -8,0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0" />
+    <path
+        android:strokeColor="#F87171"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 120,80 m -18,0 a 18,18 0 1,0 36,0 a 18,18 0 1,0 -36,0" />
+
+    <!-- Blue / Green LED (Zigbee / Sub-device) -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M 160,80 m -8,0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0" />
+    <path
+        android:strokeColor="#34D399"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 160,80 m -18,0 a 18,18 0 1,0 36,0 a 18,18 0 1,0 -36,0" />
+
+</vector>

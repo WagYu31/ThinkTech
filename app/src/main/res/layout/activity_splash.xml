@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6FB"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Exact ThinkTech Splash Stage (flex-column centered, gap 26dp, paddingBottom 56dp) -->
+    <LinearLayout
+        android:id="@+id/splashStage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="56dp">
+
+        <!-- Animated ThinkTech House + T Cutout + Cyan Wireless Signal Logo -->
+        <com.thinktech.smarthome.ui.splash.ThinkTechSplashLogoView
+            android:id="@+id/splashLogoView"
+            android:layout_width="140dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="-4dp"
+            android:contentDescription="Ikon ThinkTech: rumah dengan huruf T dan sinyal nirkabel" />
+
+        <!-- Masked Wordmark Container (overflow: hidden equivalent for slide-up reveal) -->
+        <LinearLayout
+            android:id="@+id/wordmarkMask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:clipChildren="true"
+            android:clipToPadding="true"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/tvWordThink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.045"
+                android:text="think"
+                android:textColor="#0B0D12"
+                android:textSize="44sp" />
+
+            <TextView
+                android:id="@+id/tvWordTech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_extrabold"
+                android:includeFontPadding="false"
+                android:letterSpacing="-0.045"
+                android:text="tech"
+                android:textColor="#2B4DFF"
+                android:textSize="44sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

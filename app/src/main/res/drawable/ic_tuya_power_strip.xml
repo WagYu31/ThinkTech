@@ -1,0 +1,82 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M6,27h48a5,5 0 0,1 5,5v16a5,5 0 0,1 -5,5H6a5,5 0 0,1 -5,-5V32a5,5 0 0,1 5,-5z" />
+
+    <!-- Cable Tail Entering at Right -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M54,38h7v4h-7z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M52,36h3v8h-3z" />
+
+    <!-- Sleek Power Strip Body (Landscape White Strip) -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M8,23h45a4,4 0 0,1 4,4v18a4,4 0 0,1 -4,4H8a4,4 0 0,1 -4,-4V27a4,4 0 0,1 4,-4z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,24.5h43a2.5,2.5 0 0,1 2.5,2.5v15a2.5,2.5 0 0,1 -2.5,2.5H9a2.5,2.5 0 0,1 -2.5,-2.5V27a2.5,2.5 0 0,1 2.5,-2.5z" />
+
+    <!-- Illuminated Red Master Power Rocker Switch at Left -->
+    <path
+        android:fillColor="#EF4444"
+        android:strokeColor="#DC2626"
+        android:strokeWidth="0.6"
+        android:pathData="M9,31h5a1.5,1.5 0 0,1 1.5,1.5v9a1.5,1.5 0 0,1 -1.5,1.5h-5a1.5,1.5 0 0,1 -1.5,-1.5v-9a1.5,1.5 0 0,1 1.5,-1.5z" />
+    <path
+        android:fillColor="#FCA5A5"
+        android:pathData="M11,33h2v4h-2z" />
+
+    <!-- Socket 1 (Angled Round EU Schuko) -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="0.8"
+        android:pathData="M23,36a6,6 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M21,34.5a1.2,1.2 0 1,0 0.001,0zm4,3a1.2,1.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M22.2,30.5h1.6v1.2h-1.6zm0,8.6h1.6v1.2h-1.6z" />
+
+    <!-- Socket 2 -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="0.8"
+        android:pathData="M33,36a6,6 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M31,34.5a1.2,1.2 0 1,0 0.001,0zm4,3a1.2,1.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M32.2,30.5h1.6v1.2h-1.6zm0,8.6h1.6v1.2h-1.6z" />
+
+    <!-- Socket 3 -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="0.8"
+        android:pathData="M43,36a6,6 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M41,34.5a1.2,1.2 0 1,0 0.001,0zm4,3a1.2,1.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M42.2,30.5h1.6v1.2h-1.6zm0,8.6h1.6v1.2h-1.6z" />
+
+    <!-- Dual Smart USB Ports at Far Right -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M50.5,31h3v3h-3zm0,6h3v3h-3z" />
+</vector>

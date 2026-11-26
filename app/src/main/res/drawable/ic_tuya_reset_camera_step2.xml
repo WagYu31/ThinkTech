@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Camera Stand Body -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 70,40 L 140,40 A 10,10 0 0 1 150,50 L 150,120 A 10,10 0 0 1 140,130 L 70,130 Z" />
+
+    <!-- RESET text / label -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 90,60 L 130,60" />
+
+    <!-- Reset button on camera -->
+    <path
+        android:strokeColor="#FF5722"
+        android:strokeWidth="2.0"
+        android:fillColor="#FEE2E2"
+        android:pathData="M 140,85 m -10,0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0" />
+
+    <!-- Hand & finger pressing camera reset button -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 140,85 
+            C 137,81 139,77 143,77 
+            C 146,77 149,79 153,84 
+            L 164,97 
+            L 174,99 
+            C 179,100 184,103 187,107 
+            L 200,120 
+            C 203,123 201,127 196,127 
+            L 178,121 
+            L 162,115 
+            L 150,108 
+            C 146,106 143,102 144,97 
+            Z" />
+
+</vector>

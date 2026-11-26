@@ -1,0 +1,82 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Glowing Bulb in center -->
+    <!-- Bulb socket base -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#E2E8F0"
+        android:pathData="M 132,112 L 148,112 L 145,126 L 135,126 Z" />
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#94A3B8"
+        android:pathData="M 137,126 L 143,126 L 141,130 L 139,130 Z" />
+
+    <!-- Bulb glass body -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FEF3C7"
+        android:pathData="M 132,112 
+            C 120,106 112,94 112,80 
+            C 112,64 124,52 140,52 
+            C 156,52 168,64 168,80 
+            C 168,94 160,106 148,112 Z" />
+
+    <!-- Flashing light rays -->
+    <!-- Top ray -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,36 L 140,24" />
+    <!-- Top-left ray -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 112,48 L 102,38" />
+    <!-- Top-right ray -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 168,48 L 178,38" />
+    <!-- Left ray -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 98,80 L 84,80" />
+    <!-- Right ray -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 182,80 L 196,80" />
+
+    <!-- Concentric blinking aura circles -->
+    <path
+        android:strokeColor="#FDE68A"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,80 m -44,0 a 44,44 0 1,0 88,0 a 44,44 0 1,0 -88,0" />
+
+</vector>

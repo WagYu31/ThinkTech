@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_tuya_discovered_card"
+    android:paddingStart="14dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="14dp"
+    android:paddingBottom="12dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Device Icon -->
+    <FrameLayout
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_tuya_icon_circle">
+
+        <ImageView
+            android:id="@+id/ivDiscoveredIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_tuya_plug" />
+    </FrameLayout>
+
+    <!-- Info Column -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:id="@+id/tvDiscoveredName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Plug 16A"
+            android:textColor="#0F172A"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="3dp">
+
+            <View
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/bg_green_dot" />
+
+            <TextView
+                android:id="@+id/tvDiscoveredStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="Ready to pair • Bluetooth &amp; Wi-Fi"
+                android:textColor="#10B981"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Action Button (Tuya Orange) -->
+    <TextView
+        android:id="@+id/btnDiscoveredAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_tuya_btn_orange"
+        android:gravity="center"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:text="Add"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>

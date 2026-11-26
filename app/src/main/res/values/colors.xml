@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tuya Legacy Brand Palette -->
+    <color name="tuya_orange">#FF5722</color>
+    <color name="tuya_orange_dark">#E64A19</color>
+    <color name="tuya_orange_light">#FF8A65</color>
+    <color name="tuya_orange_bg">#FFF3E0</color>
+
+    <!-- Huawei HarmonyOS / AI Life Flagship Design Tokens -->
+    <color name="harmony_canvas">#F1F3F5</color>
+    <color name="harmony_surface">#FFFFFF</color>
+    <color name="harmony_surface_sub">#F5F7FA</color>
+    <color name="harmony_divider">#ECEFF3</color>
+    <color name="harmony_blue">#0A59F7</color>
+    <color name="harmony_blue_dark">#0642C4</color>
+    <color name="harmony_blue_soft">#EDF4FF</color>
+    <color name="harmony_cyan">#00A8D8</color>
+    <color name="harmony_ink">#191919</color>
+    <color name="harmony_ink_secondary">#666B75</color>
+    <color name="harmony_ink_muted">#9398A2</color>
+    <color name="harmony_shadow">#160A192F</color>
+
+    <!-- HyperOS / Semantic compatibility tokens mapped cleanly to HarmonyOS -->
+    <color name="hyper_canvas">#F1F3F5</color>
+    <color name="hyper_sky_top">#F1F3F5</color>
+    <color name="hyper_surface">#FFFFFF</color>
+    <color name="hyper_surface_tinted">#F7F9FC</color>
+    <color name="hyper_border">#ECEFF3</color>
+    <color name="hyper_border_active">#BFD6FF</color>
+    <color name="hyper_divider">#EFF1F5</color>
+
+    <color name="hyper_blue">#0A59F7</color>
+    <color name="hyper_blue_dark">#0642C4</color>
+    <color name="hyper_blue_soft">#EDF4FF</color>
+    <color name="hyper_emerald">#00B37E</color>
+    <color name="hyper_emerald_soft">#E9FAF4</color>
+    <color name="hyper_emerald_text">#00996B</color>
+    <color name="hyper_amber">#F59E0B</color>
+    <color name="hyper_amber_soft">#FFF7E6</color>
+    <color name="hyper_amber_text">#D97706</color>
+    <color name="hyper_coral">#FA541C</color>
+    <color name="hyper_indigo">#5B5CE6</color>
+
+    <!-- Deep Neutral Inks -->
+    <color name="ink_primary">#191919</color>
+    <color name="ink_secondary">#666B75</color>
+    <color name="ink_muted">#8A909B</color>
+    <color name="ink_subtle">#A7ACB5</color>
+
+    <!-- Surfaces & Neutrals -->
+    <color name="paper_bg">#F1F3F5</color>
+    <color name="paper_card">#FFFFFF</color>
+    <color name="paper_border">#ECEFF3</color>
+    <color name="paper_border_subtle">#F2F4F7</color>
+
+    <!-- Semantic Indicators -->
+    <color name="status_green">#00B37E</color>
+    <color name="status_red">#E84026</color>
+    <color name="status_amber">#F59E0B</color>
+
+    <!-- Legacy compatibility mappings -->
+    <color name="primary">#0A59F7</color>
+    <color name="primary_dark">#0642C4</color>
+    <color name="primary_light">#4D8BFF</color>
+    <color name="accent_teal">#0A59F7</color>
+    <color name="accent_emerald">#00B37E</color>
+    <color name="accent_rose">#E84026</color>
+    <color name="bg_light">#F1F3F5</color>
+    <color name="bg_dark">#191919</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="surface_dark">#1F242D</color>
+    <color name="card_stroke_light">#ECEFF3</color>
+    <color name="text_primary">#191919</color>
+    <color name="text_secondary">#666B75</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_white_secondary">#E2E8F0</color>
+    <color name="device_online">#00B37E</color>
+    <color name="device_offline">#A7ACB5</color>
+
+    <!-- ThinkTech Official Brand Palette -->
+    <color name="thinktech_blue">#2B4DFF</color>
+    <color name="thinktech_blue_dark">#1D3BD6</color>
+    <color name="thinktech_blue_light">#5C7CFA</color>
+    <color name="thinktech_blue_soft">#EDF4FF</color>
+    <color name="thinktech_blue_glow">#202B4DFF</color>
+    <color name="thinktech_dark">#191919</color>
+    <color name="thinktech_slate">#666B75</color>
+    <color name="thinktech_slate_light">#9398A2</color>
+    <color name="thinktech_track">#E8EEFB</color>
+</resources>

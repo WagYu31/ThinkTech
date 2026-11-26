@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 3D Shadow -->
+    <item android:top="2dp">
+        <shape android:shape="oval">
+            <solid android:color="#66000000" />
+        </shape>
+    </item>
+    <!-- 3D Metallic Bezel -->
+    <item android:bottom="2dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#3B4F67"
+                android:endColor="#111B27" />
+            <stroke
+                android:width="1dp"
+                android:color="#2C3D52" />
+        </shape>
+    </item>
+    <!-- Inner Concave Inset Dish -->
+    <item
+        android:top="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:bottom="3dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#0D1520"
+                android:endColor="#1E2A3A" />
+        </shape>
+    </item>
+</layer-list>
+

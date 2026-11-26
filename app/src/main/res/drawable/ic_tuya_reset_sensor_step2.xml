@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Sensor Side Frame -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 70,35 L 140,35 A 8,8 0 0 1 148,43 L 148,127 A 8,8 0 0 1 140,135 L 70,135 Z" />
+
+    <!-- Reset Pinhole on sensor edge -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M 148,80 m -3,0 a 3,3 0 1,0 6,0 a 3,3 0 1,0 -6,0" />
+    <path
+        android:strokeColor="#EF4444"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 148,80 m -8,0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0" />
+
+    <!-- Reset Pin Tool (Needle) pointing into pinhole -->
+    <!-- Needle tip -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 149,80 L 185,80" />
+
+    <!-- Pin loop handle -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 185,80 C 185,70 195,64 205,64 C 215,64 225,72 225,80 C 225,88 215,96 205,96 C 195,96 185,90 185,80 Z" />
+
+    <!-- Inner hole of pin handle -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M 205,80 m -7,0 a 7,7 0 1,0 14,0 a 7,7 0 1,0 -14,0" />
+
+</vector>

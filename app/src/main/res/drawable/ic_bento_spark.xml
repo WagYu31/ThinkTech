@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Lightning bolt / automation -->
+    <path
+        android:fillColor="#7C3AED"
+        android:pathData="M11,21H9L10.5,13H6.5A1,1 0 0,1 5.72,11.39L13,3H15L13.5,11H17.5A1,1 0 0,1 18.28,12.61L11,21Z" />
+</vector>

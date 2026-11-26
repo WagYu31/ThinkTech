@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootClimateStudio"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <!-- A. SMART AC & FAN STUDIO -->
+    <LinearLayout
+        android:id="@+id/panelAcStudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_harmony_card_white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="22dp">
+
+            <TextView
+                android:id="@+id/tvClimateModeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_harmony_soft_blue_pill"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Mode Dingin • Kipas Auto"
+                android:textColor="@color/harmony_blue"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btnClimateDown"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/bg_harmony_power_off"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:gravity="center"
+                    android:text="−"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="24sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvClimateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:letterSpacing="-0.03"
+                        android:text="24°C"
+                        android:textColor="@color/harmony_ink"
+                        android:textSize="48sp" />
+
+                    <TextView
+                        android:id="@+id/tvClimateUnitSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                        android:text="Target Suhu Ruangan"
+                        android:textColor="@color/harmony_ink_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnClimateUp"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/bg_harmony_action_circle_blue"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@color/harmony_blue"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chipClimateMode1"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_harmony_scene_tile_active"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:gravity="center"
+                    android:text="Dingin"
+                    android:textColor="@color/harmony_blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/chipClimateMode2"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_harmony_scene_tile"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:gravity="center"
+                    android:text="Kering"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/chipClimateMode3"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_harmony_scene_tile"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:gravity="center"
+                    android:text="Kipas"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/chipClimateMode4"
+                    android:layout_width="0dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_harmony_scene_tile"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:gravity="center"
+                    android:text="Auto"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_harmony_card_white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="14dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="Ayunan Otomatis (Swing)"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:text="Sebarkan aliran udara merata ke seluruh ruangan"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="11.5sp" />
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchClimateSwing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:thumbTint="@color/harmony_switch_thumb"
+                app:trackDecorationTint="@android:color/transparent"
+                app:trackTint="@color/harmony_switch_track" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- B. SMART CURTAIN / TIRAI STUDIO -->
+    <LinearLayout
+        android:id="@+id/panelCurtainStudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_harmony_card_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvCurtainPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="75%"
+            android:textColor="@color/harmony_ink"
+            android:textSize="44sp" />
+
+        <TextView
+            android:id="@+id/tvCurtainStatusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="Posisi Tirai Terbuka"
+            android:textColor="@color/harmony_ink_secondary"
+            android:textSize="13sp" />
+
+        <SeekBar
+            android:id="@+id/seekCurtainPos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:max="100"
+            android:progress="75"
+            android:progressBackgroundTint="#E2E7F0"
+            android:progressTint="@color/harmony_blue"
+            android:thumbTint="@color/harmony_blue" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnCurtainOpen"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_btn_blue_solid"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Buka"
+                android:textColor="#FFFFFF"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/btnCurtainPause"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_sheet_row"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Jeda"
+                android:textColor="@color/harmony_ink"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/btnCurtainClose"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_sheet_row"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Tutup"
+                android:textColor="@color/harmony_ink"
+                android:textSize="13.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

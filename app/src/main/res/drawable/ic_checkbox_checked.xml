@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="22dp"
+    android:height="22dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Rounded rectangle badge -->
+    <path
+        android:fillColor="#165DFC"
+        android:pathData="M7,2 L17,2 C19.76,2 22,4.24 22,7 L22,17 C22,19.76 19.76,22 17,22 L7,22 C4.24,22 2,19.76 2,17 L2,7 C2,4.24 4.24,2 7,2 Z" />
+    <!-- Crisp white checkmark -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M6.5,12.5 L10.5,16.5 L17.5,8"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="2.5" />
+</vector>

@@ -1,0 +1,76 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M16,14h32a8,8 0 0,1 8,8v32a8,8 0 0,1 -8,8H16a8,8 0 0,1 -8,-8V22a8,8 0 0,1 8,-8z" />
+
+    <!-- Tempered Glass Platform Outer Bevel -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M16,10h32a7,7 0 0,1 7,7v32a7,7 0 0,1 -7,7H16a7,7 0 0,1 -7,-7V17a7,7 0 0,1 7,-7z" />
+
+    <!-- Pure White Tempered Glass Surface -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,11.5h30a5.5,5.5 0 0,1 5.5,5.5v30a5.5,5.5 0 0,1 -5.5,5.5H17a5.5,5.5 0 0,1 -5.5,-5.5V17a5.5,5.5 0 0,1 5.5,-5.5z" />
+
+    <!-- Hidden LED Weight Display (Hidden under glass) -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M24,15h16v4.5h-16z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M27,16h10v2.5h-10z" />
+
+    <!-- 4 ITO Conductive Stainless Electrodes (Round Sensors) -->
+    <!-- Top-Left Electrode -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1"
+        android:pathData="M20,26a4.5,4.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M20,26a2.5,2.5 0 1,0 0.001,0z" />
+
+    <!-- Top-Right Electrode -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1"
+        android:pathData="M44,26a4.5,4.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M44,26a2.5,2.5 0 1,0 0.001,0z" />
+
+    <!-- Bottom-Left Electrode -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1"
+        android:pathData="M20,44a4.5,4.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M20,44a2.5,2.5 0 1,0 0.001,0z" />
+
+    <!-- Bottom-Right Electrode -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1"
+        android:pathData="M44,44a4.5,4.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M44,44a2.5,2.5 0 1,0 0.001,0z" />
+
+    <!-- Center Heart Logo / Tuya IoT Mark -->
+    <path
+        android:fillColor="#0EA5E9"
+        android:pathData="M32,34a2,2 0 1,0 0.001,0z" />
+</vector>

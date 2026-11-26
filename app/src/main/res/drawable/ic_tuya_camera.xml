@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,12a18,18 0 0,1 18,18c0,8 -5,14 -12,16l4,8h-20l4,-8c-7,-2 -12,-8 -12,-16a18,18 0 0,1 18,-18z" />
+
+    <!-- Spherical Camera Head (Glossy White) -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,8a17,17 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,9.5a15.5,15.5 0 1,0 0.001,0z" />
+
+    <!-- Center Black Lens Eyeball Globe -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M32,24a10.5,10.5 0 1,0 0.001,0z" />
+
+    <!-- Camera Glass Aperture Lens with Blue Optical Coating -->
+    <path
+        android:fillColor="#1E3A8A"
+        android:strokeColor="#3B82F6"
+        android:strokeWidth="1"
+        android:pathData="M32,24a6,6 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32,24a3,3 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,22a1.2,1.2 0 1,0 0.001,0z" />
+
+    <!-- Status Blue/Green LED above Lens -->
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M32,15a1.2,1.2 0 1,0 0.001,0z" />
+
+    <!-- Sleek Curved Magnetic Pedestal Stand -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M27,41h10l3,8H24z" />
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1"
+        android:pathData="M20,49h24a3,3 0 0,1 3,3v2a2,2 0 0,1 -2,2H19a2,2 0 0,1 -2,-2v-2a3,3 0 0,1 3,-3z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M21,50.5h22a1.5,1.5 0 0,1 1.5,1.5v1.5H19.5V52a1.5,1.5 0 0,1 1.5,-1.5z" />
+</vector>

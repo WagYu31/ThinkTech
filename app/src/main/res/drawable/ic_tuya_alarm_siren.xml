@@ -1,0 +1,54 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,12a18,18 0 1,0 0.001,0z" />
+
+    <!-- Circular Strobe Siren Housing -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,10a17,17 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,11.5a15.5,15.5 0 1,0 0.001,0z" />
+
+    <!-- Center Flashing Red Strobe Beacon -->
+    <path
+        android:fillColor="#EF4444"
+        android:strokeColor="#DC2626"
+        android:strokeWidth="1"
+        android:pathData="M32,32a10,10 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#F87171"
+        android:pathData="M32,32a7.5,7.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FEE2E2"
+        android:pathData="M30,30a2.5,2.5 0 1,0 0.001,0z" />
+
+    <!-- Acoustic Louver Slots (Concentric Rings) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1.2"
+        android:pathData="M32,32a13,13 0 1,0 0.001,0z" />
+
+    <!-- Sound Flash Waves Emanating Outward -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#EF4444"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M48,22a21,21 0 0,1 0,20" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#EF4444"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M16,22a21,21 0 0,0 0,20" />
+</vector>

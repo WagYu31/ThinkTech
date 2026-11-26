@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_nav_home"
+        android:title="Rumah" />
+
+    <item
+        android:id="@+id/nav_smart"
+        android:icon="@drawable/ic_nav_smart"
+        android:title="Smart" />
+
+    <item
+        android:id="@+id/nav_explore"
+        android:icon="@drawable/ic_nav_explore"
+        android:title="Explore" />
+
+    <item
+        android:id="@+id/nav_me"
+        android:icon="@drawable/ic_nav_me"
+        android:title="Saya" />
+</menu>

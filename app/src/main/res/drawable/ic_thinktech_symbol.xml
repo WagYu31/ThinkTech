@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="26dp"
+    android:height="26dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Center Smart Dot -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,19m-2.2,0a2.2,2.2 0 1,1 4.4,0a2.2,2.2 0 1,1 -4.4,0" />
+    <!-- Inner Smart Signal Wave -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2.3"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M8.2,14.2 C9.3,13.1 10.6,12.5 12,12.5 C13.4,12.5 14.7,13.1 15.8,14.2" />
+    <!-- Outer Smart Signal Wave -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2.3"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M4.5,9.5 C6.6,7.4 9.2,6.2 12,6.2 C14.8,6.2 17.4,7.4 19.5,9.5" />
+</vector>

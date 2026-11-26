@@ -1,0 +1,43 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,12a20,20 0 1,0 0.001,0z" />
+
+    <!-- Circular White Detector Body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,10a19,19 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,11.5a17.5,17.5 0 1,0 0.001,0z" />
+
+    <!-- 360 Degree Smoke Chamber Ring (Perforated Slits) -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M32,29a13,13 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,29a10,10 0 1,0 0.001,0z" />
+
+    <!-- Radial Louver Fins -->
+    <path
+        android:fillColor="#475569"
+        android:pathData="M31,17h2v5h-2zm0,19h2v5h-2zm-12,-10h5v2h-5zm19,0h5v2h-5z" />
+
+    <!-- Center Test Button / Alarm Indicator Beacon -->
+    <path
+        android:fillColor="#EF4444"
+        android:strokeColor="#DC2626"
+        android:strokeWidth="0.8"
+        android:pathData="M32,29a4.5,4.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FCA5A5"
+        android:pathData="M32,29a2.5,2.5 0 1,0 0.001,0z" />
+</vector>

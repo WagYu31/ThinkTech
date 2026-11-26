@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M20,12h24a6,6 0 0,1 6,6v38a6,6 0 0,1 -6,6H20a6,6 0 0,1 -6,-6V18a6,6 0 0,1 6,-6z" />
+
+    <!-- Pure Cylindrical Body Outer Frame -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M20,8h24a5,5 0 0,1 5,5v42a5,5 0 0,1 -5,5H20a5,5 0 0,1 -5,-5V13a5,5 0 0,1 5,-5z" />
+
+    <!-- Pure White Front Shell -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M21,9.5h22a3.5,3.5 0 0,1 3.5,3.5v39a3.5,3.5 0 0,1 -3.5,3.5H21a3.5,3.5 0 0,1 -3.5,-3.5V13a3.5,3.5 0 0,1 3.5,-3.5z" />
+
+    <!-- Circular OLED Display (PM2.5 Level) -->
+    <path
+        android:fillColor="#0F172A"
+        android:strokeColor="#10B981"
+        android:strokeWidth="1.2"
+        android:pathData="M32,20a5,5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M30,19h4v2h-4z" />
+
+    <!-- Perforated Intake Mesh Holes (Micro-Grid) -->
+    <!-- Row 1 -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M22,34a1,1 0 1,0 0.001,0z M26,34a1,1 0 1,0 0.001,0z M30,34a1,1 0 1,0 0.001,0z M34,34a1,1 0 1,0 0.001,0z M38,34a1,1 0 1,0 0.001,0z M42,34a1,1 0 1,0 0.001,0z" />
+    <!-- Row 2 -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M24,38a1,1 0 1,0 0.001,0z M28,38a1,1 0 1,0 0.001,0z M32,38a1,1 0 1,0 0.001,0z M36,38a1,1 0 1,0 0.001,0z M40,38a1,1 0 1,0 0.001,0z" />
+    <!-- Row 3 -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M22,42a1,1 0 1,0 0.001,0z M26,42a1,1 0 1,0 0.001,0z M30,42a1,1 0 1,0 0.001,0z M34,42a1,1 0 1,0 0.001,0z M38,42a1,1 0 1,0 0.001,0z M42,42a1,1 0 1,0 0.001,0z" />
+    <!-- Row 4 -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M24,46a1,1 0 1,0 0.001,0z M28,46a1,1 0 1,0 0.001,0z M32,46a1,1 0 1,0 0.001,0z M36,46a1,1 0 1,0 0.001,0z M40,46a1,1 0 1,0 0.001,0z" />
+    <!-- Row 5 -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M22,50a1,1 0 1,0 0.001,0z M26,50a1,1 0 1,0 0.001,0z M30,50a1,1 0 1,0 0.001,0z M34,50a1,1 0 1,0 0.001,0z M38,50a1,1 0 1,0 0.001,0z M42,50a1,1 0 1,0 0.001,0z" />
+
+    <!-- Top Air Outlet Grill Slits -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M22,10h20v1.5h-20z" />
+</vector>

@@ -1,0 +1,58 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,36a24,24 0 1,0 0.001,0z" />
+
+    <!-- Glossy Black Cylindrical Puck Base -->
+    <path
+        android:fillColor="#1E293B"
+        android:strokeColor="#334155"
+        android:strokeWidth="1.2"
+        android:pathData="M32,32a22,22 0 1,0 0.001,0z" />
+
+    <!-- High-Gloss Piano Black Top Facet -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M32,32a20,20 0 1,0 0.001,0z" />
+
+    <!-- 360-Degree Infrared Transmissive Dark Acrylic Ring -->
+    <path
+        android:fillColor="#020617"
+        android:strokeColor="#1E293B"
+        android:strokeWidth="1"
+        android:pathData="M32,32a15,15 0 1,0 0.001,0z" />
+
+    <!-- Center Status Indicator Ring & Waves -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0284C7"
+        android:strokeWidth="1.5"
+        android:pathData="M32,32a7,7 0 1,0 0.001,0z" />
+
+    <!-- Infrared Signal Wave Emission Arcs -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#EF4444"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M26,16 C30,14 34,14 38,16" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#F87171"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M28,20 C30.5,19 33.5,19 36,20" />
+
+    <!-- Blue LED Center Glow Core -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M32,32a3,3 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32,32a1.5,1.5 0 1,0 0.001,0z" />
+</vector>

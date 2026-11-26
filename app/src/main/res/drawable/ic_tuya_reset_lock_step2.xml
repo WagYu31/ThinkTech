@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Inner Lock Plate (Battery Chamber) -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 70,30 L 140,30 A 10,10 0 0 1 150,40 L 150,130 A 10,10 0 0 1 140,140 L 70,140 Z" />
+
+    <!-- 4 Battery Outlines -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 80,45 L 94,45 L 94,85 L 80,85 Z" />
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 100,45 L 114,45 L 114,85 L 100,85 Z" />
+
+    <!-- Internal Reset Button -->
+    <path
+        android:strokeColor="#EF4444"
+        android:strokeWidth="2.0"
+        android:fillColor="#FEE2E2"
+        android:pathData="M 130,105 m -10,0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0" />
+
+    <!-- Hand & finger pressing lock reset button -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 130,105 
+            C 127,101 129,97 133,97 
+            C 136,97 139,99 143,104 
+            L 154,117 
+            L 164,119 
+            C 169,120 174,123 177,127 
+            L 190,140 
+            C 193,143 191,147 186,147 
+            L 168,141 
+            L 152,135 
+            L 140,128 
+            C 136,126 133,122 134,117 
+            Z" />
+
+</vector>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#4000F2FE">
+    <item>
+        <layer-list>
+            <!-- 3D Bottom Drop Shadow -->
+            <item android:top="4dp">
+                <shape android:shape="oval">
+                    <solid android:color="#99000000" />
+                </shape>
+            </item>
+            <!-- Physical 3D Extrusion Bevel Rim -->
+            <item android:bottom="2dp">
+                <shape android:shape="oval">
+                    <gradient
+                        android:type="linear"
+                        android:angle="270"
+                        android:startColor="#33475E"
+                        android:endColor="#0B131E" />
+                    <stroke
+                        android:width="1dp"
+                        android:color="#36495E" />
+                </shape>
+            </item>
+            <!-- 3D Domed Cap Surface -->
+            <item
+                android:top="1.5dp"
+                android:left="1.5dp"
+                android:right="1.5dp"
+                android:bottom="3.5dp">
+                <shape android:shape="oval">
+                    <gradient
+                        android:type="linear"
+                        android:angle="270"
+                        android:startColor="#2D3F54"
+                        android:centerColor="#1B2735"
+                        android:endColor="#111A24" />
+                </shape>
+            </item>
+            <!-- Top Specular Shine Glare -->
+            <item
+                android:top="3dp"
+                android:left="14dp"
+                android:right="14dp"
+                android:height="2.5dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="1.5dp" />
+                    <gradient
+                        android:type="linear"
+                        android:angle="0"
+                        android:startColor="#00FFFFFF"
+                        android:centerColor="#40FFFFFF"
+                        android:endColor="#00FFFFFF" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</ripple>

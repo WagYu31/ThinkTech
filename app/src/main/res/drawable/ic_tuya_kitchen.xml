@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Kettle / Kitchen body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.6"
+        android:pathData="M16,18 L32,18 C33.1,18 34,18.9 34,20 L35,36 C35,37.1 34.1,38 33,38 L15,38 C13.9,38 13,37.1 13,36 L14,20 C14,18.9 14.9,18 16,18 Z" />
+    <!-- Lid handle -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M22,14 L26,14 L26,18 L22,18 Z" />
+    <!-- Kettle side handle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.8"
+        android:pathData="M34,22 C37,22 39,24 39,28 C39,32 37,34 34,34" />
+</vector>

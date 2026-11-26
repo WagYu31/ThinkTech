@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Gateway Body (Puck / Hub) -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 100,55 L 180,55 A 16,16 0 0 1 196,71 L 196,105 A 16,16 0 0 1 180,121 L 100,121 A 16,16 0 0 1 84,105 L 84,71 A 16,16 0 0 1 100,55 Z" />
+
+    <!-- Center LED Ring -->
+    <path
+        android:strokeColor="#10B981"
+        android:strokeWidth="2.0"
+        android:fillColor="#D1FAE5"
+        android:pathData="M 140,88 m -10,0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0" />
+
+    <!-- Ethernet LAN Cable input -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:fillColor="#E2E8F0"
+        android:pathData="M 132,121 L 148,121 L 148,136 L 132,136 Z" />
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,136 L 140,152" />
+
+</vector>

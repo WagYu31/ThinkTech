@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="44dp"
+    android:height="44dp"
+    android:viewportWidth="44"
+    android:viewportHeight="44">
+    <!-- Google Assistant Grey Circle Background -->
+    <path
+        android:fillColor="#F1F3F4"
+        android:pathData="M22,2A20,20 0 1,0 42,22A20,20 0 0,0 22,2Z"/>
+    <!-- 4 Google Dots: Yellow, Red, Green, Blue -->
+    <!-- Yellow Dot -->
+    <path
+        android:fillColor="#FBBC05"
+        android:pathData="M14,24A3,3 0 1,1 11,21A3,3 0 0,1 14,24Z"/>
+    <!-- Red Dot -->
+    <path
+        android:fillColor="#EA4335"
+        android:pathData="M21,17A4,4 0 1,1 17,13A4,4 0 0,1 21,17Z"/>
+    <!-- Green Dot -->
+    <path
+        android:fillColor="#34A853"
+        android:pathData="M29,22A2.5,2.5 0 1,1 26.5,19.5A2.5,2.5 0 0,1 29,22Z"/>
+    <!-- Blue Dot -->
+    <path
+        android:fillColor="#4285F4"
+        android:pathData="M34,26A1.8,1.8 0 1,1 32.2,24.2A1.8,1.8 0 0,1 34,26Z"/>
+</vector>

@@ -1,0 +1,60 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Wall plate -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 100,42 L 180,42 A 8,8 0 0 1 188,50 L 188,118 A 8,8 0 0 1 180,126 L 100,126 A 8,8 0 0 1 92,118 L 92,50 A 8,8 0 0 1 100,42 Z" />
+
+    <!-- Switch rocker button -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 120,58 L 160,58 A 4,4 0 0 1 164,62 L 164,106 A 4,4 0 0 1 160,110 L 120,110 A 4,4 0 0 1 116,106 L 116,62 A 4,4 0 0 1 120,58 Z" />
+
+    <!-- Rocker dividing crease line -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 116,84 L 164,84" />
+
+    <!-- Motion flip arrows above and below switch -->
+    <!-- Top arrow pointing down (ON) -->
+    <path
+        android:strokeColor="#FF5722"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,24 L 140,40 M 135,35 L 140,40 L 145,35" />
+
+    <!-- Bottom arrow pointing up (OFF) -->
+    <path
+        android:strokeColor="#FF5722"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,144 L 140,128 M 135,133 L 140,128 L 145,133" />
+
+    <!-- ON/OFF badge tags -->
+    <path
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 72,78 L 84,78 M 78,72 L 78,84" />
+
+</vector>

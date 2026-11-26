@@ -1,0 +1,61 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,34a24,24 0 1,0 0.001,0z" />
+
+    <!-- Circular Bumper Rim (Outer Chassis) -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,30a23,23 0 1,0 0.001,0z" />
+
+    <!-- Main Pure White Top Shell Deck -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,30a21,21 0 1,0 0.001,0z" />
+
+    <!-- Dustbin Lid Seam (Subtle Arc) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#F1F5F9"
+        android:strokeWidth="1.5"
+        android:pathData="M16,36 C24,42 40,42 48,36" />
+
+    <!-- Raised Laser LiDAR Sensor Turret (Center-Top) -->
+    <!-- Turret Shadow & Base -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M32,23a7,7 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#334155"
+        android:pathData="M32,22a6,6 0 1,0 0.001,0z" />
+    <!-- Turret Cap -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M32,21.5a4.8,4.8 0 1,0 0.001,0z" />
+    <!-- Laser Optical Aperture (Red Glow) -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M31,21h2v1.5h-2z" />
+
+    <!-- Power & Home Dual Push Buttons -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="0.8"
+        android:pathData="M32,44a3,3 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M31.3,43h1.4v2h-1.4z" />
+
+    <!-- Front Laser Bumper Strip (Dark Glass Window) -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M23,10 C28,8 36,8 41,10 C39,12 25,12 23,10 Z" />
+</vector>

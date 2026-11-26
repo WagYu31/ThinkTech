@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Oven body -->
+    <path
+        android:fillColor="#1E293B"
+        android:strokeColor="#0F172A"
+        android:strokeWidth="1.5"
+        android:pathData="M12,12 L36,12 C37.1,12 38,12.9 38,14 L38,36 C38,37.1 37.1,38 36,38 L12,38 C10.9,38 10,37.1 10,36 L10,14 C10,12.9 10.9,12 12,12 Z" />
+    <!-- Glass window -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M14,18 L34,18 L34,34 L14,34 Z" />
+    <!-- Top handle bar -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M18,14 L30,14 L30,16 L18,16 Z" />
+</vector>

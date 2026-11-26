@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Clean Ice-Blue to Crisp White Modern Gradient -->
+    <item>
+        <shape>
+            <gradient
+                android:angle="270"
+                android:startColor="#EEF5FF"
+                android:centerColor="#F8FAFC"
+                android:endColor="#FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- Top Soft Ambient Cyan/Blue Glow -->
+    <item
+        android:top="-120dp"
+        android:left="20dp"
+        android:right="20dp"
+        android:height="400dp">
+        <shape>
+            <gradient
+                android:gradientRadius="260dp"
+                android:startColor="#253256F2"
+                android:centerColor="#083877FF"
+                android:endColor="#00FFFFFF"
+                android:type="radial" />
+        </shape>
+    </item>
+</layer-list>

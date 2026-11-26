@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Outer cylinder body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1.8"
+        android:pathData="M16,16 C16,14 18,12 24,12 C30,12 32,14 32,16 L32,36 C32,38 30,40 24,40 C18,40 16,38 16,36 Z" />
+    <!-- Purple UV glow band -->
+    <path
+        android:fillColor="#8B5CF6"
+        android:pathData="M17,17 L31,17 L31,21 L17,21 Z" />
+    <!-- Grill lines -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M20,24 L20,34 M24,24 L24,34 M28,24 L28,34" />
+</vector>

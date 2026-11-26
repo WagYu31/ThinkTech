@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sheet_dialog"
+    android:orientation="vertical"
+    android:paddingBottom="24dp">
+
+    <!-- Top Handle Bar -->
+    <View
+        android:layout_width="38dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_drag_handle" />
+
+    <!-- Header Row -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="Select Country / Region"
+            android:textColor="@color/thinktech_dark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnCloseCountryPicker"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="8dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/thinktech_slate" />
+    </RelativeLayout>
+
+    <!-- Search Input Box -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_search_input"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_search"
+            app:tint="@color/thinktech_slate" />
+
+        <EditText
+            android:id="@+id/etSearchCountry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="@null"
+            android:hint="Search country or dial code..."
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/thinktech_dark"
+            android:textColorHint="@color/thinktech_slate_light"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="14dp"
+        android:background="#F1F5F9" />
+
+    <!-- Country Recycler View -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCountries"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingTop="6dp"
+        android:paddingBottom="12dp" />
+
+</LinearLayout>

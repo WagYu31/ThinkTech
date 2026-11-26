@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base Warm Paper / Minimalist Wall Background -->
+    <item>
+        <shape>
+            <solid android:color="#F7F6F2" />
+        </shape>
+    </item>
+
+    <!-- Natural Sunlight & Window Blind Diagonal Shadow (Linear Gradient) -->
+    <item>
+        <shape>
+            <gradient
+                android:angle="135"
+                android:startColor="#10000000"
+                android:centerColor="#05000000"
+                android:endColor="#00000000"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- Secondary Soft Light Bleed -->
+    <item>
+        <shape>
+            <gradient
+                android:angle="45"
+                android:startColor="#00FFFFFF"
+                android:centerColor="#20FFFFFF"
+                android:endColor="#50FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+</layer-list>

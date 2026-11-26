@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Appliance Body (Smart Air Purifier / Robot) -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 115,35 L 165,35 A 14,14 0 0 1 179,49 L 179,125 A 4,4 0 0 1 175,129 L 105,129 A 4,4 0 0 1 101,125 L 101,49 A 14,14 0 0 1 115,35 Z" />
+
+    <!-- Air Intake Grille Holes -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 115,85 L 165,85 M 115,95 L 165,95 M 115,105 L 165,105 M 115,115 L 165,115" />
+
+    <!-- Top Display Panel -->
+    <path
+        android:strokeColor="#0EA5E9"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#F0F9FF"
+        android:pathData="M 140,55 m -12,0 a 12,12 0 1,0 24,0 a 12,12 0 1,0 -24,0" />
+
+</vector>

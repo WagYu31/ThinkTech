@@ -1,0 +1,51 @@
+<resources>
+    <style name="Theme.ThinkTech" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Huawei HarmonyOS Flagship System Blue -->
+        <item name="colorPrimary">@color/harmony_blue</item>
+        <item name="colorPrimaryVariant">@color/harmony_blue_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+
+        <item name="colorSecondary">@color/thinktech_blue</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+
+        <!-- Unified Geometric Flagship Typeface (Plus Jakarta Sans) -->
+        <!-- Set only android:fontFamily so per-view android:fontFamily weights (Medium/SemiBold/Bold) never get overridden by AppCompat -->
+        <item name="android:fontFamily">@font/plus_jakarta_sans_regular</item>
+
+        <!-- Seamless HarmonyOS #F1F3F5 Canvas -->
+        <item name="android:statusBarColor">#F1F3F5</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">#F1F3F5</item>
+    </style>
+
+    <!-- Transparent active indicator for Bottom Navigation -->
+    <style name="App.BottomNavigationView.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@android:color/transparent</item>
+        <item name="android:width">0dp</item>
+        <item name="android:height">0dp</item>
+    </style>
+
+    <!-- Custom BottomNav Typography using Plus Jakarta Sans -->
+    <style name="Harmony.BottomNav.TextActive" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/plus_jakarta_sans_semibold</item>
+        <item name="android:textSize">10.5sp</item>
+    </style>
+
+    <style name="Harmony.BottomNav.TextInactive" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/plus_jakarta_sans_medium</item>
+        <item name="android:textSize">10.5sp</item>
+    </style>
+
+    <!-- Dedicated Clean Splash Screen Theme (matches #F4F6FB ThinkTech Splash) -->
+    <style name="Theme.ThinkTech.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#F4F6FB</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">#F4F6FB</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowBackground">#F4F6FB</item>
+        <item name="android:windowSplashScreenBackground">#F4F6FB</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@android:color/transparent</item>
+    </style>
+</resources>

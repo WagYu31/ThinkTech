@@ -1,0 +1,65 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M20,16h24a6,6 0 0,1 6,6v36a6,6 0 0,1 -6,6H20a6,6 0 0,1 -6,-6V22a6,6 0 0,1 6,-6z" />
+
+    <!-- Main White Tower Body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M20,10h24a5,5 0 0,1 5,5v34a5,5 0 0,1 -5,5H20a5,5 0 0,1 -5,-5V15a5,5 0 0,1 5,-5z" />
+
+    <!-- Pure White Front Facade -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M21,11.5h22a3.5,3.5 0 0,1 3.5,3.5v31a3.5,3.5 0 0,1 -3.5,3.5H21a3.5,3.5 0 0,1 -3.5,-3.5V15a3.5,3.5 0 0,1 3.5,-3.5z" />
+
+    <!-- Top Transparent Food Hopper Window -->
+    <path
+        android:fillColor="#E0F2FE"
+        android:strokeColor="#BAE6FD"
+        android:strokeWidth="1"
+        android:pathData="M23,14h18v12h-18z" />
+
+    <!-- Dry Kibble Pellets visible inside hopper -->
+    <path
+        android:fillColor="#D97706"
+        android:pathData="M26,20a1.5,1.5 0 1,0 0.001,0z M31,18a1.5,1.5 0 1,0 0.001,0z M36,21a1.5,1.5 0 1,0 0.001,0z M29,23a1.5,1.5 0 1,0 0.001,0z M34,24a1.5,1.5 0 1,0 0.001,0z" />
+
+    <!-- Wide Angle HD Camera Lens & IR Sensors (Center) -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M32,33a4.5,4.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M32,33a2.5,2.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32.8,32.2a1,1 0 1,0 0.001,0z" />
+
+    <!-- Microphone & Speaker Grille Holes -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M28,40a0.8,0.8 0 1,0 0.001,0z M32,40a0.8,0.8 0 1,0 0.001,0z M36,40a0.8,0.8 0 1,0 0.001,0z" />
+
+    <!-- Food Chute Dispenser Mouth -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M27,45h10v5h-10z" />
+
+    <!-- Front Stainless Steel Feeding Bowl -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1"
+        android:pathData="M18,50h28a5,5 0 0,1 5,5v2a2,2 0 0,1 -2,2H15a2,2 0 0,1 -2,-2v-2a5,5 0 0,1 5,-5z" />
+    <path
+        android:fillColor="#F1F5F9"
+        android:pathData="M20,52h24a4,4 0 0,1 4,4v1H16v-1a4,4 0 0,1 4,-4z" />
+</vector>

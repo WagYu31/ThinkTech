@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true">
+
+    <!-- ========================================================== -->
+    <!-- NORMAL MODE: NEARBY DEVICES ORBIT RADAR + ADD MANUAL TABS  -->
+    <!-- ========================================================== -->
+    <LinearLayout
+        android:id="@+id/layoutNormalMode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <!-- 1. Top Clean Navigation Toolbar -->
+        <RelativeLayout
+            android:id="@+id/layoutTopToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#FFFFFF"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
+
+            <ImageButton
+                android:id="@+id/btnBackPairing"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Kembali"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/harmony_ink" />
+
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:letterSpacing="-0.02"
+                android:text="Add Device"
+                android:textColor="@color/harmony_ink"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/btnTopScanQr"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Scan QR"
+                android:src="@drawable/ic_qr_scan"
+                app:tint="@color/harmony_ink" />
+        </RelativeLayout>
+
+        <!-- 2. Segmented Tab Switcher (Nearby Devices | Add Manual) -->
+        <LinearLayout
+            android:id="@+id/layoutPairSegment"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_pair_tab_track"
+            android:orientation="horizontal"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/tabNearbyDevices"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_pair_tab_active"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Nearby Devices"
+                android:textColor="#FFFFFF"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/tabAddManual"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:gravity="center"
+                android:text="Add Manual"
+                android:textColor="#4B5563"
+                android:textSize="13.5sp" />
+        </LinearLayout>
+
+        <!-- 3. Tab Content Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <!-- ========== TAB 1: NEARBY DEVICES (CONCENTRIC ORBIT RADAR) ========== -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutNearbyMode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingBottom="22dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tvSearchingNearby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:gravity="center"
+                    android:letterSpacing="-0.02"
+                    android:text="Looking for nearby devices..."
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Wi-Fi + Bluetooth Status Pill -->
+                <LinearLayout
+                    android:id="@+id/layoutWifiBtPill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_pair_info_pill"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSearchingNearby">
+
+                    <FrameLayout
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/bg_hyperos_status_dot"
+                        android:backgroundTint="#3858FF">
+
+                        <ImageView
+                            android:layout_width="11dp"
+                            android:layout_height="11dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_input_wifi"
+                            app:tint="#FFFFFF" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/bg_hyperos_status_dot"
+                        android:backgroundTint="#3858FF">
+
+                        <ImageView
+                            android:layout_width="11dp"
+                            android:layout_height="11dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_bluetooth_clean"
+                            app:tint="#FFFFFF" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvPairingModeHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                        android:text="Turn on your Wifi &amp; Bluetooth to connect"
+                        android:textColor="@color/harmony_ink_secondary"
+                        android:textSize="11.5sp" />
+                </LinearLayout>
+
+                <!-- Concentric 3-Ring Orbit Radar Stage -->
+                <FrameLayout
+                    android:id="@+id/flRadarOrbitStage"
+                    android:layout_width="324dp"
+                    android:layout_height="324dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    app:layout_constraintBottom_toTopOf="@id/tvAutoAddCountdown"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutWifiBtPill">
+
+                    <com.thinktech.smarthome.ui.pairing.RadarScanView
+                        android:id="@+id/radarScanView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <!-- Centered Hub Avatar -->
+                    <FrameLayout
+                        android:id="@+id/flCenterHub"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_harmony_switch_power_on"
+                        android:elevation="6dp"
+                        android:padding="4dp">
+
+                        <ImageView
+                            android:id="@+id/ivCenterAvatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="Pemilik Rumah"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_user_orbit_avatar" />
+                    </FrameLayout>
+
+                    <!-- Orbiting Discovered Device Nodes Overlay -->
+                    <FrameLayout
+                        android:id="@+id/flOrbitDevicesOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipChildren="false"
+                        android:clipToPadding="false" />
+                </FrameLayout>
+
+                <!-- Subtle Auto-Add Countdown Strip (Visible only when devices are found) -->
+                <TextView
+                    android:id="@+id/tvAutoAddCountdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:gravity="center"
+                    android:text="Tap a detected device on the radar to connect"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/btnConnectAllDevices"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <!-- Primary Pill CTA: Connect to All Devices -->
+                <TextView
+                    android:id="@+id/btnConnectAllDevices"
+                    android:layout_width="244dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="22dp"
+                    android:background="@drawable/bg_pair_connect_btn"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:gravity="center"
+                    android:text="Connect to All Devices"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14.5sp"
+                    app:layout_constraintBottom_toTopOf="@id/layoutHelpFooter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <!-- Bottom Help Footer -->
+                <LinearLayout
+                    android:id="@+id/layoutHelpFooter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                        android:text="Can't find your devices?"
+                        android:textColor="@color/harmony_ink_muted"
+                        android:textSize="12.5sp" />
+
+                    <TextView
+                        android:id="@+id/tvLearnMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="3dp"
+                        android:text="Learn more"
+                        android:textColor="#3858FF"
+                        android:textSize="12.5sp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- ========== TAB 2: ADD MANUAL (HUAWEI AI LIFE PRODUCT SHOWCASE) ========== -->
+            <LinearLayout
+                android:id="@+id/layoutManualMode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Full-Width Clean Search Pill -->
+                <LinearLayout
+                    android:id="@+id/btnOpenSearchMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_manual_search_pill"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="14dp">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="#3858FF" />
+
+                    <TextView
+                        android:id="@+id/tvSearchTriggerHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                        android:maxLines="1"
+                        android:text="Cari perangkat (Kamera, Lampu, Saklar...)"
+                        android:textColor="@color/harmony_ink_muted"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ECEFF4" />
+
+                <!-- Two-Column Master-Detail Showcase (Cool Rail + Floating White Cards) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="#F5F7FA"
+                    android:orientation="horizontal">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="104dp"
+                        android:layout_height="match_parent"
+                        android:background="#F3F5F9"
+                        android:fillViewport="true"
+                        android:overScrollMode="never"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/layoutCategoryTabsContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F3F5F9"
+                            android:orientation="vertical"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="40dp" />
+                    </androidx.core.widget.NestedScrollView>
+
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/scrollDeviceCatalog"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#F7F8FB"
+                        android:fillViewport="true"
+                        android:overScrollMode="never"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/layoutDeviceCatalogContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="12dp"
+                            android:paddingTop="12dp"
+                            android:paddingEnd="12dp"
+                            android:paddingBottom="44dp" />
+                    </androidx.core.widget.NestedScrollView>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- ============================================== -->
+    <!-- SEARCH MODE: FULL SCREEN SEARCH                -->
+    <!-- ============================================== -->
+    <LinearLayout
+        android:id="@+id/layoutSearchMode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp">
+
+            <ImageButton
+                android:id="@+id/btnBackSearch"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/harmony_ink" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/bg_search_category_pill"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="14dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="#64748B" />
+
+                <EditText
+                    android:id="@+id/etSearchQuery"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Search for a category"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/harmony_ink"
+                    android:textColorHint="#94A3B8"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/btnClearSearch"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_close"
+                    android:visibility="gone"
+                    app:tint="#94A3B8" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F1F5F9" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F5F7FA"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layoutSearchResultsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="40dp" />
+
+                <TextView
+                    android:id="@+id/tvSearchEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="60dp"
+                    android:text="Tidak ada perangkat yang cocok"
+                    android:textColor="#94A3B8"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</FrameLayout>

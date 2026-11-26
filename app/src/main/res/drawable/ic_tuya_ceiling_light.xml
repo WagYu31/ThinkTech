@@ -1,0 +1,41 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Warm Ambient Halo Glow -->
+    <path
+        android:fillColor="#25FDE68A"
+        android:pathData="M32,10a24,24 0 1,0 0.001,0z" />
+
+    <!-- Thin Metallic Rim Border (Brushed Aluminum / Gold) -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M32,8a22,22 0 1,0 0.001,0z" />
+
+    <!-- Large Frosted Diffuser Face (Milky White with Subtle Glow) -->
+    <path
+        android:fillColor="#FEF9C3"
+        android:strokeColor="#FEF08A"
+        android:strokeWidth="0.8"
+        android:pathData="M32,9.5a20.5,20.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,12a18,18 0 1,0 0.001,0z" />
+
+    <!-- Inner Ambient Accent Light Ring -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FDE047"
+        android:strokeWidth="1"
+        android:pathData="M32,17a15,15 0 1,0 0.001,0z" />
+
+    <!-- Center Geometric Modern Core -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#E2E8F0"
+        android:strokeWidth="0.8"
+        android:pathData="M32,27a5,5 0 1,0 0.001,0z" />
+</vector>

@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M18,16h28a5,5 0 0,1 5,5v26a5,5 0 0,1 -5,5H18a5,5 0 0,1 -5,-5V21a5,5 0 0,1 5,-5z" />
+
+    <!-- Pure White Cube Body Outer Bevel -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M18,12h28a4,4 0 0,1 4,4v26a4,4 0 0,1 -4,4H18a4,4 0 0,1 -4,-4V16a4,4 0 0,1 4,-4z" />
+
+    <!-- Clean Front Surface -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M19,13.5h26a2.5,2.5 0 0,1 2.5,2.5v23a2.5,2.5 0 0,1 -2.5,2.5H19a2.5,2.5 0 0,1 -2.5,-2.5V16a2.5,2.5 0 0,1 2.5,-2.5z" />
+
+    <!-- Status Indicator LED & Bluetooth Logo Mark -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M32,20a2.5,2.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32,20a1.2,1.2 0 1,0 0.001,0z" />
+
+    <!-- Robotic Servo Arm Slot / Pivot -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1"
+        android:pathData="M32,32a6,6 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#475569"
+        android:pathData="M32,32a3.5,3.5 0 1,0 0.001,0z" />
+
+    <!-- Robotic Mechanical Pusher Arm / Finger Extended -->
+    <path
+        android:fillColor="#0284C7"
+        android:strokeColor="#0369A1"
+        android:strokeWidth="1"
+        android:pathData="M30,32 L34,32 L33.5,52 L30.5,52 Z" />
+
+    <!-- Rubber Tip / Stylus Head -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M29.5,51h5a1.5,1.5 0 0,1 1.5,1.5v1.5a1.5,1.5 0 0,1 -1.5,1.5h-5a1.5,1.5 0 0,1 -1.5,-1.5v-1.5a1.5,1.5 0 0,1 1.5,-1.5z" />
+</vector>

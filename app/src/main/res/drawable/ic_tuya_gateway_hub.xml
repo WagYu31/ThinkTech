@@ -1,0 +1,58 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M14,14h36a6,6 0 0,1 6,6v34a6,6 0 0,1 -6,6H14a6,6 0 0,1 -6,-6V20a6,6 0 0,1 6,-6z" />
+
+    <!-- Sleek Rounded Square Gateway Hub Housing -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M14,10h36a5,5 0 0,1 5,5v36a5,5 0 0,1 -5,5H14a5,5 0 0,1 -5,-5V15a5,5 0 0,1 5,-5z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15,11.5h34a3.5,3.5 0 0,1 3.5,3.5v33a3.5,3.5 0 0,1 -3.5,3.5H15a3.5,3.5 0 0,1 -3.5,-3.5V15a3.5,3.5 0 0,1 3.5,-3.5z" />
+
+    <!-- Circular Glowing RGB Multi-Color Ring in Center -->
+    <path
+        android:fillColor="#0284C7"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="1.2"
+        android:pathData="M32,32a10,10 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,32a7.5,7.5 0 1,0 0.001,0z" />
+
+    <!-- Zigbee / Wi-Fi Wireless Radio Waves Inside Center -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M32,32a2.5,2.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0284C7"
+        android:strokeWidth="1"
+        android:strokeLineCap="round"
+        android:pathData="M27.5,27.5a6.5,6.5 0 0,1 9,0" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0284C7"
+        android:strokeWidth="1"
+        android:strokeLineCap="round"
+        android:pathData="M27.5,36.5a6.5,6.5 0 0,0 9,0" />
+
+    <!-- Status LEDs on Bottom Edge -->
+    <path
+        android:fillColor="#22C55E"
+        android:pathData="M26,48a1.2,1.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M32,48a1.2,1.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M38,48a1.2,1.2 0 1,0 0.001,0z" />
+</vector>

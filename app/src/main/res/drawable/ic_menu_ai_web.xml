@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Blue browser card -->
+    <path
+        android:fillColor="#1E88E5"
+        android:pathData="M20,4H4C2.9,4 2,4.9 2,6v12c0,1.1 0.9,2 2,2h16c1.1,0 2,-0.9 2,-2V6C22,4.9 21.1,4 20,4zM20,18H4V9h16V18z"/>
+    <!-- 3 window dots -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5,6.5m-1,0a1,1 0 1,0 2,0a1,1 0 1,0 -2,0"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8,6.5m-1,0a1,1 0 1,0 2,0a1,1 0 1,0 -2,0"/>
+    <!-- AI badge text indicator -->
+    <path
+        android:fillColor="#1E88E5"
+        android:pathData="M8,11h3v5H9.5v-2h-1v2H7v-5h1zm0.8,1.2h-0.6v1h0.6v-1z"/>
+    <path
+        android:fillColor="#1E88E5"
+        android:pathData="M13,11h1.5v5H13z"/>
+</vector>

@@ -1,0 +1,44 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Outer Ambient Glow Ring -->
+    <path
+        android:fillColor="#1538BDF8"
+        android:pathData="M32,6a23,23 0 0,0 -16,39.5l3,6.5h26l3,-6.5A23,23 0 0,0 32,6z" />
+
+    <!-- Bulb Dome Shell (Frosted Glass with Colorful Multi-Color Hue) -->
+    <!-- Violet Top -->
+    <path
+        android:fillColor="#8B5CF6"
+        android:pathData="M32,8a19,19 0 0,0 -19,19c0,5.5 2.5,10.5 6.5,14h25c4,-3.5 6.5,-8.5 6.5,-14a19,19 0 0,0 -19,-19z" />
+    <!-- Cyan Middle Blend -->
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M32,12a15,15 0 0,0 -15,15c0,4.5 2,8.5 5.5,11.5h19c3.5,-3 5.5,-7 5.5,-11.5a15,15 0 0,0 -15,-15z" />
+    <!-- Warm Golden Core -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M32,16a11,11 0 0,0 -11,11c0,3.5 1.5,6.5 4,8.5h14c2.5,-2 4,-5 4,-8.5a11,11 0 0,0 -11,-11z" />
+    <!-- Center Bright White Highlight -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M27,15a5,8 -30 0,1 6,3a5,8 -30 0,1 -6,-3z" />
+
+    <!-- Heat Sink Collar (White Ceramic / Aluminium) -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1"
+        android:pathData="M23,41h18l-1.5,6h-15z" />
+
+    <!-- E27 Threaded Screw Base (Brass Ribs) -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M24,47h16v2.5h-16zm0.5,3.5h15v2.5h-15zm1,3.5h13v2.5h-13z" />
+    <!-- Bottom Contact Tip -->
+    <path
+        android:fillColor="#475569"
+        android:pathData="M28,57h8a2,2 0 0,1 -2,2h-4a2,2 0 0,1 -2,-2z" />
+</vector>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sheet_dialog"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="26dp">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_sheet_handle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:letterSpacing="-0.02"
+        android:text="Jadwal Otomatis ON/OFF"
+        android:textColor="@color/harmony_ink"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvDeviceScheduleSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/plus_jakarta_sans_regular"
+        android:text="Ketuk jadwal untuk mengedit jam atau pengulangan hari"
+        android:textColor="@color/harmony_ink_secondary"
+        android:textSize="12.5sp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/layoutDeviceScheduleList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tvDeviceScheduleEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_lamp_tab_track"
+        android:fontFamily="@font/plus_jakarta_sans_medium"
+        android:gravity="center"
+        android:paddingVertical="20dp"
+        android:text="Belum ada jadwal untuk perangkat ini"
+        android:textColor="#717887"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/btnAddSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_smart_btn_primary"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:gravity="center"
+        android:text="+ Tambah Jadwal Baru"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+</LinearLayout>

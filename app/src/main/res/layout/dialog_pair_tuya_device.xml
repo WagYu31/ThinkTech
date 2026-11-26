@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_sheet_dialog"
+    android:orientation="vertical"
+    android:paddingStart="24dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="24dp"
+    android:paddingBottom="32dp">
+
+    <!-- Bottom Sheet Drag Handle -->
+    <View
+        android:layout_width="44dp"
+        android:layout_height="4.5dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/bg_sheet_handle" />
+
+    <!-- Header: Device Icon, Title & Close Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_pairing_progress_card">
+
+            <ImageView
+                android:id="@+id/ivDialogDeviceIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_tuya_wifi_3ch_switch" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDialogDeviceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Hubungkan WiFi 3ch switch"
+                android:textColor="#0F172A"
+                android:textSize="17sp"
+                android:letterSpacing="-0.01"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_ai_pill"
+                    android:backgroundTint="#10B981" />
+
+                <TextView
+                    android:id="@+id/tvDialogSubProtocol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Tuya Smart Life • Mode EZ (2.4 GHz)"
+                    android:textColor="#64748B"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_circle_blue_tint">
+
+            <ImageButton
+                android:id="@+id/btnDialogClose"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Tutup"
+                android:src="@drawable/ic_close"
+                app:tint="#2563EB" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="14dp"
+        android:background="#F1F5F9" />
+
+    <!-- Wi-Fi Inputs Container -->
+    <LinearLayout
+        android:id="@+id/layoutWifiInputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Smart Wi-Fi 2.4 GHz Guidance Banner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_wifi_instruction_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <FrameLayout
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_circle_blue_tint">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_input_wifi"
+                app:tint="#2563EB" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jaringan Wi-Fi 2.4 GHz"
+                    android:textColor="#1E40AF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_chip_blue"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="1dp"
+                    android:text="WAJIB"
+                    android:textColor="#1D4ED8"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDialogInstruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Pastikan lampu indikator pada modul fisik berkedip cepat (mode pairing)."
+                android:textColor="#475569"
+                android:textSize="11sp"
+                android:lineSpacingExtra="1dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Wi-Fi SSID Input Box -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Nama Wi-Fi (SSID)"
+        android:textColorHint="#666B75"
+        app:boxBackgroundColor="#F8FAFC"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxStrokeColor="#3858FF"
+        app:boxStrokeWidth="1.5dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:hintTextColor="#3858FF"
+        app:startIconDrawable="@drawable/ic_input_wifi"
+        app:startIconTint="#3858FF">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDialogSsid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:inputType="text"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="ThinkTech-2.4G"
+            android:textColor="@color/harmony_ink"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Wi-Fi Password Input Box -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Kata Sandi Wi-Fi"
+        android:textColorHint="#666B75"
+        app:boxBackgroundColor="#F8FAFC"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxStrokeColor="#3858FF"
+        app:boxStrokeWidth="1.5dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:hintTextColor="#3858FF"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#666B75"
+        app:startIconDrawable="@drawable/ic_input_lock"
+        app:startIconTint="#666B75">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDialogPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_semibold"
+            android:inputType="textPassword"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:textColor="@color/harmony_ink"
+            android:textSize="15sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <!-- Camera QR Code Container (Specifically for Tuya Security Cameras) -->
+    <LinearLayout
+        android:id="@+id/layoutCameraQrCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arahkan ke Lensa Kamera"
+            android:textColor="#0F172A"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="Posisikan layar HP pada jarak 15–20 cm di depan lensa CCTV hingga terdengar bunyi 'Ding Dong' / nada konfirmasi."
+            android:textColor="#64748B"
+            android:textSize="12sp" />
+
+        <FrameLayout
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="14dp"
+            android:background="#FFFFFF"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/ivCameraQrCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvCameraQrStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Menunggu kamera membaca Kode QR..."
+            android:textColor="#2563EB"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- High-End Pairing Progress Card -->
+    <LinearLayout
+        android:id="@+id/layoutPairingProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_pairing_progress_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="14dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:indeterminateTint="#2563EB" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menghubungkan ke Tuya Cloud..."
+                android:textColor="#0F172A"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPairingProgressStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Mencari sinyal perangkat pada Wi-Fi..."
+                android:textColor="#2563EB"
+                android:textSize="11sp"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Action Primary Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDialogStartPairing"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/harmony_blue"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:text="Mulai Hubungkan"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:letterSpacing="0.01"
+        app:cornerRadius="26dp"
+        app:elevation="0dp" />
+
+</LinearLayout>

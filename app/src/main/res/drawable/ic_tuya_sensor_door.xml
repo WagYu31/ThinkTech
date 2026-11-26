@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M14,14h18a4,4 0 0,1 4,4v34a4,4 0 0,1 -4,4H14a4,4 0 0,1 -4,-4V18a4,4 0 0,1 4,-4z" />
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M40,20h10a3,3 0 0,1 3,3v22a3,3 0 0,1 -3,3H40a3,3 0 0,1 -3,-3V23a3,3 0 0,1 3,-3z" />
+
+    <!-- Main Transmitter Body (Left Capsule) -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M14,10h18a4,4 0 0,1 4,4v38a4,4 0 0,1 -4,4H14a4,4 0 0,1 -4,-4V14a4,4 0 0,1 4,-4z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15,11.5h16a2.5,2.5 0 0,1 2.5,2.5v35a2.5,2.5 0 0,1 -2.5,2.5H15a2.5,2.5 0 0,1 -2.5,-2.5V14a2.5,2.5 0 0,1 2.5,-2.5z" />
+
+    <!-- Cyan Status LED on Main Body -->
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M23,17a2,2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#67E8F9"
+        android:pathData="M23,17a1,1 0 1,0 0.001,0z" />
+
+    <!-- Magnetic Sensor Alignment Notch Line -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M31,32h3v1h-3z" />
+
+    <!-- Companion Magnetic Bar (Right Slim Capsule) -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M40,17h10a3,3 0 0,1 3,3v24a3,3 0 0,1 -3,3H40a3,3 0 0,1 -3,-3V20a3,3 0 0,1 3,-3z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M41,18.5h8a1.5,1.5 0 0,1 1.5,1.5v21a1.5,1.5 0 0,1 -1.5,1.5h-8a1.5,1.5 0 0,1 -1.5,-1.5V20a1.5,1.5 0 0,1 1.5,-1.5z" />
+
+    <!-- Magnetic Notch on Bar -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M38,32h3v1h-3z" />
+
+    <!-- Magnetic Wireless Link Waves Between Units -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M34,26c1,3 1,8 0,12" />
+</vector>

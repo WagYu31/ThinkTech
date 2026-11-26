@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rowLanguageRoot"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/tvLangBadge"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@drawable/bg_lang_badge_off"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:gravity="center"
+            android:text="ID"
+            android:textColor="#4B5563"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvLangNativeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Bahasa Indonesia"
+                android:textColor="#151922"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvLangRegionSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:text="Indonesia • Bawaan"
+                android:textColor="#717887"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/flLangRadio"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_lang_radio_off">
+
+            <ImageView
+                android:id="@+id/ivLangCheck"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_lang_check"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewLangDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="16dp"
+        android:background="#F0F2F7" />
+</LinearLayout>

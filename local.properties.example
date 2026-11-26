@@ -1,0 +1,5 @@
+# Salin file ini menjadi local.properties (sudah dikecualikan di .gitignore)
+# lalu isi dengan kredensial Tuya Developer Platform milik Anda.
+sdk.dir=/path/to/your/Android/sdk
+TUYA_APP_KEY=YOUR_TUYA_APP_KEY
+TUYA_APP_SECRET=YOUR_TUYA_APP_SECRET

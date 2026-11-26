@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 3D Shadow -->
+    <item android:top="2dp">
+        <shape android:shape="oval">
+            <solid android:color="#4D000000" />
+        </shape>
+    </item>
+    <!-- 3D Neon Bezel -->
+    <item android:bottom="2dp">
+        <shape android:shape="oval">
+            <solid android:color="#0A364E" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#00F2FE" />
+        </shape>
+    </item>
+    <!-- Inner Concave Dish -->
+    <item
+        android:top="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:bottom="3dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="18dp"
+                android:startColor="#5900F2FE"
+                android:endColor="#0E3046" />
+        </shape>
+    </item>
+</layer-list>
+

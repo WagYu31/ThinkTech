@@ -1,0 +1,46 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Amber Warm Ambient Glow -->
+    <path
+        android:fillColor="#20F59E0B"
+        android:pathData="M32,4a22,22 0 0,0 -16,37l3,8h26l3,-8A22,22 0 0,0 32,4z" />
+
+    <!-- Amber Tinted Glass Teardrop Enclosure -->
+    <path
+        android:fillColor="#FEF3C7"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="1.2"
+        android:pathData="M32,6a18,18 0 0,0 -17,17c0,6 3,11 7,15l2,5h16l2,-5c4,-4 7,-9 7,-15a18,18 0 0,0 -17,-17z" />
+
+    <!-- Inner Golden Glowing Filament Coil Structure -->
+    <!-- Center Support Rods -->
+    <path
+        android:fillColor="#D97706"
+        android:pathData="M31.2,20h1.6v20h-1.6z" />
+    <!-- Zig-Zag Filament Wires (Glowing Amber/Yellow) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M24,20L28,30L32,20L36,30L40,20" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FEF08A"
+        android:strokeWidth="0.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M24,20L28,30L32,20L36,30L40,20" />
+
+    <!-- Vintage Brass Threaded Base -->
+    <path
+        android:fillColor="#B45309"
+        android:pathData="M24,45h16v3h-16zm0.5,4h15v3h-15zm1,4h13v3h-13z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M27,56h10a2,2 0 0,1 -2,2h-6a2,2 0 0,1 -2,-2z" />
+</vector>

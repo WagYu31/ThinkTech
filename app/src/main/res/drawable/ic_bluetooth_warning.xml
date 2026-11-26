@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="36"
+    android:viewportHeight="36">
+    <!-- Gray Circular Base -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M16,3A13,13 0 1,0 29,16A13,13 0 0,0 16,3z" />
+
+    <!-- White Bluetooth Icon -->
+    <path
+        android:pathData="M13,11l6.5,5.5L15,20.5v-10l4.5,4L13,20"
+        android:strokeWidth="1.8"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Red Alert Badge -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M29,7A5,5 0 1,0 34,12A5,5 0 0,0 29,7z" />
+    <!-- White Exclamation Mark inside Red Badge -->
+    <path
+        android:pathData="M29,8.5v3"
+        android:strokeWidth="1.4"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M29,13.5a0.8,0.8 0 1,0 0.001,0z" />
+</vector>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tabRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F3F5F9"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:minHeight="48dp"
+    android:orientation="horizontal"
+    android:paddingTop="12dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="12dp">
+
+    <View
+        android:id="@+id/viewTabIndicator"
+        android:layout_width="3.5dp"
+        android:layout_height="20dp"
+        android:background="@drawable/bg_manual_tab_active_bar"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvCategoryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plus_jakarta_sans_medium"
+        android:lineSpacingMultiplier="1.12"
+        android:maxLines="2"
+        android:text="Electrical"
+        android:textColor="@color/harmony_ink_secondary"
+        android:textSize="11.5sp" />
+</LinearLayout>

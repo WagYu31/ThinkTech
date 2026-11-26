@@ -1,0 +1,37 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Sensor body mini -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 125,50 L 155,50 A 10,10 0 0 1 165,60 L 165,110 A 10,10 0 0 1 155,120 L 125,120 A 10,10 0 0 1 115,110 L 115,60 A 10,10 0 0 1 125,50 Z" />
+
+    <!-- Red / Amber status LED flashing on front -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M 140,80 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -6,0" />
+
+    <!-- Flash pulse ring 1 -->
+    <path
+        android:strokeColor="#FCA5A5"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,80 m -18,0 a 18,18 0 1,0 36,0 a 18,18 0 1,0 -36,0" />
+
+    <!-- Flash pulse ring 2 -->
+    <path
+        android:strokeColor="#FEE2E2"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,80 m -32,0 a 32,32 0 1,0 64,0 a 32,32 0 1,0 -64,0" />
+
+</vector>

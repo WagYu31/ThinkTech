@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootCameraControl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/harmony_canvas"
+    android:orientation="vertical">
+
+    <!-- 1. HUAWEI AI LIFE SEAMLESS EDITORIAL TOP BAR -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_harmony_circle_btn"
+            android:contentDescription="Kembali"
+            android:padding="8dp"
+            android:src="@drawable/ic_chevron_left"
+            app:tint="@color/harmony_ink" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCameraTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:letterSpacing="-0.02"
+                android:maxLines="1"
+                android:text="Security Camera"
+                android:textColor="@color/harmony_ink"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/dotConnectionStatus"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_hyperos_status_dot" />
+
+                <TextView
+                    android:id="@+id/tvCameraSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:maxLines="1"
+                    android:text="Online • Live"
+                    android:textColor="@color/hyper_emerald_text"
+                    android:textSize="11.5sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnCameraOptions"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_harmony_circle_btn"
+            android:contentDescription="Opsi Kamera"
+            android:padding="9dp"
+            android:src="@drawable/ic_edit_pencil"
+            app:tint="@color/harmony_ink" />
+    </RelativeLayout>
+
+    <!-- 2. CINEMA-ROUNDED 16:9 REAL-TIME TUYA P2P VIDEO VIEWPORT -->
+    <FrameLayout
+        android:id="@+id/flVideoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="226dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="#0B0E14"
+        android:elevation="4dp">
+
+        <com.thingclips.smart.camera.middleware.widget.ThingCameraView
+            android:id="@+id/cameraVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Subtle Cinema Top & Bottom Scrims so HUD stays crisp over bright ceilings/desks -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="top"
+            android:background="@drawable/bg_cam_scrim_top" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_cam_scrim_bottom" />
+
+        <!-- Center Stream Status / Loading / Retry Overlay -->
+        <LinearLayout
+            android:id="@+id/layoutStreamOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#D90B0E14"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ProgressBar
+                android:id="@+id/pbStreamLoading"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:indeterminateTint="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvStreamStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:gravity="center"
+                android:text="Menghubungkan tayangan langsung..."
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvStreamDiag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/plus_jakarta_sans_regular"
+                android:gravity="center"
+                android:text="Menyiapkan koneksi terenkripsi..."
+                android:textColor="#99FFFFFF"
+                android:textSize="11sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/btnRetryStream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_harmony_btn_blue_solid"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="8dp"
+                android:text="Hubungkan Ulang"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Top-Right Clean Live + Rec HUD (above overlay & avoids hardware top-left timestamp) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvRecBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_ai_pill"
+                android:backgroundTint="#E84026"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="4dp"
+                android:text="● REC"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_cam_hud_pill"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp">
+
+                <View
+                    android:id="@+id/dotLiveIndicator"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="#FF3B30" />
+
+                <TextView
+                    android:id="@+id/tvLiveBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:letterSpacing="0.03"
+                    android:text="LIVE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10.5sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Bottom Video HUD Controls (Crisp Frosted HD/SD & Fullscreen) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/btnToggleClarity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_cam_hud_pill"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:text="HD"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:id="@+id/btnFullscreen"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:background="@drawable/bg_cam_hud_circle"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cam_fullscreen"
+                    app:tint="#FFFFFF" />
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 3. PINNED HUAWEI AI LIFE BORDERLESS MEDIA ACTION DOCK -->
+    <LinearLayout
+        android:id="@+id/layoutMediaDock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_harmony_card_white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="12dp">
+
+        <!-- 1. Speaker / Mute -->
+        <LinearLayout
+            android:id="@+id/btnAudioMute"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/flAudioMuteCircle"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_harmony_power_off">
+
+                <ImageView
+                    android:id="@+id/ivAudioMute"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cam_speaker_off"
+                    app:tint="@color/harmony_ink" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvAudioMute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Suara"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <!-- 2. Two-Way Talk / Intercom -->
+        <LinearLayout
+            android:id="@+id/btnTwoWayTalk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/flTalkCircle"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_harmony_power_off">
+
+                <ImageView
+                    android:id="@+id/ivTwoWayTalk"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cam_mic"
+                    app:tint="@color/harmony_ink" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvTwoWayTalk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Bicara"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <!-- 3. Snapshot -->
+        <LinearLayout
+            android:id="@+id/btnSnapshot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/flSnapshotCircle"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_harmony_power_off">
+
+                <ImageView
+                    android:id="@+id/ivSnapshot"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cam_snapshot"
+                    app:tint="@color/harmony_ink" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Potret"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <!-- 4. Record Video -->
+        <LinearLayout
+            android:id="@+id/btnRecord"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/flRecordCircle"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_harmony_power_off">
+
+                <ImageView
+                    android:id="@+id/ivRecord"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cam_record"
+                    app:tint="@color/harmony_ink" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Rekam"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 4. SCROLLABLE HARMONYOS CONTROLS BELOW MEDIA DOCK -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollControls"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:fadingEdgeLength="10dp"
+        android:overScrollMode="never"
+        android:requiresFadingEdge="vertical"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="28dp">
+
+            <!-- A. HUAWEI AI LIFE SCULPTURED CIRCULAR PTZ WHEEL CARD -->
+            <LinearLayout
+                android:id="@+id/cardPtzSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_harmony_card_white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingHorizontal="18dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:letterSpacing="-0.015"
+                            android:text="Kontrol Arah Lensa"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Sentuh atau tahan arah pada roda kendali"
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="11.5sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_harmony_soft_blue_pill"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:text="360° PTZ"
+                        android:textColor="@color/harmony_blue"
+                        android:textSize="10.5sp" />
+                </RelativeLayout>
+
+                <!-- Sculpted Circular Tactile PTZ Dial (204dp x 204dp) -->
+                <FrameLayout
+                    android:id="@+id/flPtzWheel"
+                    android:layout_width="204dp"
+                    android:layout_height="204dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_harmony_ptz_wheel"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <!-- UP -->
+                    <FrameLayout
+                        android:id="@+id/btnPtzUp"
+                        android:layout_width="76dp"
+                        android:layout_height="62dp"
+                        android:layout_gravity="top|center_horizontal"
+                        android:background="@drawable/bg_harmony_ptz_dir_ripple"
+                        android:clickable="true"
+                        android:contentDescription="Geser Atas"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/ivPtzUp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_ptz_up"
+                            app:tint="@color/harmony_ink" />
+                    </FrameLayout>
+
+                    <!-- DOWN -->
+                    <FrameLayout
+                        android:id="@+id/btnPtzDown"
+                        android:layout_width="76dp"
+                        android:layout_height="62dp"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:background="@drawable/bg_harmony_ptz_dir_ripple"
+                        android:clickable="true"
+                        android:contentDescription="Geser Bawah"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/ivPtzDown"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_ptz_down"
+                            app:tint="@color/harmony_ink" />
+                    </FrameLayout>
+
+                    <!-- LEFT -->
+                    <FrameLayout
+                        android:id="@+id/btnPtzLeft"
+                        android:layout_width="62dp"
+                        android:layout_height="76dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:background="@drawable/bg_harmony_ptz_dir_ripple"
+                        android:clickable="true"
+                        android:contentDescription="Geser Kiri"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/ivPtzLeft"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_ptz_left"
+                            app:tint="@color/harmony_ink" />
+                    </FrameLayout>
+
+                    <!-- RIGHT -->
+                    <FrameLayout
+                        android:id="@+id/btnPtzRight"
+                        android:layout_width="62dp"
+                        android:layout_height="76dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:background="@drawable/bg_harmony_ptz_dir_ripple"
+                        android:clickable="true"
+                        android:contentDescription="Geser Kanan"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:id="@+id/ivPtzRight"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_ptz_right"
+                            app:tint="@color/harmony_ink" />
+                    </FrameLayout>
+
+                    <!-- Elevated Circular Center Stop Hub -->
+                    <FrameLayout
+                        android:id="@+id/btnPtzStop"
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_harmony_ptz_center"
+                        android:clickable="true"
+                        android:contentDescription="Hentikan Pergerakan Lensa"
+                        android:elevation="4dp"
+                        android:focusable="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:letterSpacing="0.06"
+                            android:text="STOP"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="11sp" />
+                    </FrameLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- B. SMART CAMERA FEATURES (BORDERLESS GROUPED HARMONYOS CARD) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_harmony_card_white"
+                android:orientation="vertical"
+                android:paddingStart="18dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="18dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:letterSpacing="-0.015"
+                    android:text="Fitur Pintar Kamera"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="15sp" />
+
+                <!-- 1. Motion Detection -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="60dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Deteksi Gerakan"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Kirim notifikasi saat terdeteksi pergerakan"
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="11.5sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchMotionDetect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/harmony_switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/harmony_switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/harmony_divider" />
+
+                <!-- 2. Motion Tracking -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="60dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Pelacakan Objek Otomatis"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Lensa mengikuti arah gerakan secara aktif"
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="11.5sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchMotionTrack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/harmony_switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/harmony_switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/harmony_divider" />
+
+                <!-- 3. Night Vision Mode -->
+                <LinearLayout
+                    android:id="@+id/rowNightVision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:minHeight="60dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Mode Malam Inframerah (IR)"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Ketuk untuk ganti Otomatis / Aktif / Mati"
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="11.5sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvNightVisionMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_harmony_soft_blue_pill"
+                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                        android:paddingHorizontal="13dp"
+                        android:paddingVertical="6dp"
+                        android:text="Otomatis"
+                        android:textColor="@color/harmony_blue"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/harmony_divider" />
+
+                <!-- 4. Privacy / Sleep Mode -->
+                <LinearLayout
+                    android:id="@+id/rowPrivateMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="60dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Mode Privasi (Tidur)"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Nonaktifkan sementara perekaman lensa"
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="11.5sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchPrivateMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/harmony_switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/harmony_switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/dividerPrivateMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/harmony_divider" />
+
+                <!-- 5. Flip Screen 180° -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="60dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Putar Gambar 180°"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Untuk pemasangan kamera terbalik di plafon"
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="11.5sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchFlipScreen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/harmony_switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/harmony_switch_track" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/harmony_divider" />
+
+                <!-- 6. Status Indicator LED -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="60dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Lampu Indikator Kamera"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:text="Nyalakan atau matikan LED status pada unit"
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="11.5sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchIndicatorLed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/harmony_switch_thumb"
+                        app:trackDecorationTint="@android:color/transparent"
+                        app:trackTint="@color/harmony_switch_track" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- C. SIREN & DELETE ACTION ROW (CLEAN BORDERLESS HARMONYOS CARDS) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btnSirenAlarm"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_harmony_siren_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:gravity="center"
+                    android:text="Bunyikan Sirene"
+                    android:textColor="#D97706"
+                    android:textSize="13.5sp" />
+
+                <TextView
+                    android:id="@+id/btnDeleteCamera"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_harmony_logout_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:gravity="center"
+                    android:text="Hapus Kamera"
+                    android:textColor="@color/status_red"
+                    android:textSize="13.5sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

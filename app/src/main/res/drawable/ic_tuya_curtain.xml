@@ -1,0 +1,48 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M12,18h40a4,4 0 0,1 4,4v28a4,4 0 0,1 -4,4H12a4,4 0 0,1 -4,-4V22a4,4 0 0,1 4,-4z" />
+
+    <!-- Top Curtain Track Rail (Aluminium Profile) -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M8,12h48v4H8z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M9,13h46v2H9z" />
+
+    <!-- Left & Right Fabric Drapery Folds (Soft Cyan / Light Blue) -->
+    <path
+        android:fillColor="#E0F2FE"
+        android:strokeColor="#BAE6FD"
+        android:strokeWidth="1"
+        android:pathData="M11,16c3,4 3,34 0,38h7c-2,-4 -2,-34 0,-38zM53,16c-3,4 -3,34 0,38h-7c2,-4 2,-34 0,-38z" />
+
+    <!-- Center Tubular Curtain Motor Unit (White & Slate Cylinder) -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M27,16h10a2,2 0 0,1 2,2v34a2,2 0 0,1 -2,2H27a2,2 0 0,1 -2,-2V18a2,2 0 0,1 2,-2z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,17.5h8a1,1 0 0,1 1,1v31a1,1 0 0,1 -1,1h-8a1,1 0 0,1 -1,-1v-31a1,1 0 0,1 1,-1z" />
+
+    <!-- Drive Gear Coupling Head at Top -->
+    <path
+        android:fillColor="#334155"
+        android:pathData="M29,14h6v3h-6z" />
+
+    <!-- Smart Wi-Fi / Zigbee LED Indicator & Control Button -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M32,44a2,2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M32,44a1,1 0 1,0 0.001,0z" />
+</vector>

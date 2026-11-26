@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    <!-- Soft outer glow halo -->
+    <path
+        android:fillColor="#261D68F2"
+        android:pathData="M16,1A15,15 0,1 1,1 16A15,15 0,0 1,16 1Z" />
+    <!-- Primary HyperAI orb core -->
+    <path
+        android:fillColor="#1D68F2"
+        android:pathData="M16,4A12,12 0,1 1,4 16A12,12 0,0 1,16 4Z" />
+    <!-- Subtle luminous cyan upper crescent -->
+    <path
+        android:fillColor="#4838BDF8"
+        android:pathData="M16,4A12,12 0,0 1,27.2 11.8C24.5,14.2 20.5,15.5 16,15.5C11.5,15.5 7.5,14.2 4.8,11.8A12,12 0,0 1,16 4Z" />
+    <!-- Crisp white 4-point HyperAI sparkle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,8.5L17.9,14.1L23.5,16L17.9,17.9L16,23.5L14.1,17.9L8.5,16L14.1,14.1L16,8.5Z" />
+</vector>

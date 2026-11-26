@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootDeviceControl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/harmony_canvas">
+
+    <!-- 1. HUAWEI AI LIFE SEAMLESS EDITORIAL TOP BAR -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_harmony_circle_btn"
+            android:contentDescription="Kembali"
+            android:padding="8dp"
+            android:src="@drawable/ic_chevron_left"
+            app:tint="@color/harmony_ink" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDeviceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:letterSpacing="-0.02"
+                android:maxLines="1"
+                android:text="WiFi 3ch switch"
+                android:textColor="@color/harmony_ink"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/dotConnectionStatus"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/bg_hyperos_status_dot"
+                    android:backgroundTint="@color/hyper_emerald" />
+
+                <TextView
+                    android:id="@+id/tvDeviceSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:maxLines="1"
+                    android:text="Online • Siaga"
+                    android:textColor="@color/hyper_emerald_text"
+                    android:textSize="11.5sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnEditDeviceName"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_harmony_circle_btn"
+            android:contentDescription="Ubah Nama"
+            android:padding="9dp"
+            android:src="@drawable/ic_edit_pencil"
+            app:tint="@color/harmony_ink" />
+    </RelativeLayout>
+
+    <!-- 2. SUBTLE DISMISSIBLE TIP STRIP -->
+    <LinearLayout
+        android:id="@+id/layoutBannerRename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_harmony_card_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <View
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:background="@drawable/bg_hyperos_status_dot"
+            android:backgroundTint="@color/harmony_blue" />
+
+        <TextView
+            android:id="@+id/tvBannerHint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="Tekan lama kartu saklar untuk mengubah nama saluran"
+            android:textColor="@color/harmony_ink_secondary"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/btnDismissBanner"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Tutup Tips"
+            android:padding="3dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/harmony_ink_muted" />
+    </LinearLayout>
+
+    <!-- 3. ARCHITECTURAL HARMONYOS CERAMIC SWITCH ROCKER PANELS (1 / 2 / 3 GANG) -->
+    <LinearLayout
+        android:id="@+id/layoutSwitches"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutBrightnessCard"
+        app:layout_constraintTop_toBottomOf="@id/layoutBannerRename">
+
+        <!-- ================= Column 1: Switch 1 ================= -->
+        <LinearLayout
+            android:id="@+id/colGang1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/cardGang1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_switch_off"
+                android:clickable="true"
+                android:clipToPadding="false"
+                android:elevation="3dp"
+                android:focusable="true"
+                android:outlineProvider="background"
+                android:paddingStart="12dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="18dp">
+
+                <LinearLayout
+                    android:id="@+id/llTopGang1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvBadgeGang1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_harmony_switch_chip_off"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp"
+                        android:text="L1"
+                        android:textColor="@color/harmony_ink_secondary"
+                        android:textSize="10.5sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:id="@+id/flGang1PowerBtn"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:background="@drawable/bg_harmony_power_off">
+
+                        <ImageView
+                            android:id="@+id/ivGang1Icon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_power"
+                            app:tint="@color/harmony_ink_secondary" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvGang1State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:letterSpacing="-0.02"
+                        android:text="OFF"
+                        android:textColor="@color/harmony_ink_muted"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvGang1StateSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                        android:text="Siaga"
+                        android:textColor="@color/ink_subtle"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/ledGang1"
+                    android:layout_width="34dp"
+                    android:layout_height="4.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/bg_harmony_switch_led_off" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvGang1Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:maxLines="1"
+                android:text="Switch 1"
+                android:textColor="@color/harmony_ink"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/tvGang1Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Saluran L1 • OFF"
+                android:textColor="@color/harmony_ink_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- ================= Column 2: Switch 2 ================= -->
+        <LinearLayout
+            android:id="@+id/colGang2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/cardGang2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_switch_off"
+                android:clickable="true"
+                android:clipToPadding="false"
+                android:elevation="3dp"
+                android:focusable="true"
+                android:outlineProvider="background"
+                android:paddingStart="12dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="18dp">
+
+                <LinearLayout
+                    android:id="@+id/llTopGang2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvBadgeGang2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_harmony_switch_chip_off"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp"
+                        android:text="L2"
+                        android:textColor="@color/harmony_ink_secondary"
+                        android:textSize="10.5sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:id="@+id/flGang2PowerBtn"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:background="@drawable/bg_harmony_power_off">
+
+                        <ImageView
+                            android:id="@+id/ivGang2Icon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_power"
+                            app:tint="@color/harmony_ink_secondary" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvGang2State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:letterSpacing="-0.02"
+                        android:text="OFF"
+                        android:textColor="@color/harmony_ink_muted"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvGang2StateSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                        android:text="Siaga"
+                        android:textColor="@color/ink_subtle"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/ledGang2"
+                    android:layout_width="34dp"
+                    android:layout_height="4.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/bg_harmony_switch_led_off" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvGang2Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:maxLines="1"
+                android:text="Switch 2"
+                android:textColor="@color/harmony_ink"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/tvGang2Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Saluran L2 • OFF"
+                android:textColor="@color/harmony_ink_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- ================= Column 3: Switch 3 ================= -->
+        <LinearLayout
+            android:id="@+id/colGang3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/cardGang3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_switch_off"
+                android:clickable="true"
+                android:clipToPadding="false"
+                android:elevation="3dp"
+                android:focusable="true"
+                android:outlineProvider="background"
+                android:paddingStart="12dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="18dp">
+
+                <LinearLayout
+                    android:id="@+id/llTopGang3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvBadgeGang3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_harmony_switch_chip_off"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="3dp"
+                        android:text="L3"
+                        android:textColor="@color/harmony_ink_secondary"
+                        android:textSize="10.5sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:id="@+id/flGang3PowerBtn"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:background="@drawable/bg_harmony_power_off">
+
+                        <ImageView
+                            android:id="@+id/ivGang3Icon"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_power"
+                            app:tint="@color/harmony_ink_secondary" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvGang3State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:letterSpacing="-0.02"
+                        android:text="OFF"
+                        android:textColor="@color/harmony_ink_muted"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvGang3StateSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/plus_jakarta_sans_medium"
+                        android:text="Siaga"
+                        android:textColor="@color/ink_subtle"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/ledGang3"
+                    android:layout_width="34dp"
+                    android:layout_height="4.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/bg_harmony_switch_led_off" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvGang3Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:maxLines="1"
+                android:text="Switch 3"
+                android:textColor="@color/harmony_ink"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/tvGang3Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Saluran L3 • OFF"
+                android:textColor="@color/harmony_ink_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 3B. SCROLLABLE SPECIALIZED DEVICE STUDIOS (RGB BULB / SMART PLUG / CLIMATE / CURTAIN) -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollDeviceStudio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="8dp"
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:fadingEdgeLength="10dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:requiresFadingEdge="vertical"
+        android:scrollbars="none"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/layoutBottomActions"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <LinearLayout
+            android:id="@+id/containerDeviceStudio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
+
+            <include
+                android:id="@+id/lightingStudio"
+                layout="@layout/include_harmony_lighting_studio" />
+
+            <include
+                android:id="@+id/plugStudio"
+                layout="@layout/include_harmony_plug_studio" />
+
+            <include
+                android:id="@+id/climateStudio"
+                layout="@layout/include_harmony_climate_studio" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- 4. DYNAMIC LIGHTING BRIGHTNESS CARD (Fallback only) -->
+    <LinearLayout
+        android:id="@+id/layoutBrightnessCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_harmony_card_white"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="14dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/layoutBottomActions">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Kecerahan Cahaya"
+                android:textColor="@color/harmony_ink"
+                android:textSize="13.5sp" />
+
+            <TextView
+                android:id="@+id/tvBrightnessPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_harmony_soft_blue_pill"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="80%"
+                android:textColor="@color/harmony_blue"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekBrightness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="80"
+            android:progressBackgroundTint="#E2E7F0"
+            android:progressTint="@color/harmony_blue"
+            android:thumbTint="@color/harmony_blue" />
+    </LinearLayout>
+
+    <!-- 5. BORDERLESS HUAWEI AI LIFE 4-ACTION DOCK -->
+    <LinearLayout
+        android:id="@+id/layoutBottomActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_harmony_card_white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutVoiceAssistant">
+
+        <!-- 1. All On -->
+        <LinearLayout
+            android:id="@+id/btnMasterAllOn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/flMasterAllOnCircle"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_harmony_action_circle_blue">
+
+                <TextView
+                    android:id="@+id/tvMasterAllOnBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:text="ON"
+                    android:textColor="@color/harmony_blue"
+                    android:textSize="12.5sp" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvMasterAllOnLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Semua ON"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <!-- 2. Timer -->
+        <LinearLayout
+            android:id="@+id/btnActionTimer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_harmony_power_off">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_tuya_timer"
+                    app:tint="@color/harmony_ink" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Timer"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <!-- 3. Settings -->
+        <LinearLayout
+            android:id="@+id/btnActionSetting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_harmony_power_off">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_tuya_cube_setting"
+                    app:tint="@color/harmony_ink" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Pengaturan"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <!-- 4. All Off -->
+        <LinearLayout
+            android:id="@+id/btnMasterAllOff"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/flMasterAllOffCircle"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_harmony_action_circle_red">
+
+                <TextView
+                    android:id="@+id/tvMasterAllOffBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:text="OFF"
+                    android:textColor="@color/status_red"
+                    android:textSize="12.5sp" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvMasterAllOffLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="Semua OFF"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 6. BORDERLESS HARMONYOS AI ASSISTANT BAR -->
+    <LinearLayout
+        android:id="@+id/layoutVoiceAssistant"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_harmony_card_white"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="14dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/ivVoiceOrb"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_ai_orb" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="Bantuan Pintar ThinkTech..."
+            android:textColor="@color/harmony_ink_secondary"
+            android:textSize="13.5sp" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_menu_bars"
+            app:tint="@color/harmony_ink_muted" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

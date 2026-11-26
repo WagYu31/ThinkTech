@@ -1,0 +1,61 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M20,8h24a8,8 0 0,1 8,8v34a8,8 0 0,1 -8,8H20a8,8 0 0,1 -8,-8V16a8,8 0 0,1 8,-8z" />
+
+    <!-- Cylindrical Boiler Outer Body -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M20,6h24a7,7 0 0,1 7,7v36a7,7 0 0,1 -7,7H20a7,7 0 0,1 -7,-7V13a7,7 0 0,1 7,-7z" />
+
+    <!-- Pure White Front Enamel -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M21,7.5h22a5.5,5.5 0 0,1 5.5,5.5v33a5.5,5.5 0 0,1 -5.5,5.5H21a5.5,5.5 0 0,1 -5.5,-5.5V13a5.5,5.5 0 0,1 5.5,-5.5z" />
+
+    <!-- Central Smart Control Panel (Dark Glass) -->
+    <path
+        android:fillColor="#0F172A"
+        android:strokeColor="#0284C7"
+        android:strokeWidth="1"
+        android:pathData="M26,24h12a2,2 0 0,1 2,2v14a2,2 0 0,1 -2,2H26a2,2 0 0,1 -2,-2V26a2,2 0 0,1 2,-2z" />
+
+    <!-- Digital Temperature Readout (Glowing Hot 65°C) -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M28,28h8v4h-8z" />
+
+    <!-- Hot Water Shower Icon / Flame Glow -->
+    <path
+        android:fillColor="#F97316"
+        android:pathData="M31,34 C31,32 33,32 33,34 C33,35.5 31.5,37 31,37 C30.5,37 29,35.5 29,34 C29,32 31,32 31,34 Z" />
+
+    <!-- Temperature Adjust Touch Buttons (- / +) -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M27,39h2v1h-2z M35,39h2v1h-2z M36,38.5h1v2h-1z" />
+
+    <!-- Bottom Inlet/Outlet Metallic Pipes -->
+    <!-- Cold Water Pipe (Blue Ring) -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M24,56h4v5h-4z" />
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M24,54h4v2h-4z" />
+
+    <!-- Hot Water Pipe (Red Ring) -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M36,56h4v5h-4z" />
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M36,54h4v2h-4z" />
+</vector>

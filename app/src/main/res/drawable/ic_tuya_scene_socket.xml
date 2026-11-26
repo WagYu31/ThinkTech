@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Glowing warm yellow dome -->
+    <path
+        android:fillColor="#FDE68A"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="1.5"
+        android:pathData="M15,31 C15,22 18,17 24,17 C30,17 33,22 33,31 Z" />
+    <!-- White base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:pathData="M13,31 L35,31 L34,36 C34,37 33,38 32,38 L16,38 C15,38 14,37 14,36 Z" />
+</vector>

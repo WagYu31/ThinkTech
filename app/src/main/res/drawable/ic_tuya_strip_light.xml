@@ -1,0 +1,54 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M32,10a22,22 0 1,0 0.001,0z" />
+
+    <!-- Spool Outer Disc (Black / Dark Slate Rim) -->
+    <path
+        android:fillColor="#1E293B"
+        android:strokeColor="#334155"
+        android:strokeWidth="1.2"
+        android:pathData="M32,8a21,21 0 1,0 0.001,0z" />
+
+    <!-- Coiled Ribbon Ring (Glowing Cyan & Magenta segments) -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M32,11a18,18 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#EC4899"
+        android:pathData="M32,13a16,16 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M32,15a14,14 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#8B5CF6"
+        android:pathData="M32,17a12,12 0 1,0 0.001,0z" />
+
+    <!-- Center Spool Hub Core -->
+    <path
+        android:fillColor="#0F172A"
+        android:strokeColor="#475569"
+        android:strokeWidth="1"
+        android:pathData="M32,22a10,10 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M32,27a5,5 0 1,0 0.001,0z" />
+
+    <!-- LED Emitter Dots along Ribbon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,12a1.5,1.5 0 1,0 0.001,0zm12,5a1.5,1.5 0 1,0 0.001,0zm5,12a1.5,1.5 0 1,0 0.001,0zm-5,12a1.5,1.5 0 1,0 0.001,0zm-12,5a1.5,1.5 0 1,0 0.001,0zm-12,-5a1.5,1.5 0 1,0 0.001,0zm-5,-12a1.5,1.5 0 1,0 0.001,0zm5,-12a1.5,1.5 0 1,0 0.001,0z" />
+
+    <!-- Uncoiled End Cable with Smart Controller Dongle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M44,40L54,50L51,53L41,43Z" />
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M52,48h5a2,2 0 0,1 2,2v4a2,2 0 0,1 -2,2h-5a2,2 0 0,1 -2,-2v-4a2,2 0 0,1 2,-2z" />
+</vector>

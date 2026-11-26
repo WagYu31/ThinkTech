@@ -1,0 +1,2479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/harmony_canvas">
+
+    <!-- Main Content Container above Bottom Navigation -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="64dp">
+
+        <!-- ================= TAB 1: RUMAH (HUAWEI AI LIFE / HARMONYOS) ================= -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/tabHomeContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/harmony_canvas"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="108dp">
+
+                    <!-- 1. HARMONYOS EDITORIAL TOP BAR -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false">
+
+                        <!-- Left: Large Architectural Home Selector -->
+                        <LinearLayout
+                            android:id="@+id/layoutHomeSelector"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingEnd="8dp">
+
+                            <TextView
+                                android:id="@+id/tvHomeName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:letterSpacing="-0.03"
+                                android:text="Rumah Saya"
+                                android:textColor="@color/harmony_ink"
+                                android:textSize="25sp" />
+
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:layout_height="17dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="1dp"
+                                android:contentDescription="Pilih Rumah"
+                                android:src="@drawable/ic_chevron_down"
+                                app:tint="@color/harmony_ink_secondary" />
+                        </LinearLayout>
+
+                        <!-- Right: Clean Borderless White AI Pill + Circular Add (+) -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/btnPlusPill"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:background="@drawable/bg_harmony_pill_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingStart="11dp"
+                                android:paddingEnd="12dp">
+
+                                <ImageView
+                                    android:layout_width="13dp"
+                                    android:layout_height="13dp"
+                                    android:contentDescription="AI Plus"
+                                    android:src="@drawable/ic_hyper_sparkle"
+                                    app:tint="@color/harmony_blue" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="AI"
+                                    android:textColor="@color/harmony_blue"
+                                    android:textSize="12.5sp" />
+                            </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/btnTopAddDevice"
+                                android:layout_width="38dp"
+                                android:layout_height="38dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/bg_harmony_circle_btn"
+                                android:contentDescription="Tambah Perangkat"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_add"
+                                app:tint="@color/harmony_ink" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <!-- 2. HUAWEI LIGHT-FIELD ARCHITECTURAL HOME OVERVIEW CARD -->
+                    <com.thinktech.smarthome.ui.home.HarmonyLightFieldCard
+                        android:id="@+id/layoutIndoorCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:paddingStart="20dp"
+                        android:paddingTop="18dp"
+                        android:paddingEnd="18dp"
+                        android:paddingBottom="18dp">
+
+                        <!-- Top Header: Spatial Tag + Editorial Status Headline + Minimal + Sensor Pill -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:letterSpacing="0.06"
+                                    android:text="STATUS RUMAH"
+                                    android:textColor="@color/harmony_blue"
+                                    android:textSize="10sp" />
+
+                                <TextView
+                                    android:id="@+id/tvHomeSummarySub"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.02"
+                                    android:text="Semua Terkendali"
+                                    android:textColor="@color/harmony_ink"
+                                    android:textSize="19sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/btnAddIndoor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/bg_harmony_pill_white"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                android:paddingStart="13dp"
+                                android:paddingTop="7dp"
+                                android:paddingEnd="13dp"
+                                android:paddingBottom="7dp"
+                                android:text="+ Sensor"
+                                android:textColor="@color/harmony_blue"
+                                android:textSize="11.5sp" />
+                        </RelativeLayout>
+
+                        <!-- Whisper-thin Hairline Divider -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@color/harmony_divider" />
+
+                        <!-- 3 Borderless Editorial Telemetry Columns (ZERO nested boxes) -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Metric 1: Online -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvStatOnline"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.02"
+                                    android:text="0/0"
+                                    android:textColor="@color/harmony_ink"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:text="Online"
+                                    android:textColor="@color/harmony_ink_secondary"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="28dp"
+                                android:background="@color/harmony_divider" />
+
+                            <!-- Metric 2: Active ON -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingStart="16dp">
+
+                                <TextView
+                                    android:id="@+id/tvStatActive"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.02"
+                                    android:text="0"
+                                    android:textColor="@color/harmony_blue"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:text="Menyala"
+                                    android:textColor="@color/harmony_ink_secondary"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="28dp"
+                                android:background="@color/harmony_divider" />
+
+                            <!-- Metric 3: Climate -->
+                            <LinearLayout
+                                android:id="@+id/chipClimateSensor"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:paddingStart="16dp">
+
+                                <TextView
+                                    android:id="@+id/tvStatClimate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.02"
+                                    android:text="24°C"
+                                    android:textColor="@color/harmony_ink"
+                                    android:textSize="22sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:maxLines="1"
+                                    android:text="Iklim Ideal"
+                                    android:textColor="@color/harmony_ink_secondary"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.thinktech.smarthome.ui.home.HarmonyLightFieldCard>
+
+                    <!-- 3. HUAWEI AI LIFE 1-TAP QUICK SCENE BAR -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/btnQuickHome"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_harmony_pill_white"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="10dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:contentDescription="Pulang"
+                                android:src="@drawable/ic_scene_home" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                android:text="Pulang"
+                                android:textColor="@color/harmony_ink"
+                                android:textSize="12.5sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnQuickLeave"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_harmony_pill_white"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="10dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:contentDescription="Keluar"
+                                android:src="@drawable/ic_scene_leave" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                android:text="Keluar"
+                                android:textColor="@color/harmony_ink"
+                                android:textSize="12.5sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnQuickSleep"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_harmony_pill_white"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="10dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:contentDescription="Tidur"
+                                android:src="@drawable/ic_scene_sleep" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                android:text="Tidur"
+                                android:textColor="@color/harmony_ink"
+                                android:textSize="12.5sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 4. SMART EMPTY-STATE CARD (Visible ONLY when 0 devices exist) -->
+                    <LinearLayout
+                        android:id="@+id/layoutHeroEmptyState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_harmony_card_white"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="24dp"
+                        android:paddingVertical="26dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:letterSpacing="-0.02"
+                            android:text="Tambahkan Perangkat Pertama"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:gravity="center"
+                            android:text="Hubungkan saklar, lampu, atau kamera pintar untuk mulai mengendalikan rumah Anda"
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="12.5sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnHeroAddDevice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/bg_harmony_soft_blue_pill"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:minWidth="168dp"
+                            android:paddingStart="24dp"
+                            android:paddingEnd="24dp"
+                            android:stateListAnimator="@null"
+                            android:text="+ Tambah Perangkat"
+                            android:textAllCaps="false"
+                            android:textColor="@color/harmony_blue"
+                            android:textSize="13.5sp" />
+                    </LinearLayout>
+
+                    <!-- 5. HARMONYOS TYPOGRAPHIC ROOM TABS + 2-COLUMN BORDERLESS DEVICE GRID -->
+                    <LinearLayout
+                        android:id="@+id/sectionConnectedDevices"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tvConnectedDevicesTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:letterSpacing="-0.02"
+                                android:text="Perangkat (0)"
+                                android:textColor="@color/harmony_ink"
+                                android:textSize="17sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="6dp"
+                                    android:layout_height="6dp"
+                                    android:background="@drawable/bg_hyperos_status_dot" />
+
+                                <TextView
+                                    android:id="@+id/tvOnlineCountBadge"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="0 Online"
+                                    android:textColor="@color/hyper_emerald_text"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <!-- Huawei HarmonyOS Dynamic Typographic Room Tabs (synced with Family & Room Management) -->
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:overScrollMode="never"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/layoutRoomTabsContainer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                        <!-- 2-Column Borderless Device Grid -->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvDevices"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never" />
+
+                        <!-- Empty Room Filter State -->
+                        <LinearLayout
+                            android:id="@+id/layoutEmpty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/bg_harmony_card_white"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="22dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tvEmptyRoomHint"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/plus_jakarta_sans_medium"
+                                android:text="Belum ada perangkat di ruangan ini"
+                                android:textColor="@color/harmony_ink_secondary"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 6. LAYANAN CERDAS AI (BORDERLESS HARMONYOS CARD) -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:letterSpacing="-0.02"
+                            android:text="Layanan Cerdas"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tvSeeMoreRecommended"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:padding="4dp"
+                            android:text="Lainnya ›"
+                            android:textColor="@color/harmony_blue"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutNotesCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_harmony_card_white"
+                        android:orientation="vertical"
+                        android:padding="18dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <FrameLayout
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/bg_harmony_icon_blue">
+
+                                    <ImageView
+                                        android:layout_width="22dp"
+                                        android:layout_height="22dp"
+                                        android:layout_gravity="center"
+                                        android:contentDescription="Catatan AI"
+                                        android:src="@drawable/ic_ai_chat_bubble" />
+                                </FrameLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="12dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                        android:text="Catatan AI"
+                                        android:textColor="@color/harmony_ink"
+                                        android:textSize="15sp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                                        android:text="Ringkasan suara &amp; interaksi alami"
+                                        android:textColor="@color/harmony_ink_secondary"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/btnAddNotes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/bg_harmony_soft_blue_pill"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                android:paddingStart="14dp"
+                                android:paddingTop="6dp"
+                                android:paddingEnd="14dp"
+                                android:paddingBottom="6dp"
+                                android:text="Buka"
+                                android:textColor="@color/harmony_blue"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/tileSimultaneous"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_harmony_subtile"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:contentDescription="Translate"
+                                    android:src="@drawable/ic_translate"
+                                    app:tint="@color/harmony_blue" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:lineSpacingMultiplier="1.15"
+                                    android:text="Terjemahan\nLangsung"
+                                    android:textColor="@color/harmony_ink"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/tileConversation"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_harmony_subtile"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:padding="12dp">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:contentDescription="Conversation"
+                                    android:src="@drawable/ic_conversation"
+                                    app:tint="@color/hyper_emerald_text" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:lineSpacingMultiplier="1.15"
+                                    android:text="Mode\nPercakapan"
+                                    android:textColor="@color/harmony_ink"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!-- ================= TAB 2: SMART (FLAGSHIP AUTOMATION & TAP-TO-RUN STUDIO) ================= -->
+        <FrameLayout
+            android:id="@+id/tabSmartContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F5F7FA"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingTop="14dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="104dp">
+
+                    <!-- Editorial Smart Header Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvSmartHomeTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.03"
+                                    android:text="Rumah Saya"
+                                    android:textColor="#151922"
+                                    android:textSize="25sp" />
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="2dp"
+                                    android:rotation="270"
+                                    android:src="@drawable/ic_chevron_left"
+                                    app:tint="#151922" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvSmartSubtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/plus_jakarta_sans_medium"
+                                android:text="6 pintasan instan • 2 jadwal aktif"
+                                android:textColor="#717887"
+                                android:textSize="12.5sp" />
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:id="@+id/btnSmartLogHeader"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_harmony_circle_btn"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="19dp"
+                                android:layout_height="19dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="Riwayat Otomasi"
+                                android:src="@drawable/ic_tuya_schedule"
+                                app:tint="#151922" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/btnSmartAddHeader"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_harmony_circle_btn"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <ImageView
+                                android:layout_width="19dp"
+                                android:layout_height="19dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="Tambah Jadwal"
+                                android:src="@drawable/ic_smart_plus"
+                                app:tint="#3B5BFF" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <!-- Royal-Blue 2-Segment Mode Switcher (Otomasi | Sekali Sentuh) -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/bg_smart_card_white_22"
+                        android:elevation="1dp"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:id="@+id/tabSmartAutomation"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:gravity="center"
+                            android:text="Otomasi"
+                            android:textColor="#2A303D"
+                            android:textSize="13.5sp" />
+
+                        <TextView
+                            android:id="@+id/tabSmartTapToRun"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_lamp_tab_active"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:gravity="center"
+                            android:text="Sekali Sentuh"
+                            android:textColor="#FFFFFF"
+                            android:textSize="13.5sp" />
+                    </LinearLayout>
+
+                    <!-- SUB-TAB A: VIBRANT 2-COLUMN GRADIENT TAP-TO-RUN GRID -->
+                    <LinearLayout
+                        android:id="@+id/panelSmartTapToRun"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <!-- Row 1: Nyalakan Lampu Cepat (Amber) & Persiapan Tidur (Ocean) -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/btnRunSceneLightsOn"
+                                android:layout_width="0dp"
+                                android:layout_height="156dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_smart_grad_amber"
+                                android:clickable="true"
+                                android:elevation="3dp"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <FrameLayout
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_alignParentStart="true"
+                                        android:background="@drawable/bg_smart_white_circle">
+
+                                        <ImageView
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/ic_lamp_brightness"
+                                            app:tint="#F97316" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="26dp"
+                                        android:layout_height="26dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true">
+
+                                        <ImageView
+                                            android:id="@+id/ivSceneLightsOnArrow"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="center"
+                                            android:rotation="180"
+                                            android:src="@drawable/ic_chevron_left"
+                                            app:tint="#E6FFFFFF" />
+
+                                        <ProgressBar
+                                            android:id="@+id/pbSceneLightsOn"
+                                            style="?android:attr/progressBarStyleSmall"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_gravity="center"
+                                            android:indeterminateTint="#FFFFFF"
+                                            android:visibility="gone" />
+                                    </FrameLayout>
+                                </RelativeLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.015"
+                                    android:text="Lampu Cepat ON"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15.5sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:text="Nyalakan semua • 1 tugas"
+                                    android:textColor="#D9FFFFFF"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/btnRunSceneSleep"
+                                android:layout_width="0dp"
+                                android:layout_height="156dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_smart_grad_ocean"
+                                android:clickable="true"
+                                android:elevation="3dp"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <FrameLayout
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_alignParentStart="true"
+                                        android:background="@drawable/bg_smart_white_circle">
+
+                                        <ImageView
+                                            android:layout_width="21dp"
+                                            android:layout_height="21dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/ic_scene_sleep"
+                                            app:tint="#2563EB" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="26dp"
+                                        android:layout_height="26dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true">
+
+                                        <ImageView
+                                            android:id="@+id/ivSceneSleepArrow"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="center"
+                                            android:rotation="180"
+                                            android:src="@drawable/ic_chevron_left"
+                                            app:tint="#E6FFFFFF" />
+
+                                        <ProgressBar
+                                            android:id="@+id/pbSceneSleep"
+                                            style="?android:attr/progressBarStyleSmall"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_gravity="center"
+                                            android:indeterminateTint="#FFFFFF"
+                                            android:visibility="gone" />
+                                    </FrameLayout>
+                                </RelativeLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.015"
+                                    android:text="Persiapan Tidur"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15.5sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:text="Redupkan ruang • 2 tugas"
+                                    android:textColor="#D9FFFFFF"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Row 2: Pulang ke Rumah (Emerald) & Mode Produktif (Violet) -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/btnRunSceneHome"
+                                android:layout_width="0dp"
+                                android:layout_height="156dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_smart_grad_emerald"
+                                android:clickable="true"
+                                android:elevation="3dp"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <FrameLayout
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_alignParentStart="true"
+                                        android:background="@drawable/bg_smart_white_circle">
+
+                                        <ImageView
+                                            android:layout_width="21dp"
+                                            android:layout_height="21dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/ic_scene_home"
+                                            app:tint="#059669" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="26dp"
+                                        android:layout_height="26dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true">
+
+                                        <ImageView
+                                            android:id="@+id/ivSceneHomeArrow"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="center"
+                                            android:rotation="180"
+                                            android:src="@drawable/ic_chevron_left"
+                                            app:tint="#E6FFFFFF" />
+
+                                        <ProgressBar
+                                            android:id="@+id/pbSceneHome"
+                                            style="?android:attr/progressBarStyleSmall"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_gravity="center"
+                                            android:indeterminateTint="#FFFFFF"
+                                            android:visibility="gone" />
+                                    </FrameLayout>
+                                </RelativeLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.015"
+                                    android:text="Pulang ke Rumah"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15.5sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:text="Aktifkan utama • 3 tugas"
+                                    android:textColor="#D9FFFFFF"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/btnRunSceneFocus"
+                                android:layout_width="0dp"
+                                android:layout_height="156dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_smart_grad_violet"
+                                android:clickable="true"
+                                android:elevation="3dp"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <FrameLayout
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_alignParentStart="true"
+                                        android:background="@drawable/bg_smart_white_circle">
+
+                                        <ImageView
+                                            android:layout_width="21dp"
+                                            android:layout_height="21dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/ic_lamp_bulb_mini"
+                                            app:tint="#7C3AED" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="26dp"
+                                        android:layout_height="26dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true">
+
+                                        <ImageView
+                                            android:id="@+id/ivSceneFocusArrow"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="center"
+                                            android:rotation="180"
+                                            android:src="@drawable/ic_chevron_left"
+                                            app:tint="#E6FFFFFF" />
+
+                                        <ProgressBar
+                                            android:id="@+id/pbSceneFocus"
+                                            style="?android:attr/progressBarStyleSmall"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_gravity="center"
+                                            android:indeterminateTint="#FFFFFF"
+                                            android:visibility="gone" />
+                                    </FrameLayout>
+                                </RelativeLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.015"
+                                    android:text="Mode Produktif"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15.5sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:text="Cahaya fokus • 1 tugas"
+                                    android:textColor="#D9FFFFFF"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Row 3: Tinggalkan Rumah (Coral) & Hemat Energi (Cyan) -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/btnRunSceneLeave"
+                                android:layout_width="0dp"
+                                android:layout_height="156dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_smart_grad_coral"
+                                android:clickable="true"
+                                android:elevation="3dp"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <FrameLayout
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_alignParentStart="true"
+                                        android:background="@drawable/bg_smart_white_circle">
+
+                                        <ImageView
+                                            android:layout_width="21dp"
+                                            android:layout_height="21dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/ic_scene_leave"
+                                            app:tint="#E11D48" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="26dp"
+                                        android:layout_height="26dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true">
+
+                                        <ImageView
+                                            android:id="@+id/ivSceneLeaveArrow"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="center"
+                                            android:rotation="180"
+                                            android:src="@drawable/ic_chevron_left"
+                                            app:tint="#E6FFFFFF" />
+
+                                        <ProgressBar
+                                            android:id="@+id/pbSceneLeave"
+                                            style="?android:attr/progressBarStyleSmall"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_gravity="center"
+                                            android:indeterminateTint="#FFFFFF"
+                                            android:visibility="gone" />
+                                    </FrameLayout>
+                                </RelativeLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.015"
+                                    android:text="Tinggalkan Rumah"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15.5sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:text="Matikan semua • 3 tugas"
+                                    android:textColor="#D9FFFFFF"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/btnRunSceneEnergy"
+                                android:layout_width="0dp"
+                                android:layout_height="156dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_smart_grad_cyan"
+                                android:clickable="true"
+                                android:elevation="3dp"
+                                android:focusable="true"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <FrameLayout
+                                        android:layout_width="44dp"
+                                        android:layout_height="44dp"
+                                        android:layout_alignParentStart="true"
+                                        android:background="@drawable/bg_smart_white_circle">
+
+                                        <ImageView
+                                            android:layout_width="21dp"
+                                            android:layout_height="21dp"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/ic_scene_energy"
+                                            app:tint="#0284C7" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:layout_width="26dp"
+                                        android:layout_height="26dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerVertical="true">
+
+                                        <ImageView
+                                            android:id="@+id/ivSceneEnergyArrow"
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_gravity="center"
+                                            android:rotation="180"
+                                            android:src="@drawable/ic_chevron_left"
+                                            app:tint="#E6FFFFFF" />
+
+                                        <ProgressBar
+                                            android:id="@+id/pbSceneEnergy"
+                                            style="?android:attr/progressBarStyleSmall"
+                                            android:layout_width="22dp"
+                                            android:layout_height="22dp"
+                                            android:layout_gravity="center"
+                                            android:indeterminateTint="#FFFFFF"
+                                            android:visibility="gone" />
+                                    </FrameLayout>
+                                </RelativeLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                                    android:letterSpacing="-0.015"
+                                    android:text="Hemat Energi"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15.5sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                                    android:text="Audit standby • 2 tugas"
+                                    android:textColor="#D9FFFFFF"
+                                    android:textSize="11.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- SUB-TAB B: CLOUD AUTOMATION & SCHEDULE LIST -->
+                    <LinearLayout
+                        android:id="@+id/panelSmartAutomation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:text="Jadwal Otomasi Cloud"
+                                android:textColor="#151922"
+                                android:textSize="15.5sp" />
+
+                            <TextView
+                                android:id="@+id/tvSmartScheduleCountBadge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_lamp_cta_soft"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:paddingHorizontal="10dp"
+                                android:paddingVertical="3dp"
+                                android:text="2 Aktif"
+                                android:textColor="#3B5BFF"
+                                android:textSize="11.5sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutSmartScheduleList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" />
+
+                        <LinearLayout
+                            android:id="@+id/layoutSmartScheduleEmpty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_smart_card_white_22"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="28dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:text="Belum Ada Jadwal Otomatis"
+                                android:textColor="#151922"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/plus_jakarta_sans_regular"
+                                android:gravity="center"
+                                android:text="Ketuk tombol + di kanan bawah untuk membuat jadwal nyala/mati perangkat otomatis"
+                                android:textColor="#717887"
+                                android:textSize="12.5sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/btnSmartAddScheduleInline"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_lamp_cta_soft"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/plus_jakarta_sans_bold"
+                            android:gravity="center"
+                            android:text="+ Tambah Jadwal Waktu Baru"
+                            android:textColor="#3B5BFF"
+                            android:textSize="13.5sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- Floating Royal-Blue (+) Create Schedule Action Button -->
+            <FrameLayout
+                android:id="@+id/btnSmartFabAdd"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_smart_fab_blue"
+                android:clickable="true"
+                android:contentDescription="Buat Jadwal Otomasi"
+                android:elevation="8dp"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_smart_plus" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <!-- ================= TAB 3: EXPLORE (HUAWEI HARMONY ECOSYSTEM) ================= -->
+        <ScrollView
+            android:id="@+id/tabExploreContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/harmony_canvas"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="96dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:letterSpacing="-0.03"
+                    android:text="Ekosistem"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:text="Integrasi AI, protokol IoT, dan kontrol suara lintas perangkat"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="13sp" />
+
+                <!-- Deep Obsidian-Sapphire Architectural Showcase Banner -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_harmony_explore_hero"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_hyperos_env_add_pill"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:letterSpacing="0.06"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="4dp"
+                        android:text="THINKTECH CONNECT"
+                        android:textColor="#FFFFFF"
+                        android:textSize="9.5sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:letterSpacing="-0.025"
+                        android:text="Satu Ekosistem,\nKendali Tanpa Batas"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/plus_jakarta_sans_regular"
+                        android:lineSpacingMultiplier="1.3"
+                        android:text="Koneksi rendah latensi untuk saklar, kamera P2P, lampu pintar, dan sensor keamanan rumah Anda."
+                        android:textColor="#CCF1F5F9"
+                        android:textSize="12.5sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_hyperos_env_chip"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:paddingHorizontal="11dp"
+                            android:paddingVertical="5dp"
+                            android:text="Matter"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_hyperos_env_chip"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:paddingHorizontal="11dp"
+                            android:paddingVertical="5dp"
+                            android:text="Zigbee 3.0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_hyperos_env_chip"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:paddingHorizontal="11dp"
+                            android:paddingVertical="5dp"
+                            android:text="BLE Mesh"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_hyperos_env_chip"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:paddingHorizontal="11dp"
+                            android:paddingVertical="5dp"
+                            android:text="Wi-Fi"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Borderless Pure White Cards -->
+                <LinearLayout
+                    android:id="@+id/cardExploreProtocol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_harmony_card_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <FrameLayout
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_harmony_icon_blue">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Multi Protocol"
+                            android:src="@drawable/ic_hyper_protocol"
+                            app:tint="@color/harmony_blue" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Dukungan Multi-Protocol IoT"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:lineSpacingMultiplier="1.25"
+                            android:text="Pairing cepat BLE + Wi-Fi 2.4 GHz serta sinkronisasi cloud Tuya Global terenkripsi."
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#C5CAD3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardExploreVoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_harmony_card_white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <FrameLayout
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_harmony_icon_emerald">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Kontrol Suara"
+                            android:src="@drawable/ic_hyper_mic"
+                            app:tint="@color/hyper_emerald_text" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Kontrol Suara Lintas Platform"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="@font/plus_jakarta_sans_regular"
+                            android:lineSpacingMultiplier="1.25"
+                            android:text="Hubungkan Google Home Assistant, Amazon Alexa, dan pintasan suara untuk kontrol bebas genggam."
+                            android:textColor="@color/harmony_ink_secondary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#C5CAD3" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ================= TAB 4: SAYA (HUAWEI ACCOUNT / HARMONYOS PROFILE) ================= -->
+        <ScrollView
+            android:id="@+id/tabMeContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/harmony_canvas"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="14dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="96dp">
+
+                <!-- Top Bar -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/plus_jakarta_sans_bold"
+                        android:letterSpacing="-0.03"
+                        android:text="Akun Saya"
+                        android:textColor="@color/harmony_ink"
+                        android:textSize="25sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/btnQrScanner"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:background="@drawable/bg_harmony_circle_btn"
+                            android:contentDescription="Scan QR"
+                            android:padding="9dp"
+                            android:src="@drawable/ic_qr_scan"
+                            app:tint="@color/harmony_ink" />
+
+                        <ImageButton
+                            android:id="@+id/btnSettingsGear"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/bg_harmony_circle_btn"
+                            android:contentDescription="Pengaturan"
+                            android:padding="9dp"
+                            android:src="@drawable/ic_settings_gear"
+                            app:tint="@color/harmony_ink" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- Borderless White Profile Identity Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_harmony_card_white"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:id="@+id/layoutProfileHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:contentDescription="Avatar"
+                            android:src="@drawable/ic_robot_avatar" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvProfileName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:letterSpacing="-0.02"
+                                android:maxLines="1"
+                                android:text="cingire687"
+                                android:textColor="@color/harmony_ink"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/tvProfileEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/plus_jakarta_sans_regular"
+                                android:maxLines="1"
+                                android:text="cingire687@gmail.com"
+                                android:textColor="@color/harmony_ink_secondary"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/bg_hyperos_badge_soft"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="2.5dp">
+
+                                <View
+                                    android:layout_width="5dp"
+                                    android:layout_height="5dp"
+                                    android:background="@drawable/bg_hyperos_status_dot" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                                    android:text="Cloud Global Aktif"
+                                    android:textColor="@color/hyper_emerald_text"
+                                    android:textSize="10.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:contentDescription="Edit Profil"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="14dp"
+                        android:background="@color/harmony_divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvProfileDeviceCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:text="0"
+                                android:textColor="@color/harmony_ink"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/plus_jakarta_sans_medium"
+                                android:text="Perangkat"
+                                android:textColor="@color/harmony_ink_secondary"
+                                android:textSize="11.5sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/harmony_divider" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvProfileOnlineCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:text="0"
+                                android:textColor="@color/hyper_emerald_text"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/plus_jakarta_sans_medium"
+                                android:text="Online"
+                                android:textColor="@color/harmony_ink_secondary"
+                                android:textSize="11.5sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/harmony_divider" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvProfileRoomCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/plus_jakarta_sans_bold"
+                                android:text="4"
+                                android:textColor="@color/harmony_blue"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/plus_jakarta_sans_medium"
+                                android:text="Ruangan"
+                                android:textColor="@color/harmony_ink_secondary"
+                                android:textSize="11.5sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Settings Group 1 (Borderless Pure White) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_harmony_card_white"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="4dp">
+
+                    <LinearLayout
+                        android:id="@+id/menuAppLanguage"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_app_language" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Bahasa Aplikasi"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14.5sp" />
+
+                        <TextView
+                            android:id="@+id/tvCurrentAppLanguage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/bg_lamp_cta_soft"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="3dp"
+                            android:text="Bahasa Indonesia"
+                            android:textColor="#3B5BFF"
+                            android:textSize="11.5sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="37dp"
+                        android:background="@color/harmony_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/menuFamilyManagement"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_menu_family" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Manajemen Keluarga &amp; Ruangan"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14.5sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="37dp"
+                        android:background="@color/harmony_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/menuMessageCenter"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_menu_message" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Pusat Pesan"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14.5sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Settings Group 2 (Borderless Pure White) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_harmony_card_white"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="4dp">
+
+                    <LinearLayout
+                        android:id="@+id/menuThirdParty"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_menu_third_party" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Third-party devices &amp; services"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14.5sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="37dp"
+                        android:background="@color/harmony_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/menuAndroidAuto"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_menu_android_auto" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Android Auto"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14.5sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="37dp"
+                        android:background="@color/harmony_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/menuAiWebVersion"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_menu_ai_web" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="ThinkTech AI Web Version"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14.5sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="37dp"
+                        android:background="@color/harmony_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/menuGoogleHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_menu_google_home" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="Google Home Devices"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14.5sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="37dp"
+                        android:background="@color/harmony_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/menuFaqFeedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_menu_faq" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/plus_jakarta_sans_semibold"
+                            android:text="FAQ &amp; Feedback"
+                            android:textColor="@color/harmony_ink"
+                            android:textSize="14.5sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"
+                            app:tint="#C5CAD3" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Clean Borderless Logout Card -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnLogoutProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_harmony_logout_btn"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:stateListAnimator="@null"
+                    android:text="Keluar dari Akun"
+                    android:textAllCaps="false"
+                    android:textColor="@color/status_red"
+                    android:textSize="14.5sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
+
+    <!-- Smooth Bottom Mist Scrim behind Floating AI Bar (prevents text collision) -->
+    <View
+        android:id="@+id/viewAiBottomScrim"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/bg_harmony_bottom_scrim" />
+
+    <!-- ================= FLOATING HARMONY AI COMMAND BAR ================= -->
+    <LinearLayout
+        android:id="@+id/layoutFloatingAiBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/bg_floating_ai_bar"
+        android:clickable="true"
+        android:elevation="6dp"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="8dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="AI Orb"
+            android:src="@drawable/ic_ai_orb" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/plus_jakarta_sans_medium"
+            android:text="Tanya ThinkTech AI..."
+            android:textColor="@color/harmony_ink_secondary"
+            android:textSize="13.5sp" />
+
+        <FrameLayout
+            android:id="@+id/btnAiVoiceMic"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_harmony_action_circle_blue"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_gravity="center"
+                android:contentDescription="Perintah Suara AI"
+                android:src="@drawable/ic_hyper_mic"
+                app:tint="@color/harmony_blue" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- ================= HARMONYOS CLEAN BOTTOM NAVIGATION ================= -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/harmony_divider" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="#FFFFFF"
+            app:elevation="0dp"
+            app:itemActiveIndicatorStyle="@style/App.BottomNavigationView.ActiveIndicator"
+            app:itemIconSize="22dp"
+            app:itemIconTint="@color/nav_item_color"
+            app:itemRippleColor="@android:color/transparent"
+            app:itemTextAppearanceActive="@style/Harmony.BottomNav.TextActive"
+            app:itemTextAppearanceInactive="@style/Harmony.BottomNav.TextInactive"
+            app:itemTextColor="@color/nav_item_color"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_nav_menu" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

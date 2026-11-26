@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. Deep 3D Ambient Drop Shadow (Floor Depth) -->
+    <item
+        android:top="10dp"
+        android:left="2dp"
+        android:right="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="24dp" />
+            <solid android:color="#99000000" />
+        </shape>
+    </item>
+
+    <!-- 2. Neon Cyan Ambient Underglow Aura -->
+    <item
+        android:top="4dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="22dp" />
+            <solid android:color="#2B00F2FE" />
+        </shape>
+    </item>
+
+    <!-- 3. Physical 3D Extrusion Side Wall (Chiseled Bevel Lip) -->
+    <item
+        android:bottom="6dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="22dp" />
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#0C4566"
+                android:endColor="#051C2B" />
+            <stroke
+                android:width="2dp"
+                android:color="#00C8E5" />
+        </shape>
+    </item>
+
+    <!-- 4. Front Raised 3D Rocker Paddle Face -->
+    <item
+        android:bottom="8dp"
+        android:left="1.5dp"
+        android:right="1.5dp"
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="20dp" />
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="#6E11567F"
+                android:centerColor="#400E3F5E"
+                android:endColor="#99072538" />
+            <stroke
+                android:width="2dp"
+                android:color="#00F2FE" />
+        </shape>
+    </item>
+
+    <!-- 5. Top 3D Specular Light Glare Reflection -->
+    <item
+        android:top="4dp"
+        android:left="20dp"
+        android:right="20dp"
+        android:height="3dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="1.5dp" />
+            <gradient
+                android:type="linear"
+                android:angle="0"
+                android:startColor="#00FFFFFF"
+                android:centerColor="#99FFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

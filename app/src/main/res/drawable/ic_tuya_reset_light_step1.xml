@@ -1,0 +1,54 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Lamp Fixture & Bulb (Power on) -->
+    <!-- Lamp base / cord coming from ceiling -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,20 L 140,55" />
+
+    <!-- Socket holder -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 126,55 L 154,55 L 150,72 L 130,72 Z" />
+
+    <!-- Bulb body -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="2.0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 130,72 
+            C 114,78 100,94 100,112 
+            C 100,134 118,152 140,152 
+            C 162,152 180,134 180,112 
+            C 180,94 166,78 150,72 Z" />
+
+    <!-- Inner filament / glow element -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 132,108 L 136,92 L 144,92 L 148,108" />
+
+    <!-- Subtle glow ring -->
+    <path
+        android:strokeColor="#FEF08A"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,112 m -32,0 a 32,32 0 1,0 64,0 a 32,32 0 1,0 -64,0" />
+
+</vector>

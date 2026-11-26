@@ -1,0 +1,49 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#200F172A"
+        android:pathData="M32,12a20,20 0 1,0 0.001,0z" />
+
+    <!-- Piano Black Cylindrical Puck Body -->
+    <path
+        android:fillColor="#0F172A"
+        android:strokeColor="#334155"
+        android:strokeWidth="1.2"
+        android:pathData="M32,10a19,19 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M32,11.5a17.5,17.5 0 1,0 0.001,0z" />
+
+    <!-- Glossy Translucent Top Dome -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M32,16a13,13 0 1,0 0.001,0z" />
+
+    <!-- Glass Reflection Curved Crescent -->
+    <path
+        android:fillColor="#15FFFFFF"
+        android:pathData="M23,19a12,12 0 0,1 18,0a12,12 0 0,0 -18,0z" />
+
+    <!-- 360 Degree Infrared Emitting Diodes Array (Glowing Red/Magenta IR arcs) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#EF4444"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:pathData="M26,26a8.5,8.5 0 0,1 12,0" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#F87171"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M23,23a12.5,12.5 0 0,1 18,0" />
+
+    <!-- Center Status Indicator Dot -->
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M32,32a2.5,2.5 0 1,0 0.001,0z" />
+</vector>

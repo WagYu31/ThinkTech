@@ -1,0 +1,55 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Dropshadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M16,16h32a5,5 0 0,1 5,5v30a5,5 0 0,1 -5,5H16a5,5 0 0,1 -5,-5V21a5,5 0 0,1 5,-5z" />
+
+    <!-- Sleek Square Radar Hub -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M16,12h32a4,4 0 0,1 4,4v32a4,4 0 0,1 -4,4H16a4,4 0 0,1 -4,-4V16a4,4 0 0,1 4,-4z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,13.5h30a2.5,2.5 0 0,1 2.5,2.5v29a2.5,2.5 0 0,1 -2.5,2.5H17a2.5,2.5 0 0,1 -2.5,-2.5V16a2.5,2.5 0 0,1 2.5,-2.5z" />
+
+    <!-- Radar Eye Core (Center Lens) -->
+    <path
+        android:fillColor="#E0F2FE"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="1"
+        android:pathData="M32,32a6,6 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M32,32a3,3 0 1,0 0.001,0z" />
+
+    <!-- Concentric mmWave Radar Micro-Rings -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#0284C7"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M24,24a11,11 0 0,1 16,0" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M20,20a17,17 0 0,1 24,0" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#7DD3FC"
+        android:strokeWidth="1"
+        android:strokeLineCap="round"
+        android:pathData="M17,17a21,21 0 0,1 30,0" />
+
+    <!-- Presence Human Dot Indicator -->
+    <path
+        android:fillColor="#22C55E"
+        android:pathData="M32,44a1.8,1.8 0 1,0 0.001,0z" />
+</vector>

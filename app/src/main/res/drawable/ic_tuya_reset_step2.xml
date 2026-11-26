@@ -1,0 +1,96 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Soft circular backdrop / aura -->
+    <path
+        android:fillColor="#EAF2FA"
+        android:pathData="M 125,80 m -56,0 a 56,56 0 1,0 112,0 a 56,56 0 1,0 -112,0" />
+
+    <!-- White smart device body with rounded corners -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 96,44 L 148,44 A 20,20 0 0 1 168,64 L 168,104 A 20,20 0 0 1 148,124 L 96,124 A 20,20 0 0 1 76,104 L 76,64 A 20,20 0 0 1 96,44 Z" />
+
+    <!-- Yellow / Amber status LED -->
+    <path
+        android:fillColor="#FBC02D"
+        android:pathData="M 98,84 m -5,0 a 5,5 0 1,0 10,0 a 5,5 0 1,0 -10,0" />
+
+    <!-- Reset button ring on device -->
+    <path
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:fillColor="#F8FAFC"
+        android:pathData="M 134,84 m -10,0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0" />
+
+    <!-- Inner circle of reset button -->
+    <path
+        android:strokeColor="#E2E8F0"
+        android:strokeWidth="1.2"
+        android:fillColor="#00000000"
+        android:pathData="M 134,84 m -6,0 a 6,6 0 1,0 12,0 a 6,6 0 1,0 -12,0" />
+
+    <!-- Hand & pointing index finger pressing the button -->
+    <!-- Hand outline filled with white to cleanly layer above device -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 133,78 
+            C 131,78 128,80 128,83 
+            C 128,86 130,89 133,89 
+            L 142,95 
+            L 136,106 
+            C 134,110 137,115 142,115 
+            C 144,115 147,113 149,110 
+            L 155,102 
+            L 165,116 
+            C 168,120 174,124 182,126 
+            L 186,127 
+            C 178,124 172,118 168,110 
+            L 168,102 
+            L 158,88 
+            L 146,80 
+            C 142,77 137,77 133,78 Z" />
+
+    <!-- Refined Tuya-style pointing finger & hand vector -->
+    <path
+        android:strokeColor="#71717A"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#FFFFFF"
+        android:pathData="M 134,84 
+            C 131,80 133,76 137,76 
+            C 140,76 143,78 147,83 
+            L 158,96 
+            L 168,98 
+            C 173,99 178,102 181,106 
+            L 194,119 
+            C 197,122 195,126 190,126 
+            L 172,120 
+            L 156,114 
+            L 144,107 
+            C 140,105 137,101 138,96 
+            L 139,91 
+            Z" />
+
+    <!-- Button press ripple arc -->
+    <path
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 126,76 C 129,72 137,72 141,75" />
+
+</vector>

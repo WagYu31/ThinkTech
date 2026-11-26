@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootPlugStudio"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <!-- 1. HERO CIRCULAR POWER HUB -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_harmony_card_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="22dp">
+
+        <FrameLayout
+            android:id="@+id/btnPlugPowerOrb"
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:background="@drawable/bg_harmony_plug_orb_on"
+            android:clickable="true"
+            android:elevation="6dp"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivPlugPowerIcon"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/ic_power"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvPlugOrbState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:letterSpacing="0.06"
+                    android:text="ON"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvPlugHeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:letterSpacing="-0.02"
+            android:text="Daya Stopkontak Aktif"
+            android:textColor="@color/harmony_ink"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tvPlugLiveWattPill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_harmony_soft_blue_pill"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:text="Beban Aktif • 42.8 W"
+            android:textColor="@color/harmony_blue"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- 2. REAL-TIME ENERGY TELEMETRY DASHBOARD -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_harmony_card_white"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/plus_jakarta_sans_bold"
+                android:text="Monitor Energi Real-Time"
+                android:textColor="@color/harmony_ink"
+                android:textSize="14.5sp" />
+
+            <TextView
+                android:id="@+id/tvPlugSafetyBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_harmony_soft_blue_pill"
+                android:backgroundTint="@color/hyper_emerald_soft"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:text="Tegangan Aman"
+                android:textColor="@color/hyper_emerald_text"
+                android:textSize="10.5sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_sheet_row"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="12dp">
+
+                <TextView
+                    android:id="@+id/tvPlugWatt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:text="42.8 W"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:text="Daya Aktif"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_sheet_row"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="12dp">
+
+                <TextView
+                    android:id="@+id/tvPlugVolt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:text="221.4 V"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:text="Tegangan"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_harmony_sheet_row"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="12dp">
+
+                <TextView
+                    android:id="@+id/tvPlugAmp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_bold"
+                    android:text="0.19 A"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/plus_jakarta_sans_medium"
+                    android:text="Arus Listrik"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="14dp"
+            android:background="@color/harmony_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPlugKwhToday"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:text="Konsumsi Hari Ini: 0.64 kWh"
+                android:textColor="@color/harmony_ink"
+                android:textSize="12.5sp" />
+
+            <TextView
+                android:id="@+id/tvPlugEstCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plus_jakarta_sans_medium"
+                android:text="≈ Rp 925"
+                android:textColor="@color/harmony_ink_secondary"
+                android:textSize="12.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 3. SMART SAFETY & RELAY PROTECTIONS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_harmony_card_white"
+        android:orientation="vertical"
+        android:paddingHorizontal="18dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:text="Proteksi &amp; Relai Pintar"
+            android:textColor="@color/harmony_ink"
+            android:textSize="14.5sp" />
+
+        <!-- Child Lock -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="56dp"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingEnd="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="Kunci Anak (Child Lock)"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="13.5sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:text="Kunci tombol fisik agar aman dari sentuhan anak"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="11.5sp" />
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchPlugChildLock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:thumbTint="@color/harmony_switch_thumb"
+                app:trackDecorationTint="@android:color/transparent"
+                app:trackTint="@color/harmony_switch_track" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/harmony_divider" />
+
+        <!-- Overcharge Cutoff -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="56dp"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingEnd="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="Proteksi Pengisian Berlebih"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="13.5sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:text="Putus daya otomatis saat perangkat penuh / standby"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="11.5sp" />
+            </LinearLayout>
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switchPlugOvercharge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:thumbTint="@color/harmony_switch_thumb"
+                app:trackDecorationTint="@android:color/transparent"
+                app:trackTint="@color/harmony_switch_track" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/harmony_divider" />
+
+        <!-- Relay Recovery Mode -->
+        <LinearLayout
+            android:id="@+id/rowPlugRelayStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:minHeight="56dp"
+            android:orientation="horizontal"
+            android:paddingVertical="6dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingEnd="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plus_jakarta_sans_semibold"
+                    android:text="Relai Saat Listrik Pulih"
+                    android:textColor="@color/harmony_ink"
+                    android:textSize="13.5sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/plus_jakarta_sans_regular"
+                    android:text="Ketuk untuk ganti Ingat / Mati / Menyala"
+                    android:textColor="@color/harmony_ink_secondary"
+                    android:textSize="11.5sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvPlugRelayValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_harmony_soft_blue_pill"
+                android:fontFamily="@font/plus_jakarta_sans_semibold"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:text="Ingat Terakhir"
+                android:textColor="@color/harmony_blue"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

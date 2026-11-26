@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160">
+
+    <!-- Center LED Dot -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M 140,80 m -8,0 a 8,8 0 1,0 16,0 a 8,8 0 1,0 -16,0" />
+
+    <!-- Ripple Wave 1 -->
+    <path
+        android:strokeColor="#7DD3FC"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,80 m -22,0 a 22,22 0 1,0 44,0 a 22,22 0 1,0 -44,0" />
+
+    <!-- Ripple Wave 2 -->
+    <path
+        android:strokeColor="#BAE6FD"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,80 m -38,0 a 38,38 0 1,0 76,0 a 38,38 0 1,0 -76,0" />
+
+    <!-- Ripple Wave 3 -->
+    <path
+        android:strokeColor="#E0F2FE"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M 140,80 m -54,0 a 54,54 0 1,0 108,0 a 54,54 0 1,0 -108,0" />
+
+</vector>

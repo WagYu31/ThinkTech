@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="44dp"
+    android:height="44dp"
+    android:viewportWidth="44"
+    android:viewportHeight="44">
+    <!-- SmartThings Blue Circle Background -->
+    <path
+        android:fillColor="#00A9E0"
+        android:pathData="M22,2A20,20 0 1,0 42,22A20,20 0 0,0 22,2Z"/>
+    <!-- SmartThings 6-dot Star Connector -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M22,13A2.5,2.5 0 1,0 24.5,15.5A2.5,2.5 0 0,0 22,13ZM15,18A2.5,2.5 0 1,0 17.5,20.5A2.5,2.5 0 0,0 15,18ZM29,18A2.5,2.5 0 1,0 31.5,20.5A2.5,2.5 0 0,0 29,18ZM15,26A2.5,2.5 0 1,0 17.5,28.5A2.5,2.5 0 0,0 15,26ZM29,26A2.5,2.5 0 1,0 31.5,28.5A2.5,2.5 0 0,0 29,26ZM22,29A2.5,2.5 0 1,0 24.5,31.5A2.5,2.5 0 0,0 22,29Z"/>
+</vector>

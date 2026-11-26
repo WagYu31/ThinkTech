@@ -1,0 +1,74 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <!-- Soft Drop Shadow -->
+    <path
+        android:fillColor="#150F172A"
+        android:pathData="M12,10h40a6,6 0 0,1 6,6v38a6,6 0 0,1 -6,6H12a6,6 0 0,1 -6,-6V16a6,6 0 0,1 6,-6z" />
+    <path
+        android:fillColor="#100F172A"
+        android:pathData="M11,11h42a7,7 0 0,1 7,7v38a7,7 0 0,1 -7,7H11a7,7 0 0,1 -7,-7V18a7,7 0 0,1 7,-7z" />
+
+    <!-- Outer Beveled White Faceplate -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:strokeColor="#CBD5E1"
+        android:strokeWidth="1.2"
+        android:pathData="M12,6h40a5,5 0 0,1 5,5v40a5,5 0 0,1 -5,5H12a5,5 0 0,1 -5,-5V11a5,5 0 0,1 5,-5z" />
+
+    <!-- Faceplate Front Surface -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M13,7.5h38a3.5,3.5 0 0,1 3.5,3.5v37a3.5,3.5 0 0,1 -3.5,3.5H13a3.5,3.5 0 0,1 -3.5,-3.5V11a3.5,3.5 0 0,1 3.5,-3.5z" />
+
+    <!-- Schuko Circular Recess (Outer Rim) -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:strokeColor="#E2E8F0"
+        android:strokeWidth="1"
+        android:pathData="M32,15a16,16 0 1,0 0.001,0z" />
+
+    <!-- Schuko Recess Inner Shadow -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M32,16.5a14.5,14.5 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#F8FAFC"
+        android:pathData="M32,18a13,13 0 1,0 0.001,0z" />
+
+    <!-- Top Grounding Brass Clip -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M30.5,16.5h3v3.5h-3z" />
+
+    <!-- Bottom Grounding Brass Clip -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M30.5,42h3v3.5h-3z" />
+
+    <!-- Left Pin Hole (Depth + Core) -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M24,31a3.2,3.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M24,31a2.2,2.2 0 1,0 0.001,0z" />
+
+    <!-- Right Pin Hole (Depth + Core) -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M40,31a3.2,3.2 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M40,31a2.2,2.2 0 1,0 0.001,0z" />
+
+    <!-- Cyan Status LED Indicator Dot -->
+    <path
+        android:fillColor="#06B6D4"
+        android:pathData="M32,49a1.8,1.8 0 1,0 0.001,0z" />
+    <path
+        android:fillColor="#67E8F9"
+        android:pathData="M32,49a0.9,0.9 0 1,0 0.001,0z" />
+</vector>
