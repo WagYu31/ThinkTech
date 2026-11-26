@@ -131,31 +131,27 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupHarmonyElevations() {
         val density = resources.displayMetrics.density
-        binding.layoutIndoorCard.setCornerRadiusDp(28f)
+        binding.layoutIndoorCard.setCornerRadiusDp(26f)
         binding.layoutIndoorCard.heroMood = HarmonyHomeHeroCard.HeroMood.ACTIVE
-        binding.layoutIndoorCard.elevation = 8f * density
+        binding.layoutIndoorCard.elevation = 3f * density
 
-        // Subtle Huawei HarmonyOS live indicator breathing pulse
+        // Whisper-subtle status indicator fade (calm HarmonyOS hardware feel)
         heroLiveDotAnimator?.cancel()
         heroLiveDotAnimator = ObjectAnimator.ofPropertyValuesHolder(
             binding.viewHeroLiveDot,
-            PropertyValuesHolder.ofFloat(View.SCALE_X, 0.88f, 1.18f),
-            PropertyValuesHolder.ofFloat(View.SCALE_Y, 0.88f, 1.18f),
-            PropertyValuesHolder.ofFloat(View.ALPHA, 0.50f, 1.0f)
+            PropertyValuesHolder.ofFloat(View.ALPHA, 0.45f, 1.0f)
         ).apply {
-            duration = 1400L
+            duration = 2200L
             repeatCount = ValueAnimator.INFINITE
             repeatMode = ValueAnimator.REVERSE
             start()
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            binding.layoutIndoorCard.outlineSpotShadowColor = 0x450A59F7
-            binding.layoutIndoorCard.outlineAmbientShadowColor = 0x260A59F7
-
             val softShadow = 0x160A192F
             val softAmbient = 0x0B0A192F
             listOf(
+                binding.layoutIndoorCard,
                 binding.layoutFloatingAiBar,
                 binding.btnPlusPill,
                 binding.btnTopAddDevice
@@ -337,7 +333,16 @@ class MainActivity : AppCompatActivity() {
         binding.tvOnlineCountBadge.text = "$onlineCount Online"
         binding.tvStatOnline.text = "$onlineCount/$total"
         binding.tvStatActive.text = activeCount.toString()
+        binding.tvStatActive.setTextColor(
+            ContextCompat.getColor(
+                this,
+                if (activeCount > 0) R.color.harmony_blue else R.color.harmony_ink
+            )
+        )
         binding.tvStatPower.text = "$estimatedWatts W"
+        binding.viewHeroLiveDot.setBackgroundResource(
+            if (onlineCount > 0) R.drawable.bg_hero_dot_emerald else R.drawable.bg_hero_dot_slate
+        )
 
         binding.tvHomeSummarySub.text = when {
             total == 0 -> "Siap Dihubungkan"
@@ -345,10 +350,9 @@ class MainActivity : AppCompatActivity() {
             else -> "$activeCount Perangkat Aktif"
         }
         binding.tvHomeSummaryDetail.text = when {
-            total == 0 -> "Hubungkan Perangkat Pintar Anda"
-            onlineCount == 0 -> "Perangkat Offline • Periksa Wi-Fi"
-            activeCount == 0 -> "Semua Perangkat Siaga • Hemat Daya"
-            else -> "Ekosistem Terhubung • Stabil"
+            total == 0 -> "Ketuk + untuk menambah perangkat"
+            onlineCount == 0 -> "Perangkat offline · Periksa Wi-Fi"
+            else -> "Iklim Ideal · Kelembapan 52%"
         }
 
         binding.layoutIndoorCard.heroMood = when {

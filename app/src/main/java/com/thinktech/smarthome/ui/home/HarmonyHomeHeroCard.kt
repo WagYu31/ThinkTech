@@ -1,28 +1,27 @@
 package com.thinktech.smarthome.ui.home
 
-import android.animation.ValueAnimator
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.LinearGradient
+import android.graphics.Matrix
 import android.graphics.Outline
 import android.graphics.Paint
-import android.graphics.Path
-import android.graphics.RadialGradient
 import android.graphics.Shader
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewOutlineProvider
-import android.view.animation.LinearInterpolator
 import android.widget.LinearLayout
-import kotlin.math.PI
-import kotlin.math.cos
-import kotlin.math.sin
+import com.thinktech.smarthome.R
+import kotlin.math.max
 
 /**
- * Flagship Huawei HarmonyOS NEXT-inspired Spatial Light-Field Hero Card.
- * Renders a deep luminous atmospheric gradient with subtly breathing optical aurora orbs,
- * architectural concentric spatial arcs, a volumetric light ribbon, and a specular glass rim.
+ * Huawei Whole-Home Smart (全屋智能) & HarmonyOS UCD Editorial Hero Card.
+ * Combines a sunlit architectural interior photograph on the right with a feathered
+ * porcelain-alabaster optical veil on the left for effortless high-contrast typography,
+ * whisper-quiet state tinting, and precision 0.6dp rim light.
  */
 class HarmonyHomeHeroCard @JvmOverloads constructor(
     context: Context,
@@ -37,15 +36,13 @@ class HarmonyHomeHeroCard @JvmOverloads constructor(
     }
 
     private val density = resources.displayMetrics.density
-    private var cornerRadiusPx = 28f * density
-    private var breathPhase = 0f
-    private var breathAnimator: ValueAnimator? = null
+    private var cornerRadiusPx = 26f * density
 
     var heroMood: HeroMood = HeroMood.ACTIVE
         set(value) {
             if (field != value) {
                 field = value
-                rebuildStaticShaders()
+                rebuildShaders()
                 invalidate()
             }
         }
@@ -56,30 +53,31 @@ class HarmonyHomeHeroCard @JvmOverloads constructor(
         invalidate()
     }
 
-    private val baseGradientPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val bgBitmap: Bitmap? by lazy {
+        runCatching {
+            BitmapFactory.decodeResource(resources, R.drawable.img_harmony_home_hero)
+        }.getOrNull()
+    }
+
+    private val bitmapMatrix = Matrix()
+    private val basePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.WHITE
         style = Paint.Style.FILL
     }
-    private val depthOrbPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val bitmapPaint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
+    private val veilPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
     }
-    private val primaryAuroraPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val moodWashPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
     }
-    private val secondarySheenPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val bottomMistPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
     }
-    private val ribbonPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        style = Paint.Style.FILL
-    }
-    private val spatialRingPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val rimPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
-        strokeWidth = 0.9f * density
+        strokeWidth = 0.75f * density
     }
-    private val specularBorderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        style = Paint.Style.STROKE
-        strokeWidth = 1.15f * density
-    }
-    private val ribbonPath = Path()
 
     init {
         setWillNotDraw(false)
@@ -91,123 +89,89 @@ class HarmonyHomeHeroCard @JvmOverloads constructor(
         }
     }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-        startBreathingAnimation()
-    }
-
-    override fun onDetachedFromWindow() {
-        stopBreathingAnimation()
-        super.onDetachedFromWindow()
-    }
-
-    private fun startBreathingAnimation() {
-        if (breathAnimator?.isRunning == true) return
-        breathAnimator = ValueAnimator.ofFloat(0f, (2.0 * PI).toFloat()).apply {
-            duration = 9000L
-            repeatCount = ValueAnimator.INFINITE
-            interpolator = LinearInterpolator()
-            addUpdateListener { anim ->
-                breathPhase = anim.animatedValue as Float
-                invalidate()
-            }
-            start()
-        }
-    }
-
-    private fun stopBreathingAnimation() {
-        breathAnimator?.cancel()
-        breathAnimator = null
-    }
-
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-        rebuildStaticShaders()
+        rebuildBitmapMatrix()
+        rebuildShaders()
     }
 
-    private fun rebuildStaticShaders() {
+    private fun rebuildBitmapMatrix() {
+        val bmp = bgBitmap ?: return
         val w = width.toFloat()
         val h = height.toFloat()
         if (w <= 0f || h <= 0f) return
 
-        val baseColors = when (heroMood) {
-            HeroMood.ACTIVE -> intArrayOf(
-                Color.parseColor("#0A3ED6"),
-                Color.parseColor("#1365F8"),
-                Color.parseColor("#2AA2FF")
-            )
-            HeroMood.STANDBY -> intArrayOf(
-                Color.parseColor("#10337A"),
-                Color.parseColor("#1954BC"),
-                Color.parseColor("#2A84DE")
-            )
-            HeroMood.OFFLINE -> intArrayOf(
-                Color.parseColor("#1F3358"),
-                Color.parseColor("#2C497B"),
-                Color.parseColor("#3E659F")
-            )
-        }
+        // Scale 1.18x anchored flush-right so the raw wall seam sits safely behind the
+        // opaque porcelain veil (x ~ 0.41w) while the olive vase, cove light, and sheer
+        // linen curtains emerge seamlessly from morning light on the right half.
+        val scale = max(w / bmp.width.toFloat(), h / bmp.height.toFloat()) * 1.18f
+        val scaledW = bmp.width * scale
+        val scaledH = bmp.height * scale
+        val dx = w - scaledW
+        val dy = (h - scaledH) * 0.40f
 
-        baseGradientPaint.shader = LinearGradient(
+        bitmapMatrix.reset()
+        bitmapMatrix.postScale(scale, scale)
+        bitmapMatrix.postTranslate(dx, dy)
+    }
+
+    private fun rebuildShaders() {
+        val w = width.toFloat()
+        val h = height.toFloat()
+        if (w <= 0f || h <= 0f) return
+
+        // Seamless porcelain-alabaster silk veil fully covering x <= 0.43w (zero hard seam)
+        // then feathering organically into the sunlit architectural room on the right.
+        veilPaint.shader = LinearGradient(
             0f,
             0f,
             w,
-            h,
-            baseColors,
-            floatArrayOf(0f, 0.50f, 1f),
+            0f,
+            intArrayOf(
+                Color.argb(255, 255, 255, 255),
+                Color.argb(255, 254, 254, 255),
+                Color.argb(170, 252, 253, 255),
+                Color.argb(38, 255, 255, 255),
+                Color.argb(0, 255, 255, 255)
+            ),
+            floatArrayOf(0f, 0.43f, 0.54f, 0.66f, 0.78f),
             Shader.TileMode.CLAMP
         )
 
-        // Sculptural deep indigo depth anchor in bottom-left corner
-        val depthColor = when (heroMood) {
-            HeroMood.ACTIVE -> Color.argb(105, 18, 25, 128)
-            HeroMood.STANDBY -> Color.argb(95, 12, 22, 86)
-            HeroMood.OFFLINE -> Color.argb(90, 16, 24, 52)
+        // Subtle atmospheric daylight tone depending on home activity state
+        val washColor = when (heroMood) {
+            HeroMood.ACTIVE -> Color.argb(14, 255, 244, 224)   // Warm sunlit equilibrium
+            HeroMood.STANDBY -> Color.argb(14, 226, 238, 255)  // Calm morning mist
+            HeroMood.OFFLINE -> Color.argb(48, 236, 240, 245)  // Quiet desaturated standby
         }
-        depthOrbPaint.shader = RadialGradient(
-            w * 0.08f,
-            h * 1.05f,
-            w * 0.65f,
-            intArrayOf(depthColor, Color.TRANSPARENT),
+        moodWashPaint.color = washColor
+
+        // Gentle bottom porcelain lift so the frosted dock sits harmoniously over the floor
+        bottomMistPaint.shader = LinearGradient(
+            0f,
+            h * 0.60f,
+            0f,
+            h,
+            intArrayOf(
+                Color.argb(0, 255, 255, 255),
+                Color.argb(90, 250, 251, 253)
+            ),
             floatArrayOf(0f, 1f),
             Shader.TileMode.CLAMP
         )
 
-        // Diagonal luminous silk ribbon sweeping across upper-right quadrant
-        ribbonPaint.shader = LinearGradient(
-            w * 0.35f,
-            0f,
-            w,
-            h * 0.72f,
-            intArrayOf(
-                Color.argb(0, 255, 255, 255),
-                Color.argb(26, 210, 244, 255),
-                Color.argb(10, 130, 225, 255),
-                Color.argb(0, 255, 255, 255)
-            ),
-            floatArrayOf(0f, 0.38f, 0.72f, 1f),
-            Shader.TileMode.CLAMP
-        )
-
-        ribbonPath.reset()
-        ribbonPath.moveTo(w * 0.28f, 0f)
-        ribbonPath.cubicTo(w * 0.56f, h * 0.24f, w * 0.76f, h * 0.05f, w, h * 0.34f)
-        ribbonPath.lineTo(w, h * 0.72f)
-        ribbonPath.cubicTo(w * 0.74f, h * 0.44f, w * 0.52f, h * 0.58f, w * 0.16f, 0f)
-        ribbonPath.close()
-
-        // Specular top-to-bottom optical glass edge highlight
-        specularBorderPaint.shader = LinearGradient(
+        // Precision 0.75dp inner specular rim (subtle white top sheen -> delicate neutral edge)
+        rimPaint.shader = LinearGradient(
             0f,
             0f,
             0f,
             h,
             intArrayOf(
-                Color.argb(128, 255, 255, 255),
-                Color.argb(42, 255, 255, 255),
-                Color.argb(18, 255, 255, 255)
+                Color.argb(235, 255, 255, 255),
+                Color.argb(110, 255, 255, 255),
+                Color.argb(22, 15, 23, 42)
             ),
-            floatArrayOf(0f, 0.42f, 1f),
+            floatArrayOf(0f, 0.45f, 1f),
             Shader.TileMode.CLAMP
         )
     }
@@ -220,64 +184,25 @@ class HarmonyHomeHeroCard @JvmOverloads constructor(
             return
         }
 
-        // 1. Base HarmonyOS spatial sapphire-azure canvas
-        canvas.drawRoundRect(0f, 0f, w, h, cornerRadiusPx, cornerRadiusPx, baseGradientPaint)
+        // 1. Pure porcelain base
+        canvas.drawRoundRect(0f, 0f, w, h, cornerRadiusPx, cornerRadiusPx, basePaint)
 
-        // 2. Sculptural bottom-left indigo depth shadow-bloom
-        canvas.drawRoundRect(0f, 0f, w, h, cornerRadiusPx, cornerRadiusPx, depthOrbPaint)
-
-        // 3. Gently breathing volumetric glacier-cyan aurora orb (top-right focal light)
-        val driftX = cos(breathPhase) * 10f * density
-        val driftY = sin(breathPhase) * 6f * density
-        val orbAlpha = when (heroMood) {
-            HeroMood.ACTIVE -> 118
-            HeroMood.STANDBY -> 88
-            HeroMood.OFFLINE -> 64
-        }
-        primaryAuroraPaint.shader = RadialGradient(
-            w * 0.87f + driftX,
-            h * 0.16f + driftY,
-            w * 0.58f,
-            intArrayOf(
-                Color.argb(orbAlpha, 140, 240, 255),
-                Color.argb(orbAlpha / 3, 72, 198, 255),
-                Color.TRANSPARENT
-            ),
-            floatArrayOf(0f, 0.52f, 1f),
-            Shader.TileMode.CLAMP
-        )
-        canvas.drawRoundRect(0f, 0f, w, h, cornerRadiusPx, cornerRadiusPx, primaryAuroraPaint)
-
-        // 4. Upper-center optical glass caustic highlight
-        secondarySheenPaint.shader = RadialGradient(
-            w * 0.40f - driftX * 0.5f,
-            -h * 0.08f,
-            w * 0.48f,
-            intArrayOf(
-                Color.argb(52, 255, 255, 255),
-                Color.TRANSPARENT
-            ),
-            floatArrayOf(0f, 1f),
-            Shader.TileMode.CLAMP
-        )
-        canvas.drawRoundRect(0f, 0f, w, h, cornerRadiusPx, cornerRadiusPx, secondarySheenPaint)
-
-        // 5. Silk optical wave ribbon
-        canvas.drawPath(ribbonPath, ribbonPaint)
-
-        // 6. Architectural concentric spatial rings (HarmonyOS Super Device signature motif)
-        val cx = w * 0.86f
-        val cy = h * 0.30f
-        val pulse = sin(breathPhase) * 2.2f * density
-        val ringRadii = floatArrayOf(46f * density + pulse, 82f * density + pulse * 1.2f, 122f * density + pulse * 1.4f)
-        val ringAlphas = intArrayOf(38, 24, 13)
-        for (i in ringRadii.indices) {
-            spatialRingPaint.color = Color.argb(ringAlphas[i], 255, 255, 255)
-            canvas.drawCircle(cx, cy, ringRadii[i], spatialRingPaint)
+        // 2. Architectural interior photography (clipped cleanly to squircle outline)
+        bgBitmap?.let { bmp ->
+            canvas.drawBitmap(bmp, bitmapMatrix, bitmapPaint)
         }
 
-        // 7. Precision specular glass rim
-        val inset = 0.6f * density
+        // 3. Feathered porcelain silk veil over left half + seam dissolution
+        canvas.drawRoundRect(0f, 0f, w, h, cornerRadiusPx, cornerRadiusPx, veilPaint)
+
+        // 4. Gentle bottom lift under unified frosted telemetry dock
+        canvas.drawRoundRect(0f, 0f, w, h, cornerRadiusPx, cornerRadiusPx, bottomMistPaint)
+
+        // 5. Whisper-subtle mood daylight wash
+        canvas.drawRoundRect(0f, 0f, w, h, cornerRadiusPx, cornerRadiusPx, moodWashPaint)
+
+        // 6. Precision hairline specular border
+        val inset = 0.4f * density
         canvas.drawRoundRect(
             inset,
             inset,
@@ -285,7 +210,7 @@ class HarmonyHomeHeroCard @JvmOverloads constructor(
             h - inset,
             cornerRadiusPx,
             cornerRadiusPx,
-            specularBorderPaint
+            rimPaint
         )
 
         super.onDraw(canvas)
