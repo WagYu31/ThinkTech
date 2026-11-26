@@ -364,6 +364,7 @@ class MainActivity : AppCompatActivity() {
         binding.layoutHeroEmptyState.visibility = if (total == 0) View.VISIBLE else View.GONE
         binding.tvProfileDeviceCount.text = total.toString()
         binding.tvProfileOnlineCount.text = onlineCount.toString()
+        updateRoomTabCounts()
         AppLanguageManager.localizeActivity(this)
     }
 
@@ -436,15 +437,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private data class RoomTabHolder(
-        val container: View,
+        val container: android.widget.LinearLayout,
         val label: TextView,
-        val indicator: View,
+        val countBadge: TextView,
         val filterKey: String
     )
 
     private var activeRoomTabHolders: List<RoomTabHolder> = emptyList()
 
     private fun setupRoomFilters() {
+        binding.btnManageRoomsHome.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+            ProfileDialogsHelper.showFamilyManagementDialog(this)
+        }
         refreshRoomTabs()
     }
 
@@ -455,6 +460,23 @@ class MainActivity : AppCompatActivity() {
             savedRoomsStr.split("|").map { it.trim() }.filter { it.isNotBlank() }
         } else {
             listOf("Ruang Tamu", "Kamar Tidur", "Dapur", "Ruang Kerja")
+        }
+    }
+
+    private fun devicesForRoom(filterKey: String): List<SmartDeviceItem> {
+        return when {
+            filterKey == "ALL" -> allDevicesList
+            filterKey.equals("Ruang Tamu", true) || filterKey.equals("Living Room", true) ->
+                allDevicesList.filter { it.room.equals("Ruang Tamu", true) || it.room.contains("Living", true) }
+            filterKey.equals("Kamar Tidur", true) || filterKey.equals("Bedroom", true) ->
+                allDevicesList.filter { it.room.equals("Kamar Tidur", true) || it.room.contains("Bedroom", true) }
+            filterKey.equals("Dapur", true) || filterKey.equals("Kitchen", true) ->
+                allDevicesList.filter { it.room.equals("Dapur", true) || it.room.contains("Kitchen", true) }
+            filterKey.equals("Ruang Kerja", true) || filterKey.equals("Workspace", true) ->
+                allDevicesList.filter {
+                    it.room.equals("Ruang Kerja", true) || it.room.contains("Work", true) || it.room.contains("Office", true)
+                }
+            else -> allDevicesList.filter { it.room.equals(filterKey, ignoreCase = true) }
         }
     }
 
@@ -476,19 +498,24 @@ class MainActivity : AppCompatActivity() {
             rooms.forEach { roomName -> add(roomName to roomName) }
         }
 
+        val pillHeightPx = (34 * density).toInt()
+        val pillPadH = (14 * density).toInt()
+        val pillGap = (8 * density).toInt()
+
         val holders = mutableListOf<RoomTabHolder>()
         tabDefs.forEachIndexed { idx, (filterKey, rawLabel) ->
-            val col = android.widget.LinearLayout(this).apply {
-                orientation = android.widget.LinearLayout.VERTICAL
-                gravity = Gravity.CENTER_HORIZONTAL
+            val pill = android.widget.LinearLayout(this).apply {
+                orientation = android.widget.LinearLayout.HORIZONTAL
+                gravity = Gravity.CENTER_VERTICAL
                 isClickable = true
                 isFocusable = true
-                setPadding(0, 0, 0, (2 * density).toInt())
+                setPadding(pillPadH, 0, pillPadH, 0)
+                setBackgroundResource(R.drawable.bg_room_pill_inactive)
                 layoutParams = android.widget.LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
+                    pillHeightPx
                 ).apply {
-                    marginEnd = ((if (idx == tabDefs.lastIndex) 8 else 22) * density).toInt()
+                    marginEnd = if (idx == tabDefs.lastIndex) 0 else pillGap
                 }
             }
 
@@ -499,28 +526,31 @@ class MainActivity : AppCompatActivity() {
                 )
                 maxLines = 1
                 isSingleLine = true
+                letterSpacing = -0.01f
                 text = AppLanguageManager.tr(this@MainActivity, rawLabel)
-                textSize = 14f
-                setTextColor(ContextCompat.getColor(this@MainActivity, R.color.harmony_ink_muted))
+                textSize = 12.5f
+                setTextColor(Color.parseColor("#5C6470"))
             }
 
-            val indicator = View(this).apply {
-                setBackgroundResource(R.drawable.bg_harmony_tab_indicator)
-                visibility = View.INVISIBLE
+            val tvCount = TextView(this).apply {
                 layoutParams = android.widget.LinearLayout.LayoutParams(
-                    (20 * density).toInt(),
-                    (3 * density).toInt()
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
                 ).apply {
-                    topMargin = (5 * density).toInt()
+                    marginStart = (5 * density).toInt()
                 }
+                maxLines = 1
+                isSingleLine = true
+                textSize = 10.5f
+                includeFontPadding = false
+                visibility = View.GONE
             }
 
-            col.addView(tvLabel)
-            col.addView(indicator)
-            container.addView(col)
+            pill.addView(tvLabel)
+            pill.addView(tvCount)
+            container.addView(pill)
 
-            val holder = RoomTabHolder(col, tvLabel, indicator, filterKey)
-            holders.add(holder)
+            holders.add(RoomTabHolder(pill, tvLabel, tvCount, filterKey))
         }
 
         activeRoomTabHolders = holders
@@ -528,7 +558,7 @@ class MainActivity : AppCompatActivity() {
             tab.container.setOnClickListener {
                 it.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
                 currentRoomFilter = tab.filterKey
-                updateRoomTabsUI(holders, tab)
+                updateRoomTabsUI(holders, tab, animateSelection = true)
                 applyRoomFilter()
             }
         }
@@ -536,7 +566,36 @@ class MainActivity : AppCompatActivity() {
         val selected = holders.firstOrNull { it.filterKey.equals(currentRoomFilter, ignoreCase = true) }
             ?: holders.firstOrNull()
         if (selected != null) {
-            updateRoomTabsUI(holders, selected)
+            updateRoomTabsUI(holders, selected, animateSelection = false)
+        }
+        updateRoomTabCounts()
+    }
+
+    private fun updateRoomTabCounts() {
+        val density = resources.displayMetrics.density
+        val padHActive = (5.5f * density).toInt()
+        val padVActive = (1.5f * density).toInt()
+        val fontSemi = ResourcesCompat.getFont(this, R.font.plus_jakarta_sans_semibold)
+
+        activeRoomTabHolders.forEach { tab ->
+            val count = devicesForRoom(tab.filterKey).size
+            val isSelected = tab.filterKey.equals(currentRoomFilter, ignoreCase = true)
+            if (count > 0) {
+                tab.countBadge.visibility = View.VISIBLE
+                tab.countBadge.text = count.toString()
+                tab.countBadge.typeface = fontSemi
+                if (isSelected) {
+                    tab.countBadge.setBackgroundResource(R.drawable.bg_room_count_active)
+                    tab.countBadge.setPadding(padHActive, padVActive, padHActive, padVActive)
+                    tab.countBadge.setTextColor(Color.parseColor("#E8EEF7"))
+                } else {
+                    tab.countBadge.background = null
+                    tab.countBadge.setPadding(0, 0, 0, 0)
+                    tab.countBadge.setTextColor(Color.parseColor("#8D95A3"))
+                }
+            } else {
+                tab.countBadge.visibility = View.GONE
+            }
         }
     }
 
@@ -547,42 +606,52 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateRoomTabsUI(tabs: List<RoomTabHolder>, selected: RoomTabHolder) {
-        val fontBold = ResourcesCompat.getFont(this, R.font.plus_jakarta_sans_bold)
+    private fun updateRoomTabsUI(
+        tabs: List<RoomTabHolder>,
+        selected: RoomTabHolder,
+        animateSelection: Boolean = false
+    ) {
+        val density = resources.displayMetrics.density
+        val fontSemi = ResourcesCompat.getFont(this, R.font.plus_jakarta_sans_semibold)
         val fontMedium = ResourcesCompat.getFont(this, R.font.plus_jakarta_sans_medium)
-        val inkActive = ContextCompat.getColor(this, R.color.harmony_ink)
-        val inkMuted = ContextCompat.getColor(this, R.color.harmony_ink_muted)
 
         tabs.forEach { tab ->
             if (tab == selected) {
-                tab.label.setTextColor(inkActive)
-                tab.label.textSize = 14.5f
-                tab.label.typeface = fontBold
-                tab.indicator.visibility = View.VISIBLE
+                tab.container.setBackgroundResource(R.drawable.bg_room_pill_active)
+                tab.container.elevation = 2.5f * density
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    tab.container.outlineSpotShadowColor = 0x26181C24
+                    tab.container.outlineAmbientShadowColor = 0x12181C24
+                }
+                tab.label.setTextColor(Color.WHITE)
+                tab.label.typeface = fontSemi
+                if (animateSelection) {
+                    tab.container.scaleX = 0.94f
+                    tab.container.scaleY = 0.94f
+                    tab.container.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setDuration(180L)
+                        .start()
+                    // Smoothly center selected pill inside the horizontal scroll rail
+                    binding.scrollRoomTabs.post {
+                        val targetScroll = (tab.container.left - (binding.scrollRoomTabs.width - tab.container.width) / 2)
+                            .coerceAtLeast(0)
+                        binding.scrollRoomTabs.smoothScrollTo(targetScroll, 0)
+                    }
+                }
             } else {
-                tab.label.setTextColor(inkMuted)
-                tab.label.textSize = 14f
+                tab.container.setBackgroundResource(R.drawable.bg_room_pill_inactive)
+                tab.container.elevation = 0f
+                tab.label.setTextColor(Color.parseColor("#5C6470"))
                 tab.label.typeface = fontMedium
-                tab.indicator.visibility = View.INVISIBLE
             }
         }
+        updateRoomTabCounts()
     }
 
     fun applyRoomFilter() {
-        val filtered = when {
-            currentRoomFilter == "ALL" -> allDevicesList
-            currentRoomFilter.equals("Ruang Tamu", true) || currentRoomFilter.equals("Living Room", true) ->
-                allDevicesList.filter { it.room.equals("Ruang Tamu", true) || it.room.contains("Living", true) }
-            currentRoomFilter.equals("Kamar Tidur", true) || currentRoomFilter.equals("Bedroom", true) ->
-                allDevicesList.filter { it.room.equals("Kamar Tidur", true) || it.room.contains("Bedroom", true) }
-            currentRoomFilter.equals("Dapur", true) || currentRoomFilter.equals("Kitchen", true) ->
-                allDevicesList.filter { it.room.equals("Dapur", true) || it.room.contains("Kitchen", true) }
-            currentRoomFilter.equals("Ruang Kerja", true) || currentRoomFilter.equals("Workspace", true) ->
-                allDevicesList.filter {
-                    it.room.equals("Ruang Kerja", true) || it.room.contains("Work", true) || it.room.contains("Office", true)
-                }
-            else -> allDevicesList.filter { it.room.equals(currentRoomFilter, ignoreCase = true) }
-        }
+        val filtered = devicesForRoom(currentRoomFilter)
         deviceAdapter.submitList(filtered.map { it.copy() })
 
         if (filtered.isEmpty()) {

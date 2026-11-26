@@ -604,20 +604,62 @@
                             </LinearLayout>
                         </RelativeLayout>
 
-                        <!-- Huawei HarmonyOS Dynamic Typographic Room Tabs (synced with Family & Room Management) -->
-                        <HorizontalScrollView
+                        <!-- Huawei HarmonyOS Architectural Capsule Room Rail + Quick Room Management Trigger -->
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="12dp"
-                            android:overScrollMode="never"
-                            android:scrollbars="none">
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:id="@+id/layoutRoomTabsContainer"
-                                android:layout_width="wrap_content"
+                            <FrameLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal" />
-                        </HorizontalScrollView>
+                                android:layout_weight="1">
+
+                                <HorizontalScrollView
+                                    android:id="@+id/scrollRoomTabs"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:overScrollMode="never"
+                                    android:scrollbars="none">
+
+                                    <LinearLayout
+                                        android:id="@+id/layoutRoomTabsContainer"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:clipChildren="false"
+                                        android:clipToPadding="false"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:paddingTop="3dp"
+                                        android:paddingEnd="20dp"
+                                        android:paddingBottom="5dp" />
+                                </HorizontalScrollView>
+
+                                <!-- Liquid silk edge fade into #F1F3F5 before pinned room-manage button -->
+                                <View
+                                    android:layout_width="24dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="end"
+                                    android:background="@drawable/bg_room_rail_fade"
+                                    android:clickable="false"
+                                    android:focusable="false" />
+                            </FrameLayout>
+
+                            <ImageButton
+                                android:id="@+id/btnManageRoomsHome"
+                                android:layout_width="34dp"
+                                android:layout_height="34dp"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginBottom="1dp"
+                                android:background="@drawable/bg_room_manage_btn"
+                                android:contentDescription="Atur Ruangan"
+                                android:elevation="1dp"
+                                android:padding="9dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_room_manage_grid" />
+                        </LinearLayout>
 
                         <!-- 2-Column Borderless Device Grid -->
                         <androidx.recyclerview.widget.RecyclerView
