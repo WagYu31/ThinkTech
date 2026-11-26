@@ -1,71 +1,83 @@
-# ThinkTech Smart Home (Tuya IoT SDK)
+# ThinkTech Smart Home
 
-Aplikasi Android Native (Kotlin) untuk ekosistem Smart Home berbasis **Tuya Smart Life App SDK** (`v7.8.0`).
+![Platform](https://img.shields.io/badge/Platform-Android%20(API%2023%2B)-3DDC84?logo=android&logoColor=white)
+![Language](https://img.shields.io/badge/Kotlin-1.9.24-7F52FF?logo=kotlin&logoColor=white)
+![SDK](https://img.shields.io/badge/Tuya%20SDK-7.8.0-FF6A00)
+![Gradle](https://img.shields.io/badge/Gradle-8.7-02303A?logo=gradle&logoColor=white)
 
----
+A native Android smart home application built with Kotlin and the **Tuya Smart Life App SDK**. Designed with a clean, responsive interface for managing IoT devices, live IPC security cameras, smart lighting, automated schedules, and voice commands.
 
-## 🔑 Konfigurasi Kredensial Tuya (Lokal)
+## Key Features
 
-* **Platform**: Android Native (Kotlin)
-* **Package Name**: `com.thinktech.iot.smarthome`
-* **Region / Location**: Outside Mainland China (Global)
+- **Device Control & Pairing** — Real-time DP status synchronization, multi-channel switch control, and Wi-Fi / BLE device onboarding.
+- **Smart Lighting Studio** — Custom radial dial supporting White CCT (270° arc), 360° RGB color control, brightness, and saturation adjustments.
+- **IPC Security Camera** — Live P2P streaming with PTZ pan/tilt, two-way talk, IR night vision, motion detection, auto-tracking, privacy mode, snapshot, and recording.
+- **Automation & Schedules** — One-tap scene execution (*Tap-to-Run*) and recurring device schedules via a 24-hour radial clock picker.
+- **Voice AI Assistant** — Speech recognition and TTS control for switches, lighting, camera actions, rooms, schedules, and energy checks.
+- **Room & Language Management** — Synchronized home/room filtering and instant in-app localization (`id`, `en`, `ms`, `zh`, `ja`).
 
-> Demi keamanan, `AppKey`, `AppSecret`, dan file Security SDK (`security-algorithm-*.aar` / `t_s.bmp`) **tidak ikut dipublikasikan** ke repositori ini.
+## Tech Stack
 
-1. Salin `local.properties.example` menjadi `local.properties` di root proyek, lalu isi kredensial dari Tuya Developer Console:
-   ```properties
-   sdk.dir=/path/to/your/Android/sdk
-   TUYA_APP_KEY=YOUR_TUYA_APP_KEY
-   TUYA_APP_SECRET=YOUR_TUYA_APP_SECRET
-   ```
-2. Di tab **Get Key** pada Tuya Developer Console:
-   * Klik **`+ Add SHA256 Hash Value`** pada bagian Android Certificate dan masukkan SHA-256 keystore Anda.
-   * Unduh **App Security SDK** (`security-algorithm-*.aar`) lalu letakkan di `app/libs/` (atau `t_s.bmp` di `app/src/main/assets/t_s.bmp`).
+| Layer | Technology |
+| :--- | :--- |
+| Language | Kotlin 1.9.24 (JDK 17) |
+| UI & Graphics | Android ViewBinding, Material 3, Custom Canvas Views, Lottie |
+| IoT & Camera SDK | Tuya Smart Life SDK `7.8.0`, Tuya IPC SDK `7.8.2` |
+| Concurrency | Kotlin Coroutines & AndroidX Lifecycle |
+| Build System | Android Gradle Plugin `8.5.2`, Gradle `8.7` (`minSdk 23`, `targetSdk 34`) |
 
----
-
-## 🏗️ Struktur Arsitektur Aplikasi
+## Project Structure
 
 ```text
-thinktech/
-├── app/
-│   ├── src/main/
-│   │   ├── AndroidManifest.xml          # Izin lengkap & Metadata AppKey/Secret
-│   │   ├── assets/                      # Tempat meletakkan file t_s.bmp
-│   │   ├── java/com/thinktech/smarthome/
-│   │   │   ├── ThinkTechApp.kt          # Inisialisasi ThingHomeSdk Tuya
-│   │   │   ├── data/
-│   │   │   │   ├── model/SmartDeviceItem.kt
-│   │   │   │   ├── TuyaAuthRepository.kt    # Login email/phone & sesi user
-│   │   │   │   ├── TuyaDeviceRepository.kt  # Query Home, device list & DP toggle
-│   │   │   │   └── TuyaPairingRepository.kt # EZ Mode Wi-Fi 2.4 GHz pairing
-│   │   │   └── ui/
-│   │   │       ├── login/LoginActivity.kt   # Layar masuk akun Tuya
-│   │   │       ├── home/
-│   │   │       │   ├── MainActivity.kt      # Dashboard smart home & device list
-│   │   │       │   └── DeviceAdapter.kt     # Adapter list dengan instant power switch
-│   │   │       ├── device/DeviceControlActivity.kt # Kontrol detail & listener real-time
-│   │   │       └── pairing/PairDeviceActivity.kt   # Wizard penambahan perangkat baru
-│   │   └── res/
-│   │       ├── layout/                  # activity_login, activity_main, dll.
-│   │       ├── values/                  # colors, strings, themes (Material3)
-│   │       └── drawable/                # Modern gradient & vector icons
-│   ├── build.gradle                     # Konfigurasi dependensi Tuya v7.8.0
-│   └── proguard-rules.pro               # Aturan obfuscation resmi Tuya SDK
-├── build.gradle                         # Root Gradle konfigurasi AGP & Kotlin
-├── settings.gradle                      # Tuya Maven Repositories
-└── local.properties                     # Path Android SDK lokal
+app/src/main/java/com/thinktech/smarthome/
+├── ThinkTechApp.kt           # SDK, P2P & locale initialization
+├── data/                     # Auth, device, pairing, schedule & language repositories
+└── ui/
+    ├── splash/               # Launch screen & session bootstrap
+    ├── login/                # Authentication & account recovery
+    ├── home/                 # Dashboard, rooms, Smart scenes & Voice AI
+    ├── device/               # Switch, Lighting Studio & IPC Camera controls
+    ├── pairing/              # Wi-Fi / BLE device discovery & onboarding
+    ├── schedule/             # Radial clock & recurring schedule editor
+    └── settings/             # In-app language selection
 ```
 
----
+## Getting Started
 
-## 🚀 Menjalankan Aplikasi
+### Prerequisites
 
-Buka folder project ini di **Android Studio** atau gunakan terminal:
+- Android Studio (JDK 17) & Android SDK 34
+- A Tuya Developer account with Android App SDK credentials
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/WagYu31/ThinkTech.git
+   cd ThinkTech
+   ```
+
+2. Create `local.properties` from the example template and set your local SDK path and Tuya credentials:
+   ```bash
+   cp local.properties.example local.properties
+   ```
+   ```properties
+   sdk.dir=/path/to/your/Android/sdk
+   TUYA_APP_KEY=your_app_key
+   TUYA_APP_SECRET=your_app_secret
+   ```
+
+3. Place your Tuya App Security SDK (`security-algorithm-*.aar`) into `app/libs/`.
+
+### Build & Run
+
 ```bash
 ./gradlew assembleDebug
-```
-Lalu install ke perangkat/emulator Android Anda:
-```bash
 adb install app/build/outputs/apk/debug/app-debug.apk
+```
+
+### Testing
+
+```bash
+./gradlew testDebugUnitTest
 ```
